@@ -137,8 +137,10 @@ export default class Game extends Phaser.Scene {
                 gameOver = true;
                 gameOverText.visible = true;
                 this.physics.pause();
+                player.setTint(0xff0000);
             }
         }
+        
     }
 
     update(game) {
@@ -147,9 +149,11 @@ export default class Game extends Phaser.Scene {
          */
         if (cursors.left.isDown) {
             player.setVelocityX(-200);
+            player.setVelocityY(0);
             player.anims.play("left", true);
         } else if (cursors.right.isDown) {
             player.setVelocityX(200);
+            player.setVelocityY(0);
             player.anims.play("right", true);
         } else if (cursors.up.isDown) {
             player.setVelocityY(-200);
@@ -163,5 +167,6 @@ export default class Game extends Phaser.Scene {
         if (keyboard.enter.isDown) {
             this.scene.restart();
         }
+        
     }
 }
