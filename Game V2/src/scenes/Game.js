@@ -1,17 +1,10 @@
-import Phaser from "../lib/Phaser";
+import Phaser from "../lib/Phaser.js";
+import Level from "../scenes/Dungeon.js";
 
 export default class Game extends Phaser.Scene {
 
     preload() {
-        this.load.setBaseURL("https://labs.phaser.io/assets");
-        this.load.image("sky", "skies/deep-space.jpg");
-        this.load.image("ground", "sets/objects/platform3.png");
-        this.load.image("star", "demoscene/star3.png");
-        this.load.image("bomb", "demoscene/blue_ball.png");
-        this.load.spritesheet("dude", "sprites/dude.png", {
-            frameWidth: 32,
-            frameHeight: 48
-        });
+        Level();
     }
 
     create() {
