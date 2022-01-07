@@ -1,21 +1,33 @@
-import Phaser from "../lib/Phaser.js";
-import Level from "../scenes/Dungeon.js";
+import Phaser from "../lib/Phaser.js" //https://codepen.io/nauwelaertsp2022/pen/GRMqmGY.js
 
 export default class Game extends Phaser.Scene {
-
-    preload() {
-        Level();
+    
+    constructor() {
+        super('game');
     }
-
+  
+    preload() {
+        this.load.image("floor", '../resources/dungeon/dungeon-floor.png'); 
+        //https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/dungeon-floor.png for testing
+        this.load.image("wall", '../resources/dungeon/dungeon-wall.png'); 
+        //https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/dungeon-wall.png
+        this.load.image("star", "https://labs.phaser.io/assets/demoscene/star3.png");
+        this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
+        this.load.spritesheet("dude", "https://labs.phaser.io/assets/sprites/dude.png", {
+            frameWidth: 32,
+            frameHeight: 48
+        });
+    }
+    
     create() {
         //adds image for background
-        this.add.image(400, 300, "sky").setScale(2);
+        this.add.image(400, 300, "floor").setScale(2);
         //creates platforms
         platforms = this.physics.add.staticGroup();
-        platforms.create(400, 568, "ground").setScale(2).refreshBody();
-        platforms.create(600, 400, "ground");
-        platforms.create(50, 250, "ground");
-        platforms.create(750, 220, "ground");
+        platforms.create(400, 568, "wall").setScale(2).refreshBody();
+        platforms.create(600, 400, "wall");
+        platforms.create(50, 250, "wall");
+        platforms.create(750, 220, "wall");
         //creates player with bounce and collision
         player = this.physics.add.sprite(300, 450, "dude");
         //player.setBounce(0.2);
