@@ -21,12 +21,12 @@ var game = new Phaser.Game(config);
  *creates function for preloaded files to be used in game
  */
 function preload() {
-  this.load.setBaseURL("https://labs.phaser.io/assets");
-  this.load.image("sky", "skies/deep-space.jpg");
-  this.load.image("ground", "sets/objects/platform3.png");
-  this.load.image("star", "demoscene/star3.png");
-  this.load.image("bomb", "demoscene/blue_ball.png");
-  this.load.spritesheet("dude", "sprites/dude.png", {
+  //this.load.setBaseURL("https://labs.phaser.io/assets");
+  this.load.image("floor", "https://images.creativemarket.com/0.1.0/ps/120087/910/607/m1/fpnw/wm0/stonefloor001_large-.jpg?1401477523&s=aeb8c8fbad2e06ac22344908c9ad2c9e");
+  this.load.image("ground", "https://labs.phaser.io/assets/sets/objects/platform3.png");
+  this.load.image("star", "https://labs.phaser.io/assets/demoscene/star3.png");
+  this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
+  this.load.spritesheet("dude", "https://labs.phaser.io/assets/sprites/dude.png", {
     frameWidth: 32,
     frameHeight: 48
   });
@@ -36,7 +36,7 @@ function preload() {
  */
 function create() {
   //adds image for background
-  this.add.image(400, 300, "sky").setScale(2);
+  this.add.image(400, 300, "floor").setScale(0.5);
   //creates platforms
   platforms = this.physics.add.staticGroup();
   platforms.create(400, 568, "ground").setScale(2).refreshBody();
