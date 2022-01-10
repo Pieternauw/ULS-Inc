@@ -36,7 +36,7 @@ function preload() {
  */
 function create() {
   //adds image for background
-  this.add.image(400, 300, "floor").setScale(0.5);
+  this.add.image(400, 300, "floor");
   //creates platforms
   platforms = this.physics.add.staticGroup();
   platforms.create(400, 568, "ground").setScale(2).refreshBody();
