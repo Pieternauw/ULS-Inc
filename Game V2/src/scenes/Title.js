@@ -20,7 +20,7 @@ export default class Title extends Phaser.Scene{
     var Start;
     
     Title = this.add.text(150, 125, "Title", {
-      fontSize: "00px",
+      fontSize: "60px",
       fill:"#000"
     })
     Title.setColor("White");
