@@ -188,3 +188,4 @@ function update(game) {
             this.scene.restart();
         }
 }
+
