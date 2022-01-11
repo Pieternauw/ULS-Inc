@@ -1,4 +1,4 @@
-//import Phaser from 'https://codepen.io/bealec2022/pen/GRMoPLG.js'
+import Phaser from 'https://codepen.io/bealec2022/pen/GRMoPLG.js'
 //import game file once made
 
 export default class Title extends Phaser.Scene{
