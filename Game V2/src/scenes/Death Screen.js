@@ -2,6 +2,10 @@
 
 export default class Death extends Phaser.Scene{
   
+  constructor() {
+        super({key: "Death"});
+    }
+  
   preload(){
     this.load.image("background", "https://images.creativemarket.com/0.1.0/ps/120087/910/607/m1/fpnw/wm0/stonefloor001_large-.jpg?1401477523&s=aeb8c8fbad2e06ac22344908c9ad2c9e");   
   }
