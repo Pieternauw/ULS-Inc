@@ -25,7 +25,7 @@ export default class Death extends Phaser.Scene{
     })
     deathText.setColor("White");
     
-    restartText = this.add.text(275, 200, "Hit Enter To Start Game", {
+    restartText = this.add.text(275, 200, "Hit Enter To Try Again", {
       fontSize: "32px",
       fill:"#000"
     })
@@ -40,9 +40,11 @@ export default class Death extends Phaser.Scene{
   
   update(){
     if (keyboard.enter.isDown) {
-      //enable switch to title screen
+      //check code
+      this.scene.start('game');
     } else if (keyboard.tab.isDown){
-      //enable switch to game
+      //check code
+      this.scene.start('Title');
     } else {
       retun false; 
     }
