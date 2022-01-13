@@ -44,7 +44,7 @@ export default class Death extends Phaser.Scene{
       this.scene.start('game');
     } else if (keyboard.tab.isDown){
       //check code
-      this.scene.start('Title');
+      this.scene.start('title');
     } else {
       retun false; 
     }
