@@ -1,12 +1,12 @@
-import Phaser from "https://codepen.io/nauwelaertsp2022/pen/GRMqmGY.js" //https://codepen.io/nauwelaertsp2022/pen/GRMqmGY.js
+//import Phaser from "../lib/Phaser.js" //https://codepen.io/nauwelaertsp2022/pen/GRMqmGY.js
 
-export default class Game extends Phaser.Scene {
-
-    constructor() {
-        super('game');
-    }
-
-    preload() {
+var Game = new Phaser.Class({
+    Extends: Phaser.Scene,
+    initialize: function() {
+        Phaser.Scene.call(this, { "key": "Game" });
+    },
+    init: function() {},
+    preload: function() {
         //this.load.setBaseURL("https://labs.phaser.io/assets");
         this.load.image("floor", "https://images.creativemarket.com/0.1.0/ps/120087/910/607/m1/fpnw/wm0/stonefloor001_large-.jpg?1401477523&s=aeb8c8fbad2e06ac22344908c9ad2c9e");
         this.load.image("ground", "https://labs.phaser.io/assets/sets/objects/platform3.png");
@@ -16,9 +16,8 @@ export default class Game extends Phaser.Scene {
             frameWidth: 32,
             frameHeight: 48
         });
-    }
-
-    create() {
+    },
+    create: function() {
         //adds image for background
         this.add.image(400, 300, "floor");
         //creates platforms
@@ -139,9 +138,8 @@ export default class Game extends Phaser.Scene {
                 player.setTint(0xff0000);
             }
         }
-    }
-
-    update(game) {
+    },
+    update: function(game) {
         if (cursors.left.isDown) {
             player.setVelocityX(-200);
             player.setVelocityY(0);
@@ -163,7 +161,4 @@ export default class Game extends Phaser.Scene {
             this.scene.restart();
         }
     }
-
-
-
-}
+});
