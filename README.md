@@ -9,3 +9,5 @@ For testing: Use CodePen
 - copy the Game.js code into one pen, then link it to the Main.js in another pen
 - link the Dungeon.js to the Game pen from a seperate pen
 - Replace all ".js" files with links to codepens, and ".png" files with links to the png in the resources 
+
+I am Caleb and I am doing the presentation and generally helping
