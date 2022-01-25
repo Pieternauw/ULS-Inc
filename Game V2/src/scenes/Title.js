@@ -25,10 +25,12 @@ var Title = new Phaser.Class({
         })
         Start.setColor("White");
 
+        cursors = this.input.keyboard.createCursorKeys();
+        keyboard = this.input.keyboard.addKeys("enter");
     },
     update: function() {
-        this.input.keyboard.on("keydown-ENTER", function() {
+        if (keyboard.enter.isDown) {
             this.scene.start("Game");
-        });
+        }
     }
 });
