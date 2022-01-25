@@ -1,5 +1,3 @@
-//import Phaser from "../lib/Phaser.js" //https://codepen.io/nauwelaertsp2022/pen/GRMqmGY.js
-
 var Game = new Phaser.Class({
     Extends: Phaser.Scene,
     initialize: function() {
@@ -107,18 +105,6 @@ var Game = new Phaser.Class({
         //color for scoreText
         lifeText.setColor("white");
 
-        var gameOverText;
-        gameOverText = this.add.text(
-            50,
-            300,
-            "You're Trash! Hit Enter To Try Again", {
-                fontSize: "32px",
-                fill: "#000"
-            }
-        );
-        gameOverText.setColor("white");
-        gameOverText.visible = false;
-
         //add physics for bombs
         var bombs = this.physics.add.group();
         this.physics.add.collider(bombs, platforms);
@@ -132,10 +118,7 @@ var Game = new Phaser.Class({
             player.clearTint();
             bomb.destroy(); //freezes, find way to ma
             if (life <= 0) {
-                gameOver = true;
-                gameOverText.visible = true;
-                this.physics.pause();
-                player.setTint(0xff0000);
+                this.scene.start("Death")
             }
         }
     },
@@ -158,7 +141,7 @@ var Game = new Phaser.Class({
         }
 
         if (keyboard.enter.isDown) {
-            this.scene.restart();
+            this.scene.start("Title");
         }
     }
 });
