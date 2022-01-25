@@ -10,11 +10,11 @@ var Death = new Phaser.Class({
     create: function() {
         this.add.image(400, 300, "background").setScale(0.5);
 
-        keyboard = this.input.keyboard.addKeys("enter", "tab");
+        cursors = this.input.keyboard.createCursorKeys();
+        keyboard = this.input.keyboard.addKeys("enter");
 
         var deathText;
         var restartText;
-        var titleScreenText;
 
         deathText = this.add.text(150, 125, "Game Over", {
             fontSize: "60px",
@@ -27,20 +27,10 @@ var Death = new Phaser.Class({
             fill: "#000"
         })
         restartText.setColor("White");
-
-        titleScreenText = this.add.text(325, 250, "Hit tab To Return to the Title Screen", {
-            fontSize: "32px",
-            fill: "#000"
-        })
-        titleScreenText.setColor("White");
     },
     update: function() {
         if (keyboard.enter.isDown) {
-            //check code
-            this.scene.start('Game');
-        } else if (keyboard.tab.isDown) {
-            //check code
-            this.scene.start('Title');
+            this.scene.start("Title");
         }
     }
 });
