@@ -140,8 +140,5 @@ var Game = new Phaser.Class({
             player.anims.play("turn");
         }
 
-        if (keyboard.enter.isDown) {
-            this.scene.start("Title");
-        }
     }
 });
