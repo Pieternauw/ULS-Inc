@@ -16,13 +16,13 @@ var Death = new Phaser.Class({
         var deathText;
         var restartText;
 
-        deathText = this.add.text(150, 125, "Game Over", {
+       deathText = this.add.text(250, 125, "Game Over", {
             fontSize: "60px",
             fill: "#000"
         })
         deathText.setColor("White");
 
-        restartText = this.add.text(275, 200, "Hit Enter To Try Again", {
+        restartText = this.add.text(200, 300, "Hit Enter To Try Again", {
             fontSize: "32px",
             fill: "#000"
         })
