@@ -11,15 +11,22 @@ var Title = new Phaser.Class({
         this.add.image(400, 400, "background");
 
         var title;
+        var title2;
         var Start;
 
-        title = this.add.text(250, 125, "Title", {
+        title = this.add.text(215, 125, "Dungeon", {
             fontSize: "100px",
             fill: "#000"
         })
         title.setColor("White");
 
-        Start = this.add.text(200, 350, "Hit Enter To Start Game", {
+        title2 = this.add.text(250, 225, "Raider", {
+            fontSize: "100px",
+            fill: "#000"
+        })
+        title2.setColor("White");
+      
+        Start = this.add.text(200, 400, "Hit Enter To Start Game", {
             fontSize: "32px",
             fill: "#000"
         })
