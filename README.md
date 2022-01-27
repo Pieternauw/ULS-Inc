@@ -10,6 +10,7 @@ For testing: Use CodePen
 - link the Dungeon.js to the Game pen from a seperate pen
 - Replace all ".js" files with links to codepens, and ".png" files with links to the png in the resources 
 
-I am Caleb and I am doing the presentation and generally helping
+I am Caleb and I am doing the presentation and generally helping being a legend
 
 I am Cameron and Caleb is telling the truth
+
