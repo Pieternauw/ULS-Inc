@@ -7,7 +7,7 @@ var Game = new Phaser.Class({
     preload: function() {
         //this.load.setBaseURL("https://labs.phaser.io/assets");
         this.load.image("floor", "https://images.creativemarket.com/0.1.0/ps/120087/910/607/m1/fpnw/wm0/stonefloor001_large-.jpg?1401477523&s=aeb8c8fbad2e06ac22344908c9ad2c9e");
-        this.load.image("ground", "https://labs.phaser.io/assets/sets/objects/platform3.png");
+        this.load.image("ground", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/dungeon-wall.png");
         this.load.image("star", "https://labs.phaser.io/assets/demoscene/star3.png");
         this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
         this.load.spritesheet("dude", "https://labs.phaser.io/assets/sprites/dude.png", {
@@ -17,13 +17,53 @@ var Game = new Phaser.Class({
     },
     create: function() {
         //adds image for background
-        this.add.image(400, 300, "floor");
+        this.add.image(400, 300, "floor").setScale(1.5);
         //creates platforms
         platforms = this.physics.add.staticGroup();
-        platforms.create(400, 568, "ground").setScale(2).refreshBody();
-        platforms.create(600, 400, "ground");
-        platforms.create(50, 250, "ground");
-        platforms.create(750, 220, "ground");
+        //floor
+        platforms.create(0, 650, "ground").setScale(0.25).refreshBody();
+        platforms.create(75, 650, "ground").setScale(0.25).refreshBody();
+        platforms.create(150, 650, "ground").setScale(0.25).refreshBody();
+        platforms.create(225, 650, "ground").setScale(0.25).refreshBody();
+        platforms.create(300, 650, "ground").setScale(0.25).refreshBody();
+        platforms.create(375, 650, "ground").setScale(0.25).refreshBody(); //remove later when we want hole in floor
+        platforms.create(400, 650, "ground").setScale(0.25).refreshBody(); //remove later when we want hole in floor  
+        platforms.create(475, 650, "ground").setScale(0.25).refreshBody();
+        platforms.create(525, 650, "ground").setScale(0.25).refreshBody();
+        platforms.create(600, 650, "ground").setScale(0.25).refreshBody();
+        platforms.create(675, 650, "ground").setScale(0.25).refreshBody();
+        platforms.create(750, 650, "ground").setScale(0.25).refreshBody();
+        //left side (done)
+        platforms.create(0, 0, "ground").setScale(0.25).refreshBody();
+        platforms.create(0,75, "ground").setScale(0.25).refreshBody();
+        platforms.create(0,150, "ground").setScale(0.25).refreshBody();
+        platforms.create(0,225, "ground").setScale(0.25).refreshBody();
+        platforms.create(0,275, "ground").setScale(0.25).refreshBody();
+        platforms.create(0,450, "ground").setScale(0.25).refreshBody();
+        platforms.create(0,525, "ground").setScale(0.25).refreshBody();
+        platforms.create(0,600, "ground").setScale(0.25).refreshBody();
+        platforms.create(0,675, "ground").setScale(0.25).refreshBody();
+        //top side (done)
+        platforms.create(75, 0, "ground").setScale(0.25).refreshBody();
+        platforms.create(150, 0, "ground").setScale(0.25).refreshBody();
+        platforms.create(225, 0, "ground").setScale(0.25).refreshBody();
+        platforms.create(300, 0, "ground").setScale(0.25).refreshBody();
+        platforms.create(475, 0, "ground").setScale(0.25).refreshBody();
+        platforms.create(525, 0, "ground").setScale(0.25).refreshBody();
+        platforms.create(600, 0, "ground").setScale(0.25).refreshBody();
+        platforms.create(675, 0, "ground").setScale(0.25).refreshBody();
+        platforms.create(750, 0, "ground").setScale(0.25).refreshBody();
+        //right side (done)
+        platforms.create(800, 0, "ground").setScale(0.25).refreshBody();
+        platforms.create(800,75, "ground").setScale(0.25).refreshBody();
+        platforms.create(800,150, "ground").setScale(0.25).refreshBody();
+        platforms.create(800,225, "ground").setScale(0.25).refreshBody();
+        platforms.create(800,275, "ground").setScale(0.25).refreshBody();
+        platforms.create(800,450, "ground").setScale(0.25).refreshBody();
+        platforms.create(800,525, "ground").setScale(0.25).refreshBody();
+        platforms.create(800,600, "ground").setScale(0.25).refreshBody();
+        platforms.create(800,675, "ground").setScale(0.25).refreshBody();
+     
         //creates player with bounce and collision
         player = this.physics.add.sprite(300, 450, "dude");
         //player.setBounce(0.2);
@@ -56,8 +96,8 @@ var Game = new Phaser.Class({
         //creates stars
         stars = this.physics.add.group({
             key: "star",
-            repeat: 11,
-            setXY: { x: 12, y: 0, stepX: 70 }
+            repeat: 9,
+            setXY: { x: 80, y: 0, stepX: 70 }
         });
         //creates multiple stars
         stars.children.iterate(function(child) {
