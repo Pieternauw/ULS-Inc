@@ -167,18 +167,22 @@ var Game = new Phaser.Class({
             player.setVelocityX(-200);
             player.setVelocityY(0);
             player.anims.play("left", true);
+            localStorage.setItem("Direction", 1)
         } else if (cursors.right.isDown) {
             player.setVelocityX(200);
             player.setVelocityY(0);
             player.anims.play("right", true);
+            localStorage.setItem("Direction", 2)
         } else if (cursors.up.isDown) {
             player.setVelocityY(-200);
+            localStorage.setItem("Direction", 3)
         } else if (cursors.down.isDown) {
             player.setVelocityY(200);
+            localStorage.setItem("Direction", 4)
         } else {
             player.setVelocity(0);
             player.anims.play("turn");
         }
-
+        console.log(localStorage.getItem("Direction"));
     }
 });
