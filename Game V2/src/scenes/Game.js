@@ -161,6 +161,11 @@ var Game = new Phaser.Class({
                 this.scene.start("Death")
             }
         }
+        keyboard = this.input.keyboard.addKeys("space");
+        x = player.body.position.x;
+        y = player.body.position.y;
+
+
     },
     update: function(game) {
         if (cursors.left.isDown) {
@@ -183,6 +188,26 @@ var Game = new Phaser.Class({
             player.setVelocity(0);
             player.anims.play("turn");
         }
+        storage = localStorage.getItem("Direction");
+
+        if (keyboard.space.isDown) {
+            /*switch (storage) {
+                case storage = 1:
+                    sword = this.add.image(x, y + 20, "sword-left");
+
+                case storage = 2:
+                    sword = this.add.image(x + 30, y + 20, "sword-right");
+                case storage = 3:
+                    sword = this.add.image(x + 15, y, "sword-up");
+                case storage = 4:
+                    sword = this.add.image(x + 15, y + 40, "sword-down");
+            }*/
+            console.log("space");
+        }
+
         console.log(localStorage.getItem("Direction"));
+        //localStorage.setItem("X", player.body.position.x);
+        //localStorage.setItem("Y", player.body.position.y);
+
     }
 });
