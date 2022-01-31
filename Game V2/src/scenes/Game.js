@@ -20,7 +20,7 @@ var Game = new Phaser.Class({
         this.add.image(400, 300, "floor").setScale(1.5);
         //creates platforms
         platforms = this.physics.add.staticGroup();
-        //floor
+        //floor (done)
         platforms.create(0, 650, "ground").setScale(0.25).refreshBody();
         platforms.create(75, 650, "ground").setScale(0.25).refreshBody();
         platforms.create(150, 650, "ground").setScale(0.25).refreshBody();
@@ -93,11 +93,12 @@ var Game = new Phaser.Class({
         //allows cursors for inputs
         cursors = this.input.keyboard.createCursorKeys();
         keyboard = this.input.keyboard.addKeys("enter");
+      
         //creates stars
         stars = this.physics.add.group({
             key: "star",
             repeat: 9,
-            setXY: { x: 80, y: 0, stepX: 70 }
+            setXY: { x: 80, y: 80, stepX: 70}
         });
         //creates multiple stars
         stars.children.iterate(function(child) {
@@ -105,16 +106,41 @@ var Game = new Phaser.Class({
         });
         //adds physics
         this.physics.add.collider(stars, platforms);
-        this.physics.add.overlap(player, stars, collectStar, null, this);
-
+        this.physics.add.overlap(player, stars, collectStar, null, this)
+      
         function collectStar(player, star) {
             star.disableBody(true, true);
             score += 10;
             scoreText.setText("Score: " + score);
             if (stars.countActive(true) === 0) {
-                stars.children.iterate(function(child) {
-                    child.enableBody(true, child.x, 0, true, true);
-                });
+                stars.children.iterate(function(child){});
+                //creates bombs at random locations with properties
+                var x =
+                    player.x < 400 ?
+                    Phaser.Math.Between(400, 800) :
+                    Phaser.Math.Between(0, 400);
+                var bomb = bombs.create(x, 16, "bomb");
+                bomb.setBounce(1);
+                bomb.setCollideWorldBounds(true);
+                bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+            }
+        }
+      
+        stars2 = this.physics.add.group({
+            key: "star",
+            repeat: 6,
+            setXY: { x: 80, y: 150, stepY: 70 }
+        });
+      
+        this.physics.add.collider(stars2, platforms);
+        this.physics.add.overlap(player, stars2, collectStar2, null, this);
+      
+        function collectStar2(player, star2) {
+            star2.disableBody(true, true);
+            score += 10;
+            scoreText.setText("Score: " + score);
+            if (stars2.countActive(true) === 0) {
+                stars2.children.iterate(function(child){});
                 //creates bombs at random locations with properties
                 var x =
                     player.x < 400 ?
@@ -167,22 +193,18 @@ var Game = new Phaser.Class({
             player.setVelocityX(-200);
             player.setVelocityY(0);
             player.anims.play("left", true);
-            localStorage.setItem("Direction", 1)
         } else if (cursors.right.isDown) {
             player.setVelocityX(200);
             player.setVelocityY(0);
             player.anims.play("right", true);
-            localStorage.setItem("Direction", 2)
         } else if (cursors.up.isDown) {
             player.setVelocityY(-200);
-            localStorage.setItem("Direction", 3)
         } else if (cursors.down.isDown) {
             player.setVelocityY(200);
-            localStorage.setItem("Direction", 4)
         } else {
             player.setVelocity(0);
             player.anims.play("turn");
         }
-        console.log(localStorage.getItem("Direction"));
+
     }
 });
