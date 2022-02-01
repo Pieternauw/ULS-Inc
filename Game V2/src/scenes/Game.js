@@ -68,6 +68,8 @@ var Game = new Phaser.Class({
         player = this.physics.add.sprite(300, 450, "dude");
         //player.setBounce(0.2);
         player.setCollideWorldBounds(true);
+        
+        this.cameras.main.startFollow(player);
 
         this.anims.create({
             key: "left",
@@ -144,6 +146,11 @@ var Game = new Phaser.Class({
         });
         //color for scoreText
         lifeText.setColor("white");
+        
+        lifeText.scrollFactorX = 0;
+        lifeText.scrollFactorY = 0;
+        scoreText.scrollFactorX = 0;
+        scoreText.scrollFactorY = 0;
 
         //add physics for bombs
         var bombs = this.physics.add.group();
