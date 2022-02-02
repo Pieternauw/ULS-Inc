@@ -10,7 +10,11 @@ var Game = new Phaser.Class({
         this.load.image("ground", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/dungeon-wall.png");
         this.load.image("star", "https://labs.phaser.io/assets/demoscene/star3.png");
         this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
-        this.load.spritesheet("dude", "https://labs.phaser.io/assets/sprites/dude.png", {
+        this.load.image("sword-up", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sword/sword1.png")
+        this.load.image("sword-down", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sword/sworddown.png");
+        this.load.image("sword-left", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sword/swordleft.png");
+        this.load.image("sword-right", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sword/swordright.png");
+        this.load.spritesheet("dude", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/Dude.png", {
             frameWidth: 32,
             frameHeight: 48
         });
@@ -35,14 +39,14 @@ var Game = new Phaser.Class({
         platforms.create(750, 650, "ground").setScale(0.25).refreshBody();
         //left side (done)
         platforms.create(0, 0, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,75, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,150, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,225, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,275, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,450, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,525, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,600, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,675, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 75, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 150, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 225, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 275, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 450, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 525, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 600, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 675, "ground").setScale(0.25).refreshBody();
         //top side (done)
         platforms.create(75, 0, "ground").setScale(0.25).refreshBody();
         platforms.create(150, 0, "ground").setScale(0.25).refreshBody();
@@ -55,20 +59,22 @@ var Game = new Phaser.Class({
         platforms.create(750, 0, "ground").setScale(0.25).refreshBody();
         //right side (done)
         platforms.create(800, 0, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,75, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,150, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,225, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,275, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,450, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,525, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,600, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,675, "ground").setScale(0.25).refreshBody();
-     
+        platforms.create(800, 75, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 150, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 225, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 275, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 450, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 525, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 600, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 675, "ground").setScale(0.25).refreshBody();
+
+
+
         //creates player with bounce and collision
         player = this.physics.add.sprite(300, 450, "dude");
         //player.setBounce(0.2);
         player.setCollideWorldBounds(true);
-        
+
         this.cameras.main.startFollow(player);
 
         this.anims.create({
@@ -146,7 +152,7 @@ var Game = new Phaser.Class({
         });
         //color for scoreText
         lifeText.setColor("white");
-        
+
         lifeText.scrollFactorX = 0;
         lifeText.scrollFactorY = 0;
         scoreText.scrollFactorX = 0;
@@ -168,11 +174,11 @@ var Game = new Phaser.Class({
                 this.scene.start("Death")
             }
         }
+
         keyboard = this.input.keyboard.addKeys("space");
-        x = player.body.position.x;
-        y = player.body.position.y;
-
-
+        if (keyboard.space.isDown) {
+            sword = this.add.image(x, y, "sword-down");
+        }
     },
     update: function(game) {
         if (cursors.left.isDown) {
@@ -195,5 +201,9 @@ var Game = new Phaser.Class({
             player.setVelocity(0);
             player.anims.play("turn");
         }
+        storage = localStorage.getItem("Direction");
+        x = player.body.position.x;
+        y = player.body.position.y;
+        console.log(storage);
     }
 });
