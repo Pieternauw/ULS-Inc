@@ -102,10 +102,10 @@ var Game = new Phaser.Class({
         cursors = this.input.keyboard.createCursorKeys();
         keyboard = this.input.keyboard.addKeys("enter");
         //creates stars
-        stars = this.physics.add.group({
+       stars = this.physics.add.group({
             key: "star",
             repeat: 9,
-            setXY: { x: 80, y: 0, stepX: 70 }
+            setXY: { x: 80, y: 80, stepX: 70}
         });
         //creates multiple stars
         stars.children.iterate(function(child) {
@@ -113,7 +113,7 @@ var Game = new Phaser.Class({
         });
         //adds physics
         this.physics.add.collider(stars, platforms);
-        this.physics.add.overlap(player, stars, collectStar, null, this);
+        this.physics.add.overlap(player, stars, collectStar, null, this)
 
         function collectStar(player, star) {
             star.disableBody(true, true);
