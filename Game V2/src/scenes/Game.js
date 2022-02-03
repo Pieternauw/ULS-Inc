@@ -117,12 +117,10 @@ var Game = new Phaser.Class({
 
         function collectStar(player, star) {
             star.disableBody(true, true);
-            score += 10;
-            scoreText.setText("Score: " + score);
+            score += 1;
+            scoreText.setText("Coins: " + score);
             if (stars.countActive(true) === 0) {
-                stars.children.iterate(function(child) {
-                    child.enableBody(true, child.x, 0, true, true);
-                });
+                stars.children.iterate(function(child){});
                 //creates bombs at random locations with properties
                 var x =
                     player.x < 400 ?
@@ -134,6 +132,88 @@ var Game = new Phaser.Class({
                 bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
             }
         }
+
+        stars2 = this.physics.add.group({
+            key: "star",
+            repeat: 5,
+            setXY: { x: 80, y: 150, stepY: 70 }
+        });
+
+        this.physics.add.collider(stars2, platforms);
+        this.physics.add.overlap(player, stars2, collectStar2, null, this);
+
+        function collectStar2(player, star2) {
+            star2.disableBody(true, true);
+            score += 1;
+            scoreText.setText("Coins: " + score);
+            if (stars2.countActive(true) === 0) {
+                stars2.children.iterate(function(child){});
+                //creates bombs at random locations with properties
+                var x =
+                    player.x < 400 ?
+                    Phaser.Math.Between(400, 800) :
+                    Phaser.Math.Between(0, 400);
+                var bomb = bombs.create(x, 16, "bomb");
+                bomb.setBounce(1);
+                bomb.setCollideWorldBounds(true);
+                bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+            }
+        }
+
+        stars3 = this.physics.add.group({
+            key: "star",
+            repeat: 9,
+            setXY: { x: 80, y: 575, stepX: 70}
+        });
+
+        this.physics.add.collider(stars3, platforms);
+        this.physics.add.overlap(player, stars3, collectStar3, null, this);
+
+        function collectStar3(player, star3) {
+            star3.disableBody(true, true);
+            score += 1;
+            scoreText.setText("Coins: " + score);
+            if (stars3.countActive(true) === 0) {
+                stars3.children.iterate(function(child){});
+                //creates bombs at random locations with properties
+                var x =
+                    player.x < 400 ?
+                    Phaser.Math.Between(400, 800) :
+                    Phaser.Math.Between(0, 400);
+                var bomb = bombs.create(x, 16, "bomb");
+                bomb.setBounce(1);
+                bomb.setCollideWorldBounds(true);
+                bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+            }
+        }
+
+        stars4 = this.physics.add.group({
+            key: "star",
+            repeat: 5,
+            setXY: { x: 715, y: 150, stepY: 70 }
+        });
+
+        this.physics.add.collider(stars4, platforms);
+        this.physics.add.overlap(player, stars4, collectStar4, null, this);
+
+        function collectStar4(player, star4) {
+            star4.disableBody(true, true);
+            score += 1;
+            scoreText.setText("Coins: " + score);
+            if (stars4.countActive(true) === 0) {
+                stars4.children.iterate(function(child){});
+                //creates bombs at random locations with properties
+                var x =
+                    player.x < 400 ?
+                    Phaser.Math.Between(400, 800) :
+                    Phaser.Math.Between(0, 400);
+                var bomb = bombs.create(x, 16, "bomb");
+                bomb.setBounce(1);
+                bomb.setCollideWorldBounds(true);
+                bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+            }
+        }
+        
         //creates score counter
         var score = 0;
         var scoreText;
