@@ -265,25 +265,36 @@ var Game = new Phaser.Class({
             player.setVelocityX(-200);
             player.setVelocityY(0);
             player.anims.play("left", true);
-            localStorage.setItem("Direction", 1)
         } else if (cursors.right.isDown) {
             player.setVelocityX(200);
             player.setVelocityY(0);
             player.anims.play("right", true);
-            localStorage.setItem("Direction", 2)
         } else if (cursors.up.isDown) {
             player.setVelocityY(-200);
-            localStorage.setItem("Direction", 3)
         } else if (cursors.down.isDown) {
             player.setVelocityY(200);
-            localStorage.setItem("Direction", 4)
         } else {
             player.setVelocity(0);
             player.anims.play("turn");
         }
-        storage = localStorage.getItem("Direction");
-        x = player.body.position.x;
+
+        x = player.body.position.x; //lock to middle of camera not player spawn
         y = player.body.position.y;
-        console.log(storage);
+
+        const attack = this.add.image(x, y, "bomb")
+        const attackLayer = this.add.layer();
+        attackLayer.add([attack]);
+        attackLayer.setVisible(false);
+
+        if (cursors.space.isDown) {
+            attackLayer.setVisible(true);
+            this.time.addEvent({
+                delay: 500,
+                loop: false,
+                callback: () => {
+                    attackLayer.setVisible(false);
+                }
+            });
+        }
     }
 });
