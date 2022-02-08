@@ -16,12 +16,12 @@ var Game = new Phaser.Class({
         this.load.image("sword-right", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sword/swordright.png");
         this.load.spritesheet("dude", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/Dude.png", {
             frameWidth: 32,
-            frameHeight: 48
+            frameHeight: 48,
         });
     },
     create: function() {
         //adds image for background
-      { this.add.image(0, 0, "floor").setScale(1.5);
+        {this.add.image(0, 0, "floor").setScale(1.5);
         this.add.image(700, 0, "floor").setScale(1.5);
         this.add.image(1400, 0, "floor").setScale(1.5);
         this.add.image(2100, 0, "floor").setScale(1.5);
@@ -62,13 +62,13 @@ var Game = new Phaser.Class({
         this.add.image(2100, 4550, "floor").setScale(1.5);
         this.add.image(2800, 4550, "floor").setScale(1.5);
         this.add.image(3500, 4550, "floor").setScale(1.5);
-        this.add.image(4200, 4550, "floor").setScale(1.5); }
-
-        //creates platforms
+        this.add.image(4200, 4550, "floor").setScale(1.5);}
+        //creates platforms physics
         platforms = this.physics.add.staticGroup();
-        //top left room (1,1)
+		//creates platforms
+        {//top left room (1,1)
         //floor
-      { platforms.create(0, 650, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 650, "ground").setScale(0.25).refreshBody();
         platforms.create(75, 650, "ground").setScale(0.25).refreshBody();
         platforms.create(150, 650, "ground").setScale(0.25).refreshBody();
         platforms.create(225, 650, "ground").setScale(0.25).refreshBody();
@@ -902,41 +902,42 @@ var Game = new Phaser.Class({
         platforms.create(1600,3550, "ground").setScale(0.25).refreshBody();
         platforms.create(1675,3550, "ground").setScale(0.25).refreshBody();
         platforms.create(1750,3550, "ground").setScale(0.25).refreshBody();
-        platforms.create(1825,3550, "ground").setScale(0.25).refreshBody(); }
-        
-        //creates player with bounce and collision
-        player = this.physics.add.sprite(300, 450, "dude");
+        platforms.create(1825,3550, "ground").setScale(0.25).refreshBody();}
+        //creates player
+		{
+        player = this.physics.add.sprite(400, 400, "dude").setScale(1.25);
         //player.setBounce(0.2);
-        player.setCollideWorldBounds(true);
-
+        //player.setCollideWorldBounds(true);      
         this.cameras.main.startFollow(player);
-
-        this.anims.create({
+		}
+		//this.anims.create
+      	{
+		this.anims.create({
             key: "left",
             frames: this.anims.generateFrameNumbers("dude", { start: 0, end: 3 }),
             frameRate: 10,
             repeat: -1
         });
-
         this.anims.create({
             key: "turn",
             frames: [{ key: "dude", frame: 4 }],
             frameRate: 20
         });
-
         this.anims.create({
             key: "right",
             frames: this.anims.generateFrameNumbers("dude", { start: 5, end: 8 }),
             frameRate: 10,
             repeat: -1
         });
+	  }
         //adds physics for player
         this.physics.add.collider(player, platforms);
         //allows cursors for inputs
-        cursors = this.input.keyboard.createCursorKeys();
-        keyboard = this.input.keyboard.addKeys("enter");
-        //creates stars
-       stars = this.physics.add.group({
+		{cursors = this.input.keyboard.createCursorKeys();
+        keyboard = this.input.keyboard.addKeys("enter");}
+        //creates stars for room
+		{
+        stars = this.physics.add.group({
             key: "star",
             repeat: 9,
             setXY: { x: 80, y: 80, stepX: 70}
@@ -960,7 +961,7 @@ var Game = new Phaser.Class({
                     player.x < 400 ?
                     Phaser.Math.Between(400, 800) :
                     Phaser.Math.Between(0, 400);
-                bomb = bombs.create(x, 16, "bomb");
+                var bomb = bombs.create(x, 16, "bomb");
                 bomb.setBounce(1);
                 bomb.setCollideWorldBounds(true);
                 bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -1047,8 +1048,9 @@ var Game = new Phaser.Class({
                 bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
             }
         }
-        
-        //creates score counter
+		}
+        //creates Life & Score counter
+		{
         var score = 0;
         var scoreText;
         scoreText = this.add.text(0, 25, "score: 0", {
@@ -1066,17 +1068,18 @@ var Game = new Phaser.Class({
         });
         //color for scoreText
         lifeText.setColor("white");
-
+        
         lifeText.scrollFactorX = 0;
         lifeText.scrollFactorY = 0;
         scoreText.scrollFactorX = 0;
         scoreText.scrollFactorY = 0;
-
-        //add physics for bombs
+		}
+        //Bombs
+		{
         var bombs = this.physics.add.group();
         this.physics.add.collider(bombs, platforms);
         this.physics.add.collider(player, bombs, hitBomb, null, this);
-
+      
         function hitBomb(player, bomb) {
             player.setTint(0xff0000);
             player.anims.play("turn");
@@ -1088,47 +1091,39 @@ var Game = new Phaser.Class({
                 this.scene.start("Death")
             }
         }
-
-        keyboard = this.input.keyboard.addKeys("space");
+		}
+      	//add Space key
+		{
+      keyboard = this.input.keyboard.addKeys("space");
         if (keyboard.space.isDown) {
-            sword = this.add.image(x, y, "sword-down");
+          sword = this.add.image(x, y, "sword-down");
         }
+		}
     },
     update: function(game) {
         if (cursors.left.isDown) {
-            player.setVelocityX(-200);
+            player.setVelocityX(-500);
             player.setVelocityY(0);
             player.anims.play("left", true);
+            localStorage.setItem("Direction", 1)
         } else if (cursors.right.isDown) {
-            player.setVelocityX(200);
+            player.setVelocityX(500);
             player.setVelocityY(0);
             player.anims.play("right", true);
+            localStorage.setItem("Direction", 2)
         } else if (cursors.up.isDown) {
-            player.setVelocityY(-200);
+            player.setVelocityY(-500);
+            localStorage.setItem("Direction", 3)
         } else if (cursors.down.isDown) {
-            player.setVelocityY(200);
+            player.setVelocityY(500);
+            localStorage.setItem("Direction", 4)
         } else {
             player.setVelocity(0);
             player.anims.play("turn");
         }
-
-        x = player.body.position.x; //lock to middle of camera not player spawn
+        storage = localStorage.getItem("Direction");
+        x = player.body.position.x;
         y = player.body.position.y;
-
-        const attack = this.add.image(x, y, "bomb")
-        const attackLayer = this.add.layer();
-        attackLayer.add([attack]);
-        attackLayer.setVisible(false);
-
-        if (cursors.space.isDown) {
-            attackLayer.setVisible(true);
-            this.time.addEvent({
-                delay: 500,
-                loop: false,
-                callback: () => {
-                    attackLayer.setVisible(false);
-                }
-            });
-        }
+        console.log(storage);
     }
 });
