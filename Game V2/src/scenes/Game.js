@@ -68,7 +68,7 @@ var Game = new Phaser.Class({
         platforms = this.physics.add.staticGroup();
         //top left room (1,1)
         //floor
-        platforms.create(0, 650, "ground").setScale(0.25).refreshBody();
+      { platforms.create(0, 650, "ground").setScale(0.25).refreshBody();
         platforms.create(75, 650, "ground").setScale(0.25).refreshBody();
         platforms.create(150, 650, "ground").setScale(0.25).refreshBody();
         platforms.create(225, 650, "ground").setScale(0.25).refreshBody();
@@ -902,7 +902,7 @@ var Game = new Phaser.Class({
         platforms.create(1600,3550, "ground").setScale(0.25).refreshBody();
         platforms.create(1675,3550, "ground").setScale(0.25).refreshBody();
         platforms.create(1750,3550, "ground").setScale(0.25).refreshBody();
-        platforms.create(1825,3550, "ground").setScale(0.25).refreshBody();
+        platforms.create(1825,3550, "ground").setScale(0.25).refreshBody(); }
         
         //creates player with bounce and collision
         player = this.physics.add.sprite(300, 450, "dude");
