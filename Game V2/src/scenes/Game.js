@@ -21,7 +21,7 @@ var Game = new Phaser.Class({
     },
     create: function() {
         //adds image for background
-        this.add.image(0, 0, "floor").setScale(1.5);
+      { this.add.image(0, 0, "floor").setScale(1.5);
         this.add.image(700, 0, "floor").setScale(1.5);
         this.add.image(1400, 0, "floor").setScale(1.5);
         this.add.image(2100, 0, "floor").setScale(1.5);
@@ -62,7 +62,7 @@ var Game = new Phaser.Class({
         this.add.image(2100, 4550, "floor").setScale(1.5);
         this.add.image(2800, 4550, "floor").setScale(1.5);
         this.add.image(3500, 4550, "floor").setScale(1.5);
-        this.add.image(4200, 4550, "floor").setScale(1.5);
+        this.add.image(4200, 4550, "floor").setScale(1.5); }
 
         //creates platforms
         platforms = this.physics.add.staticGroup();
