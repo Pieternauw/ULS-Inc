@@ -8,15 +8,11 @@ var Game = new Phaser.Class({
         //this.load.setBaseURL("https://labs.phaser.io/assets");
         this.load.image("floor", "https://images.creativemarket.com/0.1.0/ps/120087/910/607/m1/fpnw/wm0/stonefloor001_large-.jpg?1401477523&s=aeb8c8fbad2e06ac22344908c9ad2c9e");
         this.load.image("ground", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/dungeon-wall.png");
-        this.load.image("star", "https://labs.phaser.io/assets/demoscene/star3.png");
+        this.load.image("star", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/coin/coin_gold.png");
         this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
-        this.load.image("sword-up", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sword/sword1.png")
-        this.load.image("sword-down", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sword/sworddown.png");
-        this.load.image("sword-left", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sword/swordleft.png");
-        this.load.image("sword-right", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sword/swordright.png");
         this.load.spritesheet("dude", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/Dude.png", {
             frameWidth: 32,
-            frameHeight: 48,
+            frameHeight: 48
         });
     },
     create: function() {
