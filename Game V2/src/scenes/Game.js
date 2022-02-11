@@ -1102,28 +1102,52 @@ var Game = new Phaser.Class({
     },
     update: function(game) {
         if (cursors.left.isDown) {
-            player.setVelocityX(-500);
+            player.setVelocityX(-200);
             player.setVelocityY(0);
             player.anims.play("left", true);
-            localStorage.setItem("Direction", 1)
         } else if (cursors.right.isDown) {
-            player.setVelocityX(500);
+            player.setVelocityX(200);
             player.setVelocityY(0);
             player.anims.play("right", true);
-            localStorage.setItem("Direction", 2)
         } else if (cursors.up.isDown) {
-            player.setVelocityY(-500);
-            localStorage.setItem("Direction", 3)
+            player.setVelocityY(-200);
         } else if (cursors.down.isDown) {
-            player.setVelocityY(500);
-            localStorage.setItem("Direction", 4)
+            player.setVelocityY(200);
         } else {
             player.setVelocity(0);
             player.anims.play("turn");
         }
-        storage = localStorage.getItem("Direction");
-        x = player.body.position.x;
+
+        x = player.body.position.x; //lock to middle of camera not player spawn
         y = player.body.position.y;
-        console.log(storage);
+
+        attack = this.add.image(x, y, "bomb").setScale(3);
+        attackLayer = this.add.layer();
+        attackLayer.setVisible(false);
+        attackLayer.add([attack]);
+
+        if (score > 10) {
+            if (keyboard.space.isDown) {
+                if (x - bomb.x <= 100 && y - bomb.y <= 100 || x - bomb.x >= -100 && y - bomb.y >= -100) {
+                    bomb.destroy();
+                    attackLayer.setVisible(true);
+                    this.time.addEvent({
+                        delay: 500,
+                        loop: false,
+                        callback: () => {
+                            attackLayer.setVisible(false);
+                        }
+                    });
+
+                } else {
+                    console.log("miss");
+                    console.log(x);
+                    console.log(y);
+                    console.log(bomb.x);
+                    console.log(bomb.y);
+                }
+                console.log("space");
+            }
+        }
     }
 });
