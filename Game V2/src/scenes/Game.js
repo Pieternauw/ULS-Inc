@@ -4018,17 +4018,17 @@ var Game = new Phaser.Class({
     },
     update: function(game) {
         if (cursors.left.isDown) {
-            player.setVelocityX(-200);
+            player.setVelocityX(-350);
             player.setVelocityY(0);
             player.anims.play("left", true);
         } else if (cursors.right.isDown) {
-            player.setVelocityX(200);
+            player.setVelocityX(350);
             player.setVelocityY(0);
             player.anims.play("right", true);
         } else if (cursors.up.isDown) {
-            player.setVelocityY(-200);
+            player.setVelocityY(-350);
         } else if (cursors.down.isDown) {
-            player.setVelocityY(200);
+            player.setVelocityY(350);
         } else {
             player.setVelocity(0);
             player.anims.play("turn");
