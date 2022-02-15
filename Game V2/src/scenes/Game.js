@@ -932,7 +932,6 @@ var Game = new Phaser.Class({
 		{cursors = this.input.keyboard.createCursorKeys();
         keyboard = this.input.keyboard.addKeys("enter");}
         //creates stars for room
-		{
         {
         stars = this.physics.add.group({
             key: "star",
