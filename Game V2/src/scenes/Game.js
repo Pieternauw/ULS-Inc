@@ -4031,14 +4031,13 @@ var Game = new Phaser.Class({
         x = player.body.position.x; //lock to middle of camera not player spawn
         y = player.body.position.y;
 
-        attack = this.add.image(x, y, "bomb").setScale(3);
-        attackLayer = this.add.layer();
-        attackLayer.setVisible(false);
-        attackLayer.add([attack]);
-
         if (score > 10) {
             if (keyboard.space.isDown) {
-                if (x - bomb.x <= 100 && y - bomb.y <= 100 || x - bomb.x >= -100 && y - bomb.y >= -100) {
+                if (x - bomb.x <= 50 && y - bomb.y <= 50) {
+                    attack = this.add.image(x + 15, y + 20, "bomb").setScale(3);
+                    attackLayer = this.add.layer();
+                    attackLayer.setVisible(false);
+                    attackLayer.add([attack]);
                     bomb.destroy();
                     attackLayer.setVisible(true);
                     this.time.addEvent({
@@ -4048,15 +4047,7 @@ var Game = new Phaser.Class({
                             attackLayer.setVisible(false);
                         }
                     });
-
-                } else {
-                    console.log("miss");
-                    console.log(x);
-                    console.log(y);
-                    console.log(bomb.x);
-                    console.log(bomb.y);
-                }
-                console.log("space");
+		}
             }
         }
     }
