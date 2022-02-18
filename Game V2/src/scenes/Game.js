@@ -433,8 +433,8 @@ var Game = new Phaser.Class({
             platforms.create(1750, 3250, "ground").setScale(0.25).refreshBody();
             platforms.create(1825, 3250, "ground").setScale(0.25).refreshBody();
             platforms.create(1900, 3250, "ground").setScale(0.25).refreshBody();
-            //platforms.create(1975, 3250, "ground").setScale(0.25).refreshBody();
-            //platforms.create(2000, 3250, "ground").setScale(0.25).refreshBody();
+            platforms.create(1975, 3250, "ground").setScale(0.25).refreshBody();
+            platforms.create(2000, 3250, "ground").setScale(0.25).refreshBody();
             platforms.create(2075, 3250, "ground").setScale(0.25).refreshBody();
             platforms.create(2125, 3250, "ground").setScale(0.25).refreshBody();
             platforms.create(2200, 3250, "ground").setScale(0.25).refreshBody();
@@ -813,94 +813,6 @@ var Game = new Phaser.Class({
             platforms.create(1600, 2475, "ground").setScale(0.25).refreshBody();
             platforms.create(1600, 2550, "ground").setScale(0.25).refreshBody();
             platforms.create(1600, 2625, "ground").setScale(0.25).refreshBody();
-            //Boss Room
-            platforms.create(1300, 3300, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3350, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3400, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3450, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3500, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3550, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3600, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3650, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3700, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3750, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3800, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3850, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3900, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 3950, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 4000, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 4050, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 4100, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 4150, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 4200, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 4250, "ground").setScale(0.25).refreshBody();
-            platforms.create(1300, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3300, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3350, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3400, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3450, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3500, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3550, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3600, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3650, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3700, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3750, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3800, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3850, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3900, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 3950, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 4000, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 4050, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 4100, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 4150, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 4200, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 4250, "ground").setScale(0.25).refreshBody();
-            platforms.create(2650, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(1375, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(1450, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(1525, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(1600, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(1675, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(1750, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(1825, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(1900, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(1975, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(2050, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(2125, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(2200, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(2275, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(2350, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(2425, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(2500, 4300, "ground").setScale(0.25).refreshBody();
-            platforms.create(2575, 4300, "ground").setScale(0.25).refreshBody();
-            //Random Walls
-            platforms.create(2125, 4000, "ground").setScale(0.25).refreshBody();
-            platforms.create(2200, 4000, "ground").setScale(0.25).refreshBody();
-            platforms.create(2275, 4000, "ground").setScale(0.25).refreshBody();
-            platforms.create(2350, 4000, "ground").setScale(0.25).refreshBody();
-            platforms.create(2425, 4000, "ground").setScale(0.25).refreshBody();
-            platforms.create(2500, 4000, "ground").setScale(0.25).refreshBody();
-            //Random Walls
-            platforms.create(2125, 3550, "ground").setScale(0.25).refreshBody();
-            platforms.create(2200, 3550, "ground").setScale(0.25).refreshBody();
-            platforms.create(2275, 3550, "ground").setScale(0.25).refreshBody();
-            platforms.create(2350, 3550, "ground").setScale(0.25).refreshBody();
-            platforms.create(2425, 3550, "ground").setScale(0.25).refreshBody();
-            platforms.create(2500, 3550, "ground").setScale(0.25).refreshBody();
-            //Random Walls
-            platforms.create(1450, 4000, "ground").setScale(0.25).refreshBody();
-            platforms.create(1525, 4000, "ground").setScale(0.25).refreshBody();
-            platforms.create(1600, 4000, "ground").setScale(0.25).refreshBody();
-            platforms.create(1675, 4000, "ground").setScale(0.25).refreshBody();
-            platforms.create(1750, 4000, "ground").setScale(0.25).refreshBody();
-            platforms.create(1825, 4000, "ground").setScale(0.25).refreshBody();
-            //Random Walls
-            platforms.create(1450, 3550, "ground").setScale(0.25).refreshBody();
-            platforms.create(1525, 3550, "ground").setScale(0.25).refreshBody();
-            platforms.create(1600, 3550, "ground").setScale(0.25).refreshBody();
-            platforms.create(1675, 3550, "ground").setScale(0.25).refreshBody();
-            platforms.create(1750, 3550, "ground").setScale(0.25).refreshBody();
-            platforms.create(1825, 3550, "ground").setScale(0.25).refreshBody();
         }
         //creates player
         {
