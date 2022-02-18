@@ -44,6 +44,7 @@ var Title = new Phaser.Class({
     update: function() {
         if (keyboard.enter.isDown) {
             this.scene.start("Game");
+            this.themeSound.stop();
         }
     }
 });
