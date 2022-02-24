@@ -3,12 +3,10 @@ var Death = new Phaser.Class({
     initialize: function() {
         Phaser.Scene.call(this, { "key": "Death" });
     },
-    //init: function() {},
     preload: function() {
-        this.load.image("background", "https://images.creativemarket.com/0.1.0/ps/120087/910/607/m1/fpnw/wm0/stonefloor001_large-.jpg?1401477523&s=aeb8c8fbad2e06ac22344908c9ad2c9e");
+        this.load.audio('death', 'https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/Death-Screen-Music.mp3');
     },
     create: function() {
-        this.add.image(400, 300, "background").setScale(0.5);
 
         cursors = this.input.keyboard.createCursorKeys();
         keyboard = this.input.keyboard.addKeys("enter");
@@ -16,21 +14,32 @@ var Death = new Phaser.Class({
         var deathText;
         var restartText;
 
-       deathText = this.add.text(250, 125, "Game Over", {
-            fontSize: "60px",
+       deathText = this.add.text(40, 125, "You Died", {
+            fontSize: "150px",
             fill: "#000"
         })
-        deathText.setColor("White");
+        deathText.setColor("Red");
 
-        restartText = this.add.text(200, 300, "Hit Enter To Try Again", {
-            fontSize: "32px",
+        restartText = this.add.text(120, 400, "Hit Enter To Try Again", {
+            fontSize: "45px",
             fill: "#000"
         })
-        restartText.setColor("White");
+        restartText.setColor("Red");
+      
+        this.themeSound = this.sound.add("death");
+        this.themeSound.play({
+          mute: false,
+          volume: 1,
+          rate: 1,
+          detune: 0,
+          seek: 0,
+          loop: true,
+          delay: 0.5});
     },
     update: function() {
         if (keyboard.enter.isDown) {
             this.scene.start("Title");
+            this.themeSound.stop();
         }
     }
 });
