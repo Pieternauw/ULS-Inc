@@ -39,7 +39,14 @@ var Title = new Phaser.Class({
         keyboard = this.input.keyboard.addKeys("enter");
       
       this.themeSound = this.sound.add('theme');
-      this.themeSound.play();
+      this.themeSound.play({
+          mute: false,
+          volume: 1,
+          rate: 1,
+          detune: 0,
+          seek: 0,
+          loop: true,
+          delay: 0.25});
     },
     update: function() {
         if (keyboard.enter.isDown) {
