@@ -851,6 +851,7 @@ var Game = new Phaser.Class({
         }
         //creates stars for room
         {
+            scoreCounter = 0;
             stars = this.physics.add.group({
                 key: "star",
                 repeat: 3,
@@ -866,7 +867,8 @@ var Game = new Phaser.Class({
 
             function collectStar(player, star) {
                 star.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -884,7 +886,8 @@ var Game = new Phaser.Class({
 
             function collectStar2(player, star2) {
                 star2.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -902,7 +905,8 @@ var Game = new Phaser.Class({
 
             function collectStar3(player, star3) {
                 star3.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -920,7 +924,8 @@ var Game = new Phaser.Class({
 
             function collectStar4(player, star4) {
                 star4.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -939,7 +944,8 @@ var Game = new Phaser.Class({
 
             function collectStar5(player, star5) {
                 star5.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -957,7 +963,8 @@ var Game = new Phaser.Class({
 
             function collectStar6(player, star6) {
                 star6.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -975,7 +982,8 @@ var Game = new Phaser.Class({
 
             function collectStar7(player, star7) {
                 star7.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -993,7 +1001,8 @@ var Game = new Phaser.Class({
 
             function collectStar8(player, star8) {
                 star8.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1012,7 +1021,8 @@ var Game = new Phaser.Class({
 
             function collectStar9(player, star9) {
                 star9.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1030,7 +1040,8 @@ var Game = new Phaser.Class({
 
             function collectStar10(player, star10) {
                 star10.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1048,7 +1059,8 @@ var Game = new Phaser.Class({
 
             function collectStar11(player, star11) {
                 star11.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1066,7 +1078,8 @@ var Game = new Phaser.Class({
 
             function collectStar12(player, star12) {
                 star12.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1085,7 +1098,8 @@ var Game = new Phaser.Class({
 
             function collectStar13(player, star13) {
                 star13.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1103,7 +1117,8 @@ var Game = new Phaser.Class({
 
             function collectStar14(player, star14) {
                 star14.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1121,7 +1136,8 @@ var Game = new Phaser.Class({
 
             function collectStar15(player, star15) {
                 star15.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1139,7 +1155,8 @@ var Game = new Phaser.Class({
 
             function collectStar16(player, star16) {
                 star16.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1158,7 +1175,8 @@ var Game = new Phaser.Class({
 
             function collectStar17(player, star17) {
                 star17.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1176,7 +1194,8 @@ var Game = new Phaser.Class({
 
             function collectStar18(player, star18) {
                 star18.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1194,7 +1213,8 @@ var Game = new Phaser.Class({
 
             function collectStar19(player, star19) {
                 star19.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1212,7 +1232,8 @@ var Game = new Phaser.Class({
 
             function collectStar20(player, star20) {
                 star20.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1231,7 +1252,8 @@ var Game = new Phaser.Class({
 
             function collectStar21(player, star21) {
                 star21.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1249,7 +1271,8 @@ var Game = new Phaser.Class({
 
             function collectStar22(player, star22) {
                 star22.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1267,7 +1290,8 @@ var Game = new Phaser.Class({
 
             function collectStar23(player, star23) {
                 star23.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1285,7 +1309,8 @@ var Game = new Phaser.Class({
 
             function collectStar24(player, star24) {
                 star24.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1304,7 +1329,8 @@ var Game = new Phaser.Class({
 
             function collectStar25(player, star25) {
                 star25.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1322,7 +1348,8 @@ var Game = new Phaser.Class({
 
             function collectStar26(player, star26) {
                 star26.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1340,7 +1367,8 @@ var Game = new Phaser.Class({
 
             function collectStar27(player, star27) {
                 star27.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1358,7 +1386,8 @@ var Game = new Phaser.Class({
 
             function collectStar28(player, star28) {
                 star28.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1377,7 +1406,8 @@ var Game = new Phaser.Class({
 
             function collectStar29(player, star29) {
                 star29.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1395,7 +1425,8 @@ var Game = new Phaser.Class({
 
             function collectStar30(player, star30) {
                 star30.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1413,7 +1444,8 @@ var Game = new Phaser.Class({
 
             function collectStar31(player, star31) {
                 star31.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1431,7 +1463,8 @@ var Game = new Phaser.Class({
 
             function collectStar32(player, star32) {
                 star32.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1450,7 +1483,8 @@ var Game = new Phaser.Class({
 
             function collectStar33(player, star33) {
                 star33.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1468,7 +1502,8 @@ var Game = new Phaser.Class({
 
             function collectStar34(player, star34) {
                 star34.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1486,7 +1521,8 @@ var Game = new Phaser.Class({
 
             function collectStar35(player, star35) {
                 star35.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1504,7 +1540,8 @@ var Game = new Phaser.Class({
 
             function collectStar36(player, star36) {
                 star36.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1523,7 +1560,8 @@ var Game = new Phaser.Class({
 
             function collectStar37(player, star37) {
                 star37.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1541,7 +1579,8 @@ var Game = new Phaser.Class({
 
             function collectStar38(player, star38) {
                 star38.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1559,7 +1598,8 @@ var Game = new Phaser.Class({
 
             function collectStar39(player, star39) {
                 star39.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1577,7 +1617,8 @@ var Game = new Phaser.Class({
 
             function collectStar40(player, star40) {
                 star40.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1596,7 +1637,8 @@ var Game = new Phaser.Class({
 
             function collectStar41(player, star41) {
                 star41.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1614,7 +1656,8 @@ var Game = new Phaser.Class({
 
             function collectStar42(player, star42) {
                 star42.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1632,7 +1675,8 @@ var Game = new Phaser.Class({
 
             function collectStar43(player, star43) {
                 star43.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1650,7 +1694,8 @@ var Game = new Phaser.Class({
 
             function collectStar44(player, star44) {
                 star44.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1669,7 +1714,8 @@ var Game = new Phaser.Class({
 
             function collectStar45(player, star45) {
                 star45.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1687,7 +1733,8 @@ var Game = new Phaser.Class({
 
             function collectStar46(player, star46) {
                 star46.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1705,7 +1752,8 @@ var Game = new Phaser.Class({
 
             function collectStar47(player, star47) {
                 star47.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1723,7 +1771,8 @@ var Game = new Phaser.Class({
 
             function collectStar48(player, star48) {
                 star48.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1742,7 +1791,8 @@ var Game = new Phaser.Class({
 
             function collectStar49(player, star49) {
                 star49.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1760,7 +1810,8 @@ var Game = new Phaser.Class({
 
             function collectStar50(player, star50) {
                 star50.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1778,7 +1829,8 @@ var Game = new Phaser.Class({
 
             function collectStar51(player, star51) {
                 star51.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1796,7 +1848,8 @@ var Game = new Phaser.Class({
 
             function collectStar52(player, star52) {
                 star52.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1815,7 +1868,8 @@ var Game = new Phaser.Class({
 
             function collectStar53(player, star53) {
                 star53.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1833,7 +1887,8 @@ var Game = new Phaser.Class({
 
             function collectStar54(player, star54) {
                 star54.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1851,7 +1906,8 @@ var Game = new Phaser.Class({
 
             function collectStar55(player, star55) {
                 star55.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1869,7 +1925,8 @@ var Game = new Phaser.Class({
 
             function collectStar56(player, star56) {
                 star56.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1888,7 +1945,8 @@ var Game = new Phaser.Class({
 
             function collectStar57(player, star57) {
                 star57.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1906,7 +1964,8 @@ var Game = new Phaser.Class({
 
             function collectStar58(player, star58) {
                 star58.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1924,7 +1983,8 @@ var Game = new Phaser.Class({
 
             function collectStar59(player, star59) {
                 star59.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1942,7 +2002,8 @@ var Game = new Phaser.Class({
 
             function collectStar60(player, star60) {
                 star60.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1961,7 +2022,8 @@ var Game = new Phaser.Class({
 
             function collectStar61(player, star61) {
                 star61.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1979,7 +2041,8 @@ var Game = new Phaser.Class({
 
             function collectStar62(player, star62) {
                 star62.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -1997,7 +2060,8 @@ var Game = new Phaser.Class({
 
             function collectStar63(player, star63) {
                 star63.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2015,7 +2079,8 @@ var Game = new Phaser.Class({
 
             function collectStar64(player, star64) {
                 star64.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2034,7 +2099,8 @@ var Game = new Phaser.Class({
 
             function collectStar65(player, star65) {
                 star65.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2052,7 +2118,8 @@ var Game = new Phaser.Class({
 
             function collectStar66(player, star66) {
                 star66.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2070,7 +2137,8 @@ var Game = new Phaser.Class({
 
             function collectStar67(player, star67) {
                 star67.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2088,7 +2156,8 @@ var Game = new Phaser.Class({
 
             function collectStar68(player, star68) {
                 star68.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2107,7 +2176,8 @@ var Game = new Phaser.Class({
 
             function collectStar69(player, star69) {
                 star69.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2125,7 +2195,8 @@ var Game = new Phaser.Class({
 
             function collectStar70(player, star70) {
                 star70.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2143,7 +2214,8 @@ var Game = new Phaser.Class({
 
             function collectStar71(player, star71) {
                 star71.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2161,7 +2233,8 @@ var Game = new Phaser.Class({
 
             function collectStar72(player, star72) {
                 star72.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2180,7 +2253,8 @@ var Game = new Phaser.Class({
 
             function collectStar73(player, star73) {
                 star73.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2198,7 +2272,8 @@ var Game = new Phaser.Class({
 
             function collectStar74(player, star74) {
                 star74.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2216,7 +2291,8 @@ var Game = new Phaser.Class({
 
             function collectStar75(player, star75) {
                 star75.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2234,7 +2310,8 @@ var Game = new Phaser.Class({
 
             function collectStar76(player, star76) {
                 star76.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2253,7 +2330,8 @@ var Game = new Phaser.Class({
 
             function collectStar77(player, star77) {
                 star77.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2271,7 +2349,8 @@ var Game = new Phaser.Class({
 
             function collectStar78(player, star78) {
                 star78.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2289,7 +2368,8 @@ var Game = new Phaser.Class({
 
             function collectStar79(player, star79) {
                 star79.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2307,7 +2387,8 @@ var Game = new Phaser.Class({
 
             function collectStar80(player, star80) {
                 star80.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2327,7 +2408,8 @@ var Game = new Phaser.Class({
 
             function collectStar81(player, star81) {
                 star81.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2345,7 +2427,8 @@ var Game = new Phaser.Class({
 
             function collectStar82(player, star82) {
                 star82.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2363,7 +2446,8 @@ var Game = new Phaser.Class({
 
             function collectStar83(player, star83) {
                 star83.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2381,7 +2465,8 @@ var Game = new Phaser.Class({
 
             function collectStar84(player, star84) {
                 star84.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2400,7 +2485,8 @@ var Game = new Phaser.Class({
 
             function collectStar85(player, star85) {
                 star85.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2418,7 +2504,8 @@ var Game = new Phaser.Class({
 
             function collectStar86(player, star86) {
                 star86.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2436,7 +2523,8 @@ var Game = new Phaser.Class({
 
             function collectStar87(player, star87) {
                 star87.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2454,7 +2542,8 @@ var Game = new Phaser.Class({
 
             function collectStar88(player, star88) {
                 star88.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2473,7 +2562,8 @@ var Game = new Phaser.Class({
 
             function collectStar89(player, star89) {
                 star89.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2491,7 +2581,8 @@ var Game = new Phaser.Class({
 
             function collectStar90(player, star90) {
                 star90.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2509,7 +2600,8 @@ var Game = new Phaser.Class({
 
             function collectStar91(player, star91) {
                 star91.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2527,7 +2619,8 @@ var Game = new Phaser.Class({
 
             function collectStar92(player, star92) {
                 star92.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2546,7 +2639,8 @@ var Game = new Phaser.Class({
 
             function collectStar93(player, star93) {
                 star93.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2564,7 +2658,8 @@ var Game = new Phaser.Class({
 
             function collectStar94(player, star94) {
                 star94.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2582,7 +2677,8 @@ var Game = new Phaser.Class({
 
             function collectStar95(player, star95) {
                 star95.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2600,7 +2696,8 @@ var Game = new Phaser.Class({
 
             function collectStar96(player, star96) {
                 star96.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2619,7 +2716,8 @@ var Game = new Phaser.Class({
 
             function collectStar97(player, star97) {
                 star97.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2637,7 +2735,8 @@ var Game = new Phaser.Class({
 
             function collectStar98(player, star98) {
                 star98.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2655,7 +2754,8 @@ var Game = new Phaser.Class({
 
             function collectStar99(player, star99) {
                 star99.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
 
@@ -2673,7 +2773,8 @@ var Game = new Phaser.Class({
 
             function collectStar100(player, star100) {
                 star100.disableBody(true, true);
-                score += 1;
+                score++;
+                scoreCounter++;
                 scoreText.setText("Coins: " + score);
             }
         }
@@ -2688,8 +2789,8 @@ var Game = new Phaser.Class({
             //color for scoreText
             scoreText.setColor("white");
             //creates score counter
-            var life = 3;
-            var lifeText;
+            life = 3;
+            lifeText = " ";
             lifeText = this.add.text(0, 0, "Hearts: 3", {
                 fontSize: "32px",
                 fill: "#000"
@@ -2712,6 +2813,8 @@ var Game = new Phaser.Class({
         //enemies (muk)
         {
             muks = this.physics.add.group();
+
+            mukCount = 24;
 
             this.physics.add.collider(muks, platforms);
             this.physics.add.collider(player, muks, hitMuk, null, this);
@@ -2747,221 +2850,238 @@ var Game = new Phaser.Class({
             }*/
             //muk2
             {
-                muk2 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(700, 1250), 'muk');
+                var muk2 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(700, 1250), 'muk');
                 muk2.setBounce(1);
                 muk2.setCollideWorldBounds(false);
                 muk2.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk3
             {
-                muk3 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(1400, 1950), 'muk');
+                var muk3 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(1400, 1950), 'muk');
                 muk3.setBounce(1);
                 muk3.setCollideWorldBounds(false);
                 muk3.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk4
             {
-                muk4 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(2100, 2650), 'muk');
+                var muk4 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(2100, 2650), 'muk');
                 muk4.setBounce(1);
                 muk4.setCollideWorldBounds(false);
                 muk4.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk5
             {
-                muk5 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(2800, 3350), 'muk');
+                var muk5 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(2800, 3350), 'muk');
                 muk5.setBounce(1);
                 muk5.setCollideWorldBounds(false);
                 muk5.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk6 - middle 1
             {
-                muk6 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(100, 550), 'muk');
+                var muk6 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(100, 550), 'muk');
                 muk6.setBounce(1);
                 muk6.setCollideWorldBounds(false);
                 muk6.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk7
             {
-                muk7 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(700, 1250), 'muk');
+                var muk7 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(700, 1250), 'muk');
                 muk7.setBounce(1);
                 muk7.setCollideWorldBounds(false);
                 muk7.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk8
             {
-                muk8 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(1400, 1950), 'muk');
+                var muk8 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(1400, 1950), 'muk');
                 muk8.setBounce(1);
                 muk8.setCollideWorldBounds(false);
                 muk8.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk9
             {
-                muk9 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(2100, 2650), 'muk');
+                var muk9 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(2100, 2650), 'muk');
                 muk9.setBounce(1);
                 muk9.setCollideWorldBounds(false);
                 muk9.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk10
             {
-                muk10 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(2100, 2650), 'muk');
+                var muk10 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(2100, 2650), 'muk');
                 muk10.setBounce(1);
                 muk10.setCollideWorldBounds(false);
                 muk10.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk11 - middle 2
             {
-                muk11 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(100, 550), 'muk');
+                var muk11 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(100, 550), 'muk');
                 muk11.setBounce(1);
                 muk11.setCollideWorldBounds(false);
                 muk11.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk12
             {
-                muk12 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(700, 1250), 'muk');
+                var muk12 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(700, 1250), 'muk');
                 muk12.setBounce(1);
                 muk12.setCollideWorldBounds(false);
                 muk12.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk13
             {
-                muk13 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(1400, 1950), 'muk');
+                var muk13 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(1400, 1950), 'muk');
                 muk13.setBounce(1);
                 muk13.setCollideWorldBounds(false);
                 muk13.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk14
             {
-                muk14 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
+                var muk14 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
                 muk14.setBounce(1);
                 muk14.setCollideWorldBounds(false);
                 muk14.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk15
             {
-                muk15 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
+                var muk15 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
                 muk15.setBounce(1);
                 muk15.setCollideWorldBounds(false);
                 muk15.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk16 - middle 3
             {
-                muk16 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(100, 550), 'muk');
+                var muk16 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(100, 550), 'muk');
                 muk16.setBounce(1);
                 muk16.setCollideWorldBounds(false);
                 muk16.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk17
             {
-                muk17 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(700, 1250), 'muk');
+                var muk17 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(700, 1250), 'muk');
                 muk17.setBounce(1);
                 muk17.setCollideWorldBounds(false);
                 muk17.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk18
             {
-                muk18 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(1400, 1950), 'muk');
+                var muk18 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(1400, 1950), 'muk');
                 muk18.setBounce(1);
                 muk18.setCollideWorldBounds(false);
                 muk18.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk19
             {
-                muk19 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
+                var muk19 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
                 muk19.setBounce(1);
                 muk19.setCollideWorldBounds(false);
                 muk19.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk20
             {
-                muk20 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
+                var muk20 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
                 muk20.setBounce(1);
                 muk20.setCollideWorldBounds(false);
                 muk20.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk21 - left
             {
-                muk21 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(100, 550), 'muk');
+                var muk21 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(100, 550), 'muk');
                 muk21.setBounce(1);
                 muk21.setCollideWorldBounds(false);
                 muk21.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk22
             {
-                muk22 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(700, 1250), 'muk');
+                var muk22 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(700, 1250), 'muk');
                 muk22.setBounce(1);
                 muk22.setCollideWorldBounds(false);
                 muk22.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk23
             {
-                muk23 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(1400, 1950), 'muk');
+                var muk23 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(1400, 1950), 'muk');
                 muk23.setBounce(1);
                 muk23.setCollideWorldBounds(false);
                 muk23.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk24
             {
-                muk24 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
+                var muk24 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
                 muk24.setBounce(1);
                 muk24.setCollideWorldBounds(false);
                 muk24.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
             //muk25
             {
-                muk25 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
+                var muk25 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
                 muk25.setBounce(1);
                 muk25.setCollideWorldBounds(false);
                 muk25.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
 
         }
-        x = player.body.position.x;
-        y = player.body.position.y;
+        //attack code
+        {
+            x = player.body.position.x;
+            y = player.body.position.y;
 
-        attackLayer = this.add.layer();
-        attackLayer.setVisible(false);
-        attack = this.add.image(x + 20, y + 20, "bomb").setScale(3);
-        attackLayer.add([attack])
+            attackLayer = this.add.layer();
+            attackLayer.setVisible(false);
+            attack = this.add.image(x + 20, y + 20, "bomb").setScale(3);
+            attackLayer.add([attack])
 
-        attack.scrollFactorX = 0;
-        attack.scrollFactorY = 0;
-        attack.scrollFactorX = 0;
-        attack.scrollFactorY = 0;
+            attack.scrollFactorX = 0;
+            attack.scrollFactorY = 0;
+            attack.scrollFactorX = 0;
+            attack.scrollFactorY = 0;
+        }
+        //collision of attacks and muks
+        {
+            //look back at bomb creating functions for how this was done idk why it isn't creating a collider
+            //bomb function doesn't help this is exactly the same
+            this.physics.add.collider(muks, attack, attackMuks, null, this);
 
+            function attackMuks(muk, attack) {
+                muk.setTint(0xff0000);
+                attack.setTint(0xff0000);
+                this.time.addEvent({
+                    delay: 100,
+                    callback: () => {
+                        muk.destroy();
+                        attack.clearTint();
+                    }
+                });
+                mukCount--;
+                //muk count = 0 -> scene transition
+
+                if (mukCount == 0) {
+                    this.scene.start("Boss");
+                }
+
+            }
+        }
     },
     update: function(game) {
         //movement code
         {
             if (cursors.left.isDown) {
-                player.setVelocityX(-500);
+                player.setVelocityX(-300);
                 player.setVelocityY(0);
                 player.anims.play("left", true);
             } else if (cursors.right.isDown) {
-                player.setVelocityX(500);
+                player.setVelocityX(300);
                 player.setVelocityY(0);
                 player.anims.play("right", true);
             } else if (cursors.up.isDown) {
-                player.setVelocityY(-500);
+                player.setVelocityY(-300);
             } else if (cursors.down.isDown) {
-                player.setVelocityY(500);
+                player.setVelocityY(300);
             } else {
                 player.setVelocity(0);
                 player.anims.play("turn");
             }
         }
-        if (keyboard.space.isDown) {
-            attackLayer.setVisible(true);
-            this.time.addEvent({
-                delay: 500,
-                loop: false,
-                callback: () => {
-                    attackLayer.setVisible(false);
-                }
-            });
-
-            if (x - muks.x <= 100 && y - muks.y <= 100) {
-
-                muks.destroy();
+        //attack layer hiding
+        {
+            if (keyboard.space.isDown) {
                 attackLayer.setVisible(true);
                 this.time.addEvent({
                     delay: 500,
@@ -2970,9 +3090,19 @@ var Game = new Phaser.Class({
                         attackLayer.setVisible(false);
                     }
                 });
-
+                console.log("space");
+                this.time.addEvent({
+                    delay: 500,
+                })
             }
-            console.log("space");
+        }
+        //returning health 
+        {
+            if (scoreCounter == 30) {
+                life++;
+                scoreCounter = 0;
+                lifeText.setText("Health: " + life);
+            }
         }
     }
 });
