@@ -2739,12 +2739,12 @@ var Game = new Phaser.Class({
                 })
             }
             //muk1 - 1-5 row 1, 6-10 row 2, 11-15 row 3, 16-20 row 4, 21-25 row 5
-            {
+            /*{
                 muk1 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(100, 550), 'muk');
                 muk1.setBounce(1);
                 muk1.setCollideWorldBounds(false);
                 muk1.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
-            }
+            }*/
             //muk2
             {
                 muk2 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(700, 1250), 'muk');
@@ -2808,52 +2808,171 @@ var Game = new Phaser.Class({
                 muk10.setCollideWorldBounds(false);
                 muk10.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
+            //muk11 - middle 2
+            {
+                muk11 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(100, 550), 'muk');
+                muk11.setBounce(1);
+                muk11.setCollideWorldBounds(false);
+                muk11.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk12
+            {
+                muk12 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(700, 1250), 'muk');
+                muk12.setBounce(1);
+                muk12.setCollideWorldBounds(false);
+                muk12.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk13
+            {
+                muk13 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(1400, 1950), 'muk');
+                muk13.setBounce(1);
+                muk13.setCollideWorldBounds(false);
+                muk13.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk14
+            {
+                muk14 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
+                muk14.setBounce(1);
+                muk14.setCollideWorldBounds(false);
+                muk14.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk15
+            {
+                muk15 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
+                muk15.setBounce(1);
+                muk15.setCollideWorldBounds(false);
+                muk15.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk16 - middle 3
+            {
+                muk16 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(100, 550), 'muk');
+                muk16.setBounce(1);
+                muk16.setCollideWorldBounds(false);
+                muk16.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk17
+            {
+                muk17 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(700, 1250), 'muk');
+                muk17.setBounce(1);
+                muk17.setCollideWorldBounds(false);
+                muk17.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk18
+            {
+                muk18 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(1400, 1950), 'muk');
+                muk18.setBounce(1);
+                muk18.setCollideWorldBounds(false);
+                muk18.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk19
+            {
+                muk19 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
+                muk19.setBounce(1);
+                muk19.setCollideWorldBounds(false);
+                muk19.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk20
+            {
+                muk20 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
+                muk20.setBounce(1);
+                muk20.setCollideWorldBounds(false);
+                muk20.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk21 - left
+            {
+                muk21 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(100, 550), 'muk');
+                muk21.setBounce(1);
+                muk21.setCollideWorldBounds(false);
+                muk21.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk22
+            {
+                muk22 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(700, 1250), 'muk');
+                muk22.setBounce(1);
+                muk22.setCollideWorldBounds(false);
+                muk22.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk23
+            {
+                muk23 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(1400, 1950), 'muk');
+                muk23.setBounce(1);
+                muk23.setCollideWorldBounds(false);
+                muk23.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk24
+            {
+                muk24 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
+                muk24.setBounce(1);
+                muk24.setCollideWorldBounds(false);
+                muk24.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk25
+            {
+                muk25 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
+                muk25.setBounce(1);
+                muk25.setCollideWorldBounds(false);
+                muk25.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
 
         }
-    },
-    update: function(game) {
-        if (cursors.left.isDown) {
-            player.setVelocityX(-500);
-            player.setVelocityY(0);
-            player.anims.play("left", true);
-        } else if (cursors.right.isDown) {
-            player.setVelocityX(500);
-            player.setVelocityY(0);
-            player.anims.play("right", true);
-        } else if (cursors.up.isDown) {
-            player.setVelocityY(-500);
-        } else if (cursors.down.isDown) {
-            player.setVelocityY(500);
-        } else {
-            player.setVelocity(0);
-            player.anims.play("turn");
-        }
-
-        x = player.body.position.x; //lock to middle of camera not player spawn
+        x = player.body.position.x;
         y = player.body.position.y;
 
-        attack = this.add.image(x, y, "bomb").setScale(3);
         attackLayer = this.add.layer();
         attackLayer.setVisible(false);
-        attackLayer.add([attack]);
+        attack = this.add.image(x + 20, y + 20, "bomb").setScale(3);
+        attackLayer.add([attack])
 
-        if (score > 10) {
-            if (keyboard.space.isDown) {
-                if (x - muks.x <= 100 && y - muks.y <= 100) {
+        attack.scrollFactorX = 0;
+        attack.scrollFactorY = 0;
+        attack.scrollFactorX = 0;
+        attack.scrollFactorY = 0;
 
-                    muks.destroy();
-                    attackLayer.setVisible(true);
-                    this.time.addEvent({
-                        delay: 500,
-                        loop: false,
-                        callback: () => {
-                            attackLayer.setVisible(false);
-                        }
-                    });
-
-                }
-                console.log("space");
+    },
+    update: function(game) {
+        //movement code
+        {
+            if (cursors.left.isDown) {
+                player.setVelocityX(-500);
+                player.setVelocityY(0);
+                player.anims.play("left", true);
+            } else if (cursors.right.isDown) {
+                player.setVelocityX(500);
+                player.setVelocityY(0);
+                player.anims.play("right", true);
+            } else if (cursors.up.isDown) {
+                player.setVelocityY(-500);
+            } else if (cursors.down.isDown) {
+                player.setVelocityY(500);
+            } else {
+                player.setVelocity(0);
+                player.anims.play("turn");
             }
+        }
+        if (keyboard.space.isDown) {
+            attackLayer.setVisible(true);
+            this.time.addEvent({
+                delay: 500,
+                loop: false,
+                callback: () => {
+                    attackLayer.setVisible(false);
+                }
+            });
+
+            if (x - muks.x <= 100 && y - muks.y <= 100) {
+
+                muks.destroy();
+                attackLayer.setVisible(true);
+                this.time.addEvent({
+                    delay: 500,
+                    loop: false,
+                    callback: () => {
+                        attackLayer.setVisible(false);
+                    }
+                });
+
+            }
+            console.log("space");
         }
     }
 });
