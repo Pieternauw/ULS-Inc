@@ -2713,11 +2713,6 @@ var Game = new Phaser.Class({
         {
             muks = this.physics.add.group();
 
-            muk = muks.create(100, 100, 'muk');
-            muk.setBounce(1);
-            muk.setCollideWorldBounds(false);
-            muk.setVelocity(Phaser.Math.Between(-200, 200), 20);
-
             this.physics.add.collider(muks, platforms);
             this.physics.add.collider(player, muks, hitMuk, null, this);
 
@@ -2743,26 +2738,92 @@ var Game = new Phaser.Class({
                     }
                 })
             }
-
-            if (muks.velocityX > 400 || muks.velocityY > 400) {
-                muks.setVelocityX(200);
-                muks.setVelocityY(200);
+            //muk1 - 1-5 row 1, 6-10 row 2, 11-15 row 3, 16-20 row 4, 21-25 row 5
+            {
+                muk1 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(100, 550), 'muk');
+                muk1.setBounce(1);
+                muk1.setCollideWorldBounds(false);
+                muk1.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
             }
+            //muk2
+            {
+                muk2 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(700, 1250), 'muk');
+                muk2.setBounce(1);
+                muk2.setCollideWorldBounds(false);
+                muk2.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk3
+            {
+                muk3 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(1400, 1950), 'muk');
+                muk3.setBounce(1);
+                muk3.setCollideWorldBounds(false);
+                muk3.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk4
+            {
+                muk4 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(2100, 2650), 'muk');
+                muk4.setBounce(1);
+                muk4.setCollideWorldBounds(false);
+                muk4.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk5
+            {
+                muk5 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(2800, 3350), 'muk');
+                muk5.setBounce(1);
+                muk5.setCollideWorldBounds(false);
+                muk5.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk6 - middle 1
+            {
+                muk6 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(100, 550), 'muk');
+                muk6.setBounce(1);
+                muk6.setCollideWorldBounds(false);
+                muk6.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk7
+            {
+                muk7 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(700, 1250), 'muk');
+                muk7.setBounce(1);
+                muk7.setCollideWorldBounds(false);
+                muk7.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk8
+            {
+                muk8 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(1400, 1950), 'muk');
+                muk8.setBounce(1);
+                muk8.setCollideWorldBounds(false);
+                muk8.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk9
+            {
+                muk9 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(2100, 2650), 'muk');
+                muk9.setBounce(1);
+                muk9.setCollideWorldBounds(false);
+                muk9.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+            //muk10
+            {
+                muk10 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(2100, 2650), 'muk');
+                muk10.setBounce(1);
+                muk10.setCollideWorldBounds(false);
+                muk10.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+            }
+
         }
     },
     update: function(game) {
         if (cursors.left.isDown) {
-            player.setVelocityX(-350);
+            player.setVelocityX(-500);
             player.setVelocityY(0);
             player.anims.play("left", true);
         } else if (cursors.right.isDown) {
-            player.setVelocityX(350);
+            player.setVelocityX(500);
             player.setVelocityY(0);
             player.anims.play("right", true);
         } else if (cursors.up.isDown) {
-            player.setVelocityY(-350);
+            player.setVelocityY(-500);
         } else if (cursors.down.isDown) {
-            player.setVelocityY(350);
+            player.setVelocityY(500);
         } else {
             player.setVelocity(0);
             player.anims.play("turn");
