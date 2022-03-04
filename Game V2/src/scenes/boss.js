@@ -135,7 +135,7 @@ var Boss = new Phaser.Class({
         {
             bossLife = 10;
             bossText = " ";
-            bossText = this.add.text(500, 700, "renoB giB: 10", {
+            bossText = this.add.text(150, 700, "renoB giB: 10", {
                 fontSize: "64px",
                 fill: "#000"
             });
@@ -185,7 +185,7 @@ var Boss = new Phaser.Class({
             attack.scrollFactorY = 0;
         }
         //collision of attacks and boss
-        /*{
+        {
             //look back at bomb creating functions for how this was done idk why it isn't creating a collider
             //bomb function doesn't help this is exactly the same
             this.physics.add.collider(renoB, attack, attackMuks, null, this);
@@ -197,13 +197,16 @@ var Boss = new Phaser.Class({
                     delay: 100,
                     callback: () => {
                         attack.clearTint();
+                        renoB.clearTint();
                     }
                 });
                 bossLife--;
                 bossText.setText("renoB giB: " + bossLife);
-                //add win scene
+                if (bossLife == 0) {
+                    this.scene.start("Win");
+                }
             }
-        }*/
+        }
     },
     update: function() {
         //movement
