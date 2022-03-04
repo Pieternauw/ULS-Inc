@@ -8,24 +8,25 @@ var Boss = new Phaser.Class({
         this.load.image("floor", "https://images.creativemarket.com/0.1.0/ps/120087/910/607/m1/fpnw/wm0/stonefloor001_large-.jpg?1401477523&s=aeb8c8fbad2e06ac22344908c9ad2c9e");
         this.load.image("ground", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/dungeon-wall.png");
         this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
+        this.load.image("enemy", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/skeletonminion.png");
         this.load.spritesheet("dude", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/Dude.png", {
             frameWidth: 32,
             frameHeight: 48
         });
     },
     create: function() {
+
         //floor, add more if a bigger room required
-        this.add.image(0, 0, "floor").setScale(1.5);
-        this.add.image(0, 910, "floor").setScale(1.5);
-        this.add.image(700, 0, "floor").setScale(1.5);
-        this.add.image(700, 910, "floor").setScale(1.5);
-
-        //platform group
-
-        platforms = this.physics.add.staticGroup();
+        {
+            this.add.image(0, 0, "floor").setScale(1.5);
+            this.add.image(0, 910, "floor").setScale(1.5);
+            this.add.image(700, 0, "floor").setScale(1.5);
+            this.add.image(700, 910, "floor").setScale(1.5);
+        }
 
         //boss room walls
         {
+            platforms = this.physics.add.staticGroup();
             platforms.create(0, 0, "ground").setScale(0.25).refreshBody();
             platforms.create(0, 50, "ground").setScale(0.25).refreshBody();
             platforms.create(0, 100, "ground").setScale(0.25).refreshBody();
@@ -130,6 +131,35 @@ var Boss = new Phaser.Class({
         }
         this.physics.add.collider(player, platforms);
 
+        //boss health
+        {
+            bossLife = 10;
+            bossText = " ";
+            bossText = this.add.text(500, 700, "renoB giB: 10", {
+                fontSize: "64px",
+                fill: "#000"
+            });
+
+            bossText.setColor("White");
+
+            bossText.scrollFactorX = 0;
+            bossText.scrollFactorY = 0;
+        }
+        //player health
+        {
+            life = localStorage.getItem("Health")
+
+            lifeText = " ";
+            lifeText = this.add.text(0, 0, "Hearts: 3", {
+                fontSize: "32px",
+                fill: "#000"
+            });
+            //color for scoreText
+            lifeText.setColor("white");
+
+            lifeText.scrollFactorX = 0;
+            lifeText.scrollFactorY = 0;
+        }
         //keyboard
         {
             cursors = this.input.keyboard.createCursorKeys();
@@ -138,6 +168,42 @@ var Boss = new Phaser.Class({
         }
 
         //boss movement and other code
+
+        //attack
+        {
+            x = player.body.position.x;
+            y = player.body.position.y;
+
+            attackLayer = this.add.layer();
+            attackLayer.setVisible(false);
+            attack = this.add.image(x + 20, y + 20, "bomb").setScale(3);
+            attackLayer.add([attack])
+
+            attack.scrollFactorX = 0;
+            attack.scrollFactorY = 0;
+            attack.scrollFactorX = 0;
+            attack.scrollFactorY = 0;
+        }
+        //collision of attacks and boss
+        /*{
+            //look back at bomb creating functions for how this was done idk why it isn't creating a collider
+            //bomb function doesn't help this is exactly the same
+            this.physics.add.collider(renoB, attack, attackMuks, null, this);
+
+            function attackMuks(renoB, attack) {
+                renoB.setTint(0xff0000);
+                attack.setTint(0xff0000);
+                this.time.addEvent({
+                    delay: 100,
+                    callback: () => {
+                        attack.clearTint();
+                    }
+                });
+                bossLife--;
+                bossText.setText("renoB giB: " + bossLife);
+                //add win scene
+            }
+        }*/
     },
     update: function() {
         //movement
@@ -160,20 +226,27 @@ var Boss = new Phaser.Class({
             }
         }
 
-        //attack code   -   doesn't quite work
+        x = player.body.position.x;
+        y = player.body.position.y;
+
+        //attack layer hiding
         {
-            x = player.body.position.x; //lock to middle of camera not player spawn
-            y = player.body.position.y;
-
-            attack = this.add.image(x + 10, y + 25, "bomb").setScale(3);
-            attackLayer = this.add.layer();
-            attackLayer.setVisible(false);
-            attackLayer.add([attack]);
-
-
             if (keyboard.space.isDown) {
+                attackLayer.setVisible(true);
+                this.time.addEvent({
+                    delay: 500,
+                    loop: false,
+                    callback: () => {
+                        attackLayer.setVisible(false);
+                    }
+                });
                 console.log("space");
+                this.time.addEvent({
+                    delay: 500,
+                });
             }
         }
     }
 });
+
+//boss name Renob
