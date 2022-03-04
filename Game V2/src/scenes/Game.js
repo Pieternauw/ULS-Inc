@@ -2810,7 +2810,7 @@ var Game = new Phaser.Class({
                 sword = this.add.image(x, y, "sword-down");
             }
         }
-        //enemies (muk)
+        //enemies (muk) - change count back when done
         {
             muks = this.physics.add.group();
 
@@ -2830,6 +2830,7 @@ var Game = new Phaser.Class({
                         lifeText.setText("Hearts: " + life);
                         if (life <= 0) {
                             this.scene.start("Death");
+                            localStorage.setItem("Health", 3);
                         }
                         this.time.addEvent({
                             delay: 500,
@@ -3055,7 +3056,6 @@ var Game = new Phaser.Class({
                 if (mukCount == 0) {
                     this.scene.start("Boss");
                 }
-
             }
         }
     },
@@ -3079,6 +3079,8 @@ var Game = new Phaser.Class({
                 player.anims.play("turn");
             }
         }
+        x = player.body.position.x;
+        y = player.body.position.y;
         //attack layer hiding
         {
             if (keyboard.space.isDown) {
@@ -3102,6 +3104,7 @@ var Game = new Phaser.Class({
                 life++;
                 scoreCounter = 0;
                 lifeText.setText("Health: " + life);
+                localStorage.setItem("Health", life);
             }
         }
     }
