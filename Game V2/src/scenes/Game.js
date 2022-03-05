@@ -2843,12 +2843,12 @@ var Game = new Phaser.Class({
                 })
             }
             //muk1 - 1-5 row 1, 6-10 row 2, 11-15 row 3, 16-20 row 4, 21-25 row 5
-            /*{
+            {
                 muk1 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(100, 550), 'muk');
                 muk1.setBounce(1);
                 muk1.setCollideWorldBounds(false);
                 muk1.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
-            }*/
+            }
             //muk2
             {
                 var muk2 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(700, 1250), 'muk');
@@ -3024,21 +3024,17 @@ var Game = new Phaser.Class({
             x = player.body.position.x;
             y = player.body.position.y;
 
-            attackLayer = this.add.layer();
-            attackLayer.setVisible(false);
-            attack = this.add.image(x + 20, y + 20, "bomb").setScale(3);
-            attackLayer.add([attack])
+            attack = this.physics.add.group();
 
-            attack.scrollFactorX = 0;
-            attack.scrollFactorY = 0;
-            attack.scrollFactorX = 0;
-            attack.scrollFactorY = 0;
+            attack1 = attack.create(x + 20, y + 20, "bomb").setScale(3);
+            attack1.visible = false;
         }
         //collision of attacks and muks
         {
             //look back at bomb creating functions for how this was done idk why it isn't creating a collider
             //bomb function doesn't help this is exactly the same
             this.physics.add.collider(muks, attack, attackMuks, null, this);
+            attack1.body.enable = false;
 
             function attackMuks(muk, attack) {
                 muk.setTint(0xff0000);
@@ -3051,6 +3047,7 @@ var Game = new Phaser.Class({
                     }
                 });
                 mukCount--;
+                attack.setVelocity(0, 0);
                 //muk count = 0 -> scene transition
 
                 if (mukCount == 0) {
@@ -3063,17 +3060,17 @@ var Game = new Phaser.Class({
         //movement code
         {
             if (cursors.left.isDown) {
-                player.setVelocityX(-300);
+                player.setVelocityX(-350);
                 player.setVelocityY(0);
                 player.anims.play("left", true);
             } else if (cursors.right.isDown) {
-                player.setVelocityX(300);
+                player.setVelocityX(350);
                 player.setVelocityY(0);
                 player.anims.play("right", true);
             } else if (cursors.up.isDown) {
-                player.setVelocityY(-300);
+                player.setVelocityY(-350);
             } else if (cursors.down.isDown) {
-                player.setVelocityY(300);
+                player.setVelocityY(350);
             } else {
                 player.setVelocity(0);
                 player.anims.play("turn");
@@ -3084,12 +3081,15 @@ var Game = new Phaser.Class({
         //attack layer hiding
         {
             if (keyboard.space.isDown) {
-                attackLayer.setVisible(true);
+                attack1.body.enable = true;
+                attack1.setPosition(x + 20, y + 20);
+                attack1.visible = true;
                 this.time.addEvent({
                     delay: 500,
                     loop: false,
                     callback: () => {
-                        attackLayer.setVisible(false);
+                        attack1.visible = false;
+                        attack1.body.enable = false;
                     }
                 });
                 console.log("space");
