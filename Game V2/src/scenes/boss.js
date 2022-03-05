@@ -174,21 +174,15 @@ var Boss = new Phaser.Class({
             x = player.body.position.x;
             y = player.body.position.y;
 
-            attackLayer = this.add.layer();
-            attackLayer.setVisible(false);
-            attack = this.add.image(x + 20, y + 20, "bomb").setScale(3);
-            attackLayer.add([attack])
-
-            attack.scrollFactorX = 0;
-            attack.scrollFactorY = 0;
-            attack.scrollFactorX = 0;
-            attack.scrollFactorY = 0;
+            attack1 = attack.create(x + 20, y + 20, "bomb").setScale(3);
+            attack1.visible = false;
         }
         //collision of attacks and boss
         {
             //look back at bomb creating functions for how this was done idk why it isn't creating a collider
             //bomb function doesn't help this is exactly the same
             this.physics.add.collider(renoB, attack, attackMuks, null, this);
+            attack1.body.enable = false;
 
             function attackMuks(renoB, attack) {
                 renoB.setTint(0xff0000);
@@ -201,6 +195,7 @@ var Boss = new Phaser.Class({
                     }
                 });
                 bossLife--;
+                attack.setVelocity(0, 0);
                 bossText.setText("renoB giB: " + bossLife);
                 if (bossLife == 0) {
                     this.scene.start("Win");
@@ -235,18 +230,21 @@ var Boss = new Phaser.Class({
         //attack layer hiding
         {
             if (keyboard.space.isDown) {
-                attackLayer.setVisible(true);
+                attack1.body.enable = true;
+                attack1.setPosition(x + 20, y + 20);
+                attack1.visible = true;
                 this.time.addEvent({
                     delay: 500,
                     loop: false,
                     callback: () => {
-                        attackLayer.setVisible(false);
+                        attack1.visible = false;
+                        attack1.body.enable = false;
                     }
                 });
                 console.log("space");
                 this.time.addEvent({
                     delay: 500,
-                });
+                })
             }
         }
     }
