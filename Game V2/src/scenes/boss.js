@@ -173,6 +173,8 @@ var Boss = new Phaser.Class({
         {
             x = player.body.position.x;
             y = player.body.position.y;
+            
+            attack = this.physics.add.group();
 
             attack1 = attack.create(x + 20, y + 20, "bomb").setScale(3);
             attack1.visible = false;
