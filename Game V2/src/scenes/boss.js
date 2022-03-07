@@ -168,12 +168,15 @@ var Boss = new Phaser.Class({
         }
 
         //boss movement and other code
-
+        {
+            renoB = this.physics.add.group();
+            renoBgiB = renoB.create(0, 0, "enemy").setScale(1.5);
+        }
         //attack
         {
             x = player.body.position.x;
             y = player.body.position.y;
-            
+
             attack = this.physics.add.group();
 
             attack1 = attack.create(x + 20, y + 20, "bomb").setScale(3);
@@ -189,6 +192,7 @@ var Boss = new Phaser.Class({
             function attackMuks(renoB, attack) {
                 renoB.setTint(0xff0000);
                 attack.setTint(0xff0000);
+                attack.setVelocity(0, 0);
                 this.time.addEvent({
                     delay: 100,
                     callback: () => {
@@ -196,12 +200,16 @@ var Boss = new Phaser.Class({
                         renoB.clearTint();
                     }
                 });
-                bossLife--;
-                attack.setVelocity(0, 0);
-                bossText.setText("renoB giB: " + bossLife);
-                if (bossLife == 0) {
-                    this.scene.start("Win");
-                }
+                this.time.addEvent({
+                    delay: 500,
+                    callback: () => {
+                        bossLife--;
+                        bossText.setText("renoB giB: " + bossLife);
+                        if (bossLife == 0) {
+                            this.scene.start("Win");
+                        }
+                    }
+                });
             }
         }
     },
@@ -236,7 +244,7 @@ var Boss = new Phaser.Class({
                 attack1.setPosition(x + 20, y + 20);
                 attack1.visible = true;
                 this.time.addEvent({
-                    delay: 500,
+                    delay: 20,
                     loop: false,
                     callback: () => {
                         attack1.visible = false;
