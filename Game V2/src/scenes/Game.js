@@ -2843,12 +2843,12 @@ var Game = new Phaser.Class({
                 })
             }
             //muk1 - 1-5 row 1, 6-10 row 2, 11-15 row 3, 16-20 row 4, 21-25 row 5
-            {
+            /*{
                 muk1 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(100, 550), 'muk');
                 muk1.setBounce(1);
                 muk1.setCollideWorldBounds(false);
                 muk1.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
-            }
+            }*/
             //muk2
             {
                 var muk2 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(700, 1250), 'muk');
