@@ -35,14 +35,14 @@ var Game = new Phaser.Class({
         platforms.create(750, 650, "ground").setScale(0.25).refreshBody();
         //left side (done)
         platforms.create(0, 0, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,75, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,150, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,225, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,275, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,450, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,525, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,600, "ground").setScale(0.25).refreshBody();
-        platforms.create(0,675, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 75, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 150, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 225, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 275, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 450, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 525, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 600, "ground").setScale(0.25).refreshBody();
+        platforms.create(0, 675, "ground").setScale(0.25).refreshBody();
         //top side (done)
         platforms.create(75, 0, "ground").setScale(0.25).refreshBody();
         platforms.create(150, 0, "ground").setScale(0.25).refreshBody();
@@ -55,15 +55,15 @@ var Game = new Phaser.Class({
         platforms.create(750, 0, "ground").setScale(0.25).refreshBody();
         //right side (done)
         platforms.create(800, 0, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,75, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,150, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,225, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,275, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,450, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,525, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,600, "ground").setScale(0.25).refreshBody();
-        platforms.create(800,675, "ground").setScale(0.25).refreshBody();
-     
+        platforms.create(800, 75, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 150, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 225, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 275, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 450, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 525, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 600, "ground").setScale(0.25).refreshBody();
+        platforms.create(800, 675, "ground").setScale(0.25).refreshBody();
+
         //creates player with bounce and collision
         player = this.physics.add.sprite(300, 450, "dude");
         //player.setBounce(0.2);
