@@ -2814,8 +2814,6 @@ var Game = new Phaser.Class({
         {
             muks = this.physics.add.group();
 
-            mukCount = 24;
-
             this.physics.add.collider(muks, platforms);
             this.physics.add.collider(player, muks, hitMuk, null, this);
 
@@ -3044,15 +3042,14 @@ var Game = new Phaser.Class({
                     callback: () => {
                         muk.destroy();
                         attack.clearTint();
+                        enemyCount.setText("Enemy count: " + mukCount);
                     }
                 });
-                mukCount--;
                 attack.setVelocity(0, 0);
-                //muk count = 0 -> scene transition
-
-                if (mukCount == 0) {
+                if (muks.countActive() == 0) {
                     this.scene.start("Boss");
                 }
+                //muk count = 0 -> scene transition
             }
         }
     },
@@ -3088,14 +3085,11 @@ var Game = new Phaser.Class({
                     delay: 500,
                     loop: false,
                     callback: () => {
-                        attack1.visible = false;
                         attack1.body.enable = false;
+                        attack1.visible = false;
                     }
                 });
-                console.log("space");
-                this.time.addEvent({
-                    delay: 500,
-                })
+                console.log(muks.countActive());
             }
         }
         //returning health 
