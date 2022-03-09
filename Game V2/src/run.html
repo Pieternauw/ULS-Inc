@@ -2,12 +2,13 @@
 <html>
 
 <head>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
     <script src="scenes/boss.js"></script>
     <script src="scenes/Death Screen.js"></script>
     <script src="scenes/Game.js"></script>
     <script src="scenes/Title.js"></script>
     <script src="scenes/win-scene.js"></script>
-    <script src="scenes/floor-2.js"></script>
+
 </head>
 
 <body>
@@ -16,8 +17,8 @@
             type: Phaser.AUTO,
             width: 800,
             height: 800,
-            scene: [Title, Game, Boss, Death, Win],
-            //scene: [Boss],
+            //scene: [Title, Game, Boss, Death, Win],
+            scene: [Boss],
             physics: {
                 default: "arcade",
                 arcade: {
