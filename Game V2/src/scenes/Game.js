@@ -3029,8 +3029,6 @@ var Game = new Phaser.Class({
         }
         //collision of attacks and muks
         {
-            //look back at bomb creating functions for how this was done idk why it isn't creating a collider
-            //bomb function doesn't help this is exactly the same
             this.physics.add.collider(muks, attack, attackMuks, null, this);
             attack1.body.enable = false;
 
