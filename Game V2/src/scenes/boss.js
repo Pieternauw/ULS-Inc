@@ -150,7 +150,7 @@ var Boss = new Phaser.Class({
             life = localStorage.getItem("Health")
 
             lifeText = " ";
-            lifeText = this.add.text(0, 0, "Hearts: 3", {
+            lifeText = this.add.text(0, 0, "Hearts: " + life, {
                 fontSize: "32px",
                 fill: "#000"
             });

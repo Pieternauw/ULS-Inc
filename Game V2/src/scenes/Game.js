@@ -2791,7 +2791,7 @@ var Game = new Phaser.Class({
             //creates score counter
             life = 3;
             lifeText = " ";
-            lifeText = this.add.text(0, 0, "Hearts: 3", {
+            lifeText = this.add.text(0, 0, "Hearts: " + life, {
                 fontSize: "32px",
                 fill: "#000"
             });
@@ -3043,9 +3043,6 @@ var Game = new Phaser.Class({
                     }
                 });
                 attack.setVelocity(0, 0);
-                if (muks.countActive() == 0) {
-                    this.scene.start("Boss");
-                }
                 //muk count = 0 -> scene transition
             }
         }
@@ -3096,6 +3093,13 @@ var Game = new Phaser.Class({
                 scoreCounter = 0;
                 lifeText.setText("Health: " + life);
                 localStorage.setItem("Health", life);
+            }
+        }
+        //scene transition
+        {
+            if (muks.countActive() == 23) {
+                localStorage.setItem("Health", life);
+                this.scene.start("Boss");
             }
         }
     }
