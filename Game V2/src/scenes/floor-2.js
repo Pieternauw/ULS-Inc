@@ -140,8 +140,8 @@ var Game = new Phaser.Class({
             //color for scoreText
             scoreText.setColor("white");
             //creates score counter
-            var life = 3;
-            var lifeText;
+            life = 3;
+            lifeText = ' ';
             lifeText = this.add.text(0, 0, "Hearts: 3", {
                 fontSize: "32px",
                 fill: "#000"
@@ -179,7 +179,6 @@ var Game = new Phaser.Class({
                     callback: () => {
                         muk.destroy();
                         attack.clearTint();
-                        enemyCount.setText("Enemy count: " + mukCount);
                     }
                 });
                 attack.setVelocity(0, 0);

@@ -3040,7 +3040,6 @@ var Game = new Phaser.Class({
                     callback: () => {
                         muk.destroy();
                         attack.clearTint();
-                        enemyCount.setText("Enemy count: " + mukCount);
                     }
                 });
                 attack.setVelocity(0, 0);
