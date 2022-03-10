@@ -167,11 +167,33 @@ var Boss = new Phaser.Class({
             keyboard = this.input.keyboard.addKeys("space");
         }
 
+        //timer for boss spawning + boss spawning stuff - testing the boss timer
+        /*{
+            timer = 10;
+            bossTime = " ";
+
+            bossTime = this.add.text(0, 75, "Boss Spawn Time " + timer, {
+                fontSize: "32px",
+                fill: "#000"
+            });
+            bossTime.setColor("white");
+
+            bossTime.scrollFactorX = 0;
+            bossTime.scrollFactorY = 0;
+
+            this.time.addEvent({
+                delay: 1000,
+                repeat: 10,
+                callback: () => {
+                    timer--;
+                }
+            });
+        }*/
         //boss movement and other code
-        {
-            renoB = this.physics.add.group();
-            renoBgiB = renoB.create(0, 0, "enemy").setScale(1.5);
-        }
+        renoB = this.physics.add.group();
+        renoBgiB = renoB.create(0, 0, "enemy").setScale(1.5);
+        renoBgiB.visible = false;
+        renoBgiB.body.enable = false;
         //attack
         {
             x = player.body.position.x;
@@ -214,6 +236,10 @@ var Boss = new Phaser.Class({
         }
     },
     update: function() {
+        if (timer <= 0) {
+            renoBgiB.visible = true;
+            renoBgiB.body.enable = true;
+        }
         //movement
         {
             if (cursors.left.isDown) {
