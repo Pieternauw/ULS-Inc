@@ -168,19 +168,20 @@ var Boss = new Phaser.Class({
         }
 
         //timer for boss spawning + boss spawning stuff - testing the boss timer
-        /*{
+        {
             timer = 10;
-            bossTime = " ";
+            /*
+                bossTime = " ";
 
-            bossTime = this.add.text(0, 75, "Boss Spawn Time " + timer, {
-                fontSize: "32px",
-                fill: "#000"
-            });
-            bossTime.setColor("white");
+                bossTime = this.add.text(0, 75, "Boss Spawn Time " + timer, {
+                    fontSize: "32px",
+                    fill: "#000"
+                });
+                bossTime.setColor("white");
 
-            bossTime.scrollFactorX = 0;
-            bossTime.scrollFactorY = 0;
-
+                bossTime.scrollFactorX = 0;
+                bossTime.scrollFactorY = 0;
+            */
             this.time.addEvent({
                 delay: 1000,
                 repeat: 10,
@@ -188,7 +189,7 @@ var Boss = new Phaser.Class({
                     timer--;
                 }
             });
-        }*/
+        }
         //boss movement and other code
         renoB = this.physics.add.group();
         renoBgiB = renoB.create(0, 0, "enemy").setScale(1.5);
