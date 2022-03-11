@@ -39,7 +39,7 @@ var Win = new Phaser.Class({
     update: function() {
         if (keyboard.enter.isDown) {
             this.scene.start("Title");
-            this.themeSound.stop();
+            //this.themeSound.stop();
         }
     }
 });
