@@ -192,7 +192,7 @@ var Boss = new Phaser.Class({
         } {
             //boss movement and other code
             renoB = this.physics.add.group();
-            renoBgiB = renoB.create(0, 0, "enemy").setScale(1.5);
+            renoBgiB = renoB.create(400, 400, "enemy").setScale(1.5);
             renoBgiB.visible = false;
             renoBgiB.body.enable = false;
         }
@@ -307,6 +307,26 @@ var Boss = new Phaser.Class({
                 this.time.addEvent({
                     delay: 500,
                 })
+            }
+        }
+        //boss movement/velocity
+        {
+            rx = renoBgiB.body.position.x;
+            ry = renoBgiB.body.position.y;
+
+            console.log(rx + " + " + ry);
+
+            switch (rx) {
+                case rx > 800:
+                    renoBgiB.setVelocity(-200, 0);
+                case rx < 800:
+                    renoBgiB.setVelocity(200, 0);
+            }
+            switch (ry) {
+                case ry > 800:
+                    renoBgiB.setVelocity(0, -200);
+                case ry < 800:
+                    renoBgiB.setVelocity(0, 200);
             }
         }
     }
