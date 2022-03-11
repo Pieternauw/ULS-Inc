@@ -189,12 +189,42 @@ var Boss = new Phaser.Class({
                     timer--;
                 }
             });
+        } {
+            //boss movement and other code
+            renoB = this.physics.add.group();
+            renoBgiB = renoB.create(0, 0, "enemy").setScale(1.5);
+            renoBgiB.visible = false;
+            renoBgiB.body.enable = false;
         }
-        //boss movement and other code
-        renoB = this.physics.add.group();
-        renoBgiB = renoB.create(0, 0, "enemy").setScale(1.5);
-        renoBgiB.visible = false;
-        renoBgiB.body.enable = false;
+        //boss hitting player
+        {
+            this.physics.add.collider(renoB, platforms);
+            this.physics.add.collider(player, renoB, hitMuk, null, this);
+
+            function hitMuk(player, muk) {
+                player.setTint(0xff0000);
+                player.anims.play("turn");
+                this.time.addEvent({
+                    delay: 500,
+                    loop: false,
+                    callback: () => {
+                        life--;
+                        lifeText.setText("Hearts: " + life);
+                        if (life <= 0) {
+                            this.scene.start("Death");
+                            localStorage.setItem("Health", 3);
+                        }
+                        this.time.addEvent({
+                            delay: 500,
+                            loop: false,
+                            callback: () => {
+                                player.clearTint();
+                            }
+                        });
+                    }
+                })
+            }
+        }
         //attack
         {
             x = player.body.position.x;
@@ -223,16 +253,11 @@ var Boss = new Phaser.Class({
                         renoB.clearTint();
                     }
                 });
-                this.time.addEvent({
-                    delay: 500,
-                    callback: () => {
-                        bossLife--;
-                        bossText.setText("renoB giB: " + bossLife);
-                        if (bossLife == 0) {
-                            this.scene.start("Win");
-                        }
-                    }
-                });
+                bossLife--;
+                bossText.setText("renoB giB: " + bossLife);
+                if (bossLife <= 0) {
+                    this.scene.start("Win");
+                }
             }
         }
     },

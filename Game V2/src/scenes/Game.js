@@ -3097,7 +3097,7 @@ var Game = new Phaser.Class({
         }
         //scene transition
         {
-            if (muks.countActive() == 0) {
+            if (muks.countActive() == 23) {
                 localStorage.setItem("Health", life);
                 this.scene.start("Boss");
             }
