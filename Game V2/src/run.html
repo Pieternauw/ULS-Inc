@@ -3,11 +3,7 @@
 
 <head>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
-    <script src="scenes/boss.js"></script>
-    <script src="scenes/Death Screen.js"></script>
-    <script src="scenes/Game.js"></script>
-    <script src="scenes/Title.js"></script>
-    <script src="scenes/Win.js"></script>
+    <script src="scenes/source.ipynb"></script>
 </head>
 
 <body>
@@ -17,7 +13,7 @@
             width: 800,
             height: 800,
             scene: [Title, Game, Boss, Death, Win],
-            //scene: [Boss],
+            //scene: [Game],
             physics: {
                 default: "arcade",
                 arcade: {
