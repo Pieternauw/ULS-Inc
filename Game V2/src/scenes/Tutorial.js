@@ -18,17 +18,26 @@ var Tutorial = new Phaser.Class({
             fontSize: "32px",
             fill: "#000"
         });
-        var timer = 15;
+        attackText.setColor("white");
+        timer = 15;
         this.time.addEvent({
-            delay: 100,
+            delay: 1000,
             repeat: 10,
             callback: () => {
+                console.log(timer);
                 timer--;
             }
         });
+
+        cursors = this.input.keyboard.createCursorKeys();
+        keyboard = this.input.keyboard.addKeys("enter");
     },
     update: function() {
-        if (timer >= 0) {
+        if (timer <= 0) {
+            this.scene.start("Game");
+        }
+
+        if (keyboard.enter.isDown) {
             this.scene.start("Game");
         }
     }
