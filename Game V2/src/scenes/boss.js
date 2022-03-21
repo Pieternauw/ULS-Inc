@@ -232,7 +232,7 @@ var Boss = new Phaser.Class({
 
             attack = this.physics.add.group();
 
-            attack1 = attack.create(x + 20, y + 20, "bomb").setScale(3);
+            attack1 = attack.create(x + 20, y + 10, "bomb").setScale(2.5);
             attack1.visible = false;
         }
         //collision of attacks and boss

@@ -8,6 +8,7 @@
     <script src="scenes/Game.js"></script>
     <script src="scenes/Title.js"></script>
     <script src="scenes/Win.js"></script>
+    <script src="scenes/Tutorial.js"></script>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
             type: Phaser.AUTO,
             width: 800,
             height: 800,
-            scene: [Title, Game, Boss, Death, Win],
+            scene: [Title, Tutorial, Game, Boss, Death, Win],
             //scene: [Boss],
             physics: {
                 default: "arcade",
