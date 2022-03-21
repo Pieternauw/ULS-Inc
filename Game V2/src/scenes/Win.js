@@ -38,7 +38,7 @@ var Win = new Phaser.Class({
     },
     update: function() {
         if (keyboard.enter.isDown) {
-            this.scene.start("Title");
+            this.scene.start("iceGame");
             //this.themeSound.stop();
         }
     }
