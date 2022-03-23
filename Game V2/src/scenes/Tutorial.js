@@ -29,6 +29,13 @@ var Tutorial = new Phaser.Class({
             }
         });
 
+        var enterText = ' ';
+        enterText = this.add.text(200, 500, "Press Enter to play", {
+            fontsize: "32px",
+            fill: "#000"
+        });
+        attackText.setColor("white");
+
         cursors = this.input.keyboard.createCursorKeys();
         keyboard = this.input.keyboard.addKeys("enter");
     },
