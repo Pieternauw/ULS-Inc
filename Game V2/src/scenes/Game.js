@@ -847,7 +847,7 @@ var Game = new Phaser.Class({
         //allows cursors for inputs
         {
             cursors = this.input.keyboard.createCursorKeys();
-            keyboardE = this.input.keyboard.addKeys("enter");
+            keyboard = this.input.keyboard.addKeys("enter");
             keyboard = this.input.keyboard.addKeys("space");
 
         }
@@ -3109,20 +3109,21 @@ var Game = new Phaser.Class({
         //special attack 
         {
             if (score >= 10) {
-                if (keyboardE.enter.isDown) {
+                this.input.keyboard.on('keydown-' + 'ENTER', function(event) {
                     attack2.body.enable = true;
                     attack2.visible = true;
+                    score = score - 10;
+                    scoreCounter = scoreCounter - 10;
                     this.time.addEvent({
                         delay: 500,
                         loop: false,
                         callback: () => {
                             attack2.body.enable = false;
-                            attack2.visible = false
-                            score = score - 10;
-                            scoreCounter = scoreCounter - 10;
+                            attack2.visible = false;
                         }
-                    })
-                }
+                    });
+
+                })
             }
         }
     }
