@@ -847,7 +847,9 @@ var Game = new Phaser.Class({
         //allows cursors for inputs
         {
             cursors = this.input.keyboard.createCursorKeys();
-            keyboard = this.input.keyboard.addKey("enter");
+            keyboardE = this.input.keyboard.addKeys("enter");
+            keyboard = this.input.keyboard.addKeys("space");
+
         }
         //creates stars for room
         {
@@ -2803,13 +2805,6 @@ var Game = new Phaser.Class({
             scoreText.scrollFactorX = 0;
             scoreText.scrollFactorY = 0;
         }
-        //add Space key
-        {
-            keyboard = this.input.keyboard.addKeys("space");
-            if (keyboard.space.isDown) {
-                sword = this.add.image(x, y, "sword-down");
-            }
-        }
         //enemies (muk) - change count back when done
         {
             muks = this.physics.add.group();
@@ -3114,7 +3109,7 @@ var Game = new Phaser.Class({
         //special attack 
         {
             if (score >= 10) {
-                if (keyboard.enter.isDown) {
+                if (keyboardE.enter.isDown) {
                     attack2.body.enable = true;
                     attack2.visible = true;
                     this.time.addEvent({
