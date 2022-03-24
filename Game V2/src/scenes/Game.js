@@ -847,7 +847,9 @@ var Game = new Phaser.Class({
         //allows cursors for inputs
         {
             cursors = this.input.keyboard.createCursorKeys();
-            keyboard = this.input.keyboard.addKeys("enter");
+            keyboardE = this.input.keyboard.addKeys("enter");
+            keyboard = this.input.keyboard.addKeys("space");
+
         }
         //creates stars for room
         {
@@ -2803,13 +2805,6 @@ var Game = new Phaser.Class({
             scoreText.scrollFactorX = 0;
             scoreText.scrollFactorY = 0;
         }
-        //add Space key
-        {
-            keyboard = this.input.keyboard.addKeys("space");
-            if (keyboard.space.isDown) {
-                sword = this.add.image(x, y, "sword-down");
-            }
-        }
         //enemies (muk) - change count back when done
         {
             muks = this.physics.add.group();
@@ -3046,6 +3041,14 @@ var Game = new Phaser.Class({
                 //muk count = 0 -> scene transition
             }
         }
+        //special attack (for boss scene this is just test)
+        {
+            //special attack is a bigger attack requiring coins
+            attack2 = attack.create(x + 20, y + 10, "bomb").setScale(5);
+            attack2.visible = false;
+
+            attack2.body.enable = false;
+        }
     },
     update: function(game) {
         //movement code
@@ -3099,7 +3102,27 @@ var Game = new Phaser.Class({
         {
             if (muks.countActive() == 0) {
                 localStorage.setItem("Health", life);
+                localStorage.setItem("Score", score)
                 this.scene.start("Boss");
+            }
+        }
+        //special attack 
+        {
+            if (score >= 10) {
+                if (keyboardE.enter.isDown) {
+                    attack2.body.enable = true;
+                    attack2.visible = true;
+                    this.time.addEvent({
+                        delay: 500,
+                        loop: false,
+                        callback: () => {
+                            attack2.body.enable = false;
+                            attack2.visible = false
+                            score = score - 10;
+                            scoreCounter = scoreCounter - 10;
+                        }
+                    })
+                }
             }
         }
     }
