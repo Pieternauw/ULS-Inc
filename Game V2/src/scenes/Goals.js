@@ -1,20 +1,20 @@
-var Tutorial = new Phaser.Class({
+var Goals = new Phaser.Class({
     Extends: Phaser.Scene,
     initialize: function() {
-        Phaser.Scene.call(this, { "key": "Tutorial" });
+        Phaser.Scene.call(this, { "key": "Goals" });
     },
     init: function() {},
     preload: function() {},
     create: function() {
         var moveText = ' ';
-        moveText = this.add.text(200, 100, "Move with arrow keys", {
+        moveText = this.add.text(150, 100, "Kill all of the enemies to move on", {
             fontSize: "32px",
             fill: "#000"
         });
         moveText.setColor("white");
 
         var attackText = ' ';
-        attackText = this.add.text(200, 300, "Attack with space", {
+        attackText = this.add.text(200, 300, "Collect coins for extra health", {
             fontSize: "32px",
             fill: "#000"
         });
@@ -30,7 +30,7 @@ var Tutorial = new Phaser.Class({
         });
 
         var enterText = ' ';
-        enterText = this.add.text(200, 500, "Press Enter to continue", {
+        enterText = this.add.text(200, 500, "Press Enter to play", {
             fontsize: "32px",
             fill: "#000"
         });
@@ -41,11 +41,11 @@ var Tutorial = new Phaser.Class({
     },
     update: function() {
         if (timer <= 0) {
-            this.scene.start("Goals");
+            this.scene.start("Game");
         }
 
         if (keyboard.enter.isDown) {
-            this.scene.start("Goals");
+            this.scene.start("Game");
         }
     }
 })
