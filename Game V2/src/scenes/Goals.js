@@ -22,7 +22,7 @@ var Goals = new Phaser.Class({
         timer = 15;
         this.time.addEvent({
             delay: 1000,
-            repeat: 10,
+            repeat: 16,
             callback: () => {
                 console.log(timer);
                 timer--;
