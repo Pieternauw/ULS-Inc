@@ -260,6 +260,9 @@ var Boss = new Phaser.Class({
                 }
             }
         }
+        //random placement of boss
+        randomrenoBx = Phaser.Math.Between(0, 1200)
+        randomrenoBy = Phaser.Math.Between(0, 1000)
     },
     update: function() {
         if (timer <= 0) {
@@ -316,18 +319,20 @@ var Boss = new Phaser.Class({
 
             console.log(rx + " + " + ry);
 
-            switch (rx) {
-                case rx > 800:
-                    renoBgiB.setVelocity(-200, 0);
-                case rx < 800:
-                    renoBgiB.setVelocity(200, 0);
-            }
-            switch (ry) {
-                case ry > 800:
-                    renoBgiB.setVelocity(0, -200);
-                case ry < 800:
-                    renoBgiB.setVelocity(0, 200);
-            }
+            //random placement of boss (teleportation mechanic)
+            //ask ben about the move to function for placement
+
+            do {
+                this.time.addEvent({
+                    delay: 500,
+                    loop: false,
+                    callback: () => {
+                        //setting position
+
+                        console.log(rx + " + " + ry)
+                    }
+                })
+            } while (bossLife > 0);
         }
     }
 });
