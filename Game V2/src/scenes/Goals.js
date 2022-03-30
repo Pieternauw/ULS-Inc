@@ -7,14 +7,14 @@ var Goals = new Phaser.Class({
     preload: function() {},
     create: function() {
         var moveText = ' ';
-        moveText = this.add.text(150, 100, "Kill all of the enemies to move on", {
+        moveText = this.add.text(75, 100, "Kill all of the enemies to move on", {
             fontSize: "32px",
             fill: "#000"
         });
         moveText.setColor("white");
 
         var attackText = ' ';
-        attackText = this.add.text(200, 300, "Collect coins for extra health", {
+        attackText = this.add.text(100, 300, "Collect coins for extra health", {
             fontSize: "32px",
             fill: "#000"
         });
