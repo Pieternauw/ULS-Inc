@@ -34,7 +34,7 @@ var Tutorial = new Phaser.Class({
             fontsize: "32px",
             fill: "#000"
         });
-        attackText.setColor("white");
+        enterText.setColor("white");
 
         cursors = this.input.keyboard.createCursorKeys();
         keyboard = this.input.keyboard.addKeys("enter");
