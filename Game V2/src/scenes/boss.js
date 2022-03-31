@@ -163,38 +163,14 @@ var Boss = new Phaser.Class({
         //keyboard
         {
             cursors = this.input.keyboard.createCursorKeys();
-            keyboard = this.input.keyboard.addKeys("space");
-            keyboard = this.input.keyboard.addKeys("enter");
+            keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE)
         }
 
         //timer for boss spawning + boss spawning stuff - testing the boss timer
         {
-            timer = 10;
-            /*
-                bossTime = " ";
-
-                bossTime = this.add.text(0, 75, "Boss Spawn Time " + timer, {
-                    fontSize: "32px",
-                    fill: "#000"
-                });
-                bossTime.setColor("white");
-
-                bossTime.scrollFactorX = 0;
-                bossTime.scrollFactorY = 0;
-            */
-            this.time.addEvent({
-                delay: 1000,
-                repeat: 10,
-                callback: () => {
-                    timer--;
-                }
-            });
-        } {
             //boss movement and other code
             renoB = this.physics.add.group();
-            renoBgiB = renoB.create(400, 400, "enemy").setScale(1.5);
-            renoBgiB.visible = false;
-            renoBgiB.body.enable = false;
+            renoBgiB = renoB.create(400, 100, "enemy").setScale(1.5);
         }
         //boss hitting player
         {
@@ -265,10 +241,6 @@ var Boss = new Phaser.Class({
         randomrenoBy = Phaser.Math.Between(0, 1000)
     },
     update: function() {
-        if (timer <= 0) {
-            renoBgiB.visible = true;
-            renoBgiB.body.enable = true;
-        }
         //movement
         {
             if (cursors.left.isDown) {
@@ -294,7 +266,7 @@ var Boss = new Phaser.Class({
 
         //attack layer hiding
         {
-            if (keyboard.space.isDown) {
+            if (Phaser.Input.Keyboard.JustDown(keyS)) {
                 attack1.body.enable = true;
                 attack1.setPosition(x + 20, y + 20);
                 attack1.visible = true;
@@ -321,7 +293,7 @@ var Boss = new Phaser.Class({
 
             //random placement of boss (teleportation mechanic)
             //ask ben about the move to function for placement
-
+            /*
             do {
                 this.time.addEvent({
                     delay: 500,
@@ -332,7 +304,7 @@ var Boss = new Phaser.Class({
                         console.log(rx + " + " + ry)
                     }
                 })
-            } while (bossLife > 0);
+            } while (bossLife > 0); */
         }
     }
 });
