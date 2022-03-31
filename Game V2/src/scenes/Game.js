@@ -11,6 +11,7 @@ var Game = new Phaser.Class({
         this.load.image("star", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/coin/coin_gold.png");
         this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
         this.load.image("muk", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/skeletonminion.png")
+        this.load.audio("game", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/Dungeon_Main_Track.mp3");
         this.load.spritesheet("dude", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/Dude.png", {
             frameWidth: 32,
             frameHeight: 48
@@ -3049,6 +3050,19 @@ var Game = new Phaser.Class({
 
             attack2.body.enable = false;
         }
+        //Game Audio
+		{
+			this.gameSound = this.sound.add('game');
+        	this.gameSound.play({
+           		mute: false,
+            	volume: 1,
+            	rate: 1,
+            	detune: 0,
+            	seek: 0,
+            	loop: true,
+            	delay: 0
+        	});
+		}
     },
     update: function(game) {
         //movement code
@@ -3104,6 +3118,7 @@ var Game = new Phaser.Class({
                 localStorage.setItem("Health", life);
                 localStorage.setItem("Score", score)
                 this.scene.start("Boss");
+                this.gameSound.stop();
             }
         }
         //special attack 
