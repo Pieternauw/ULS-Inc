@@ -163,8 +163,8 @@ var Boss = new Phaser.Class({
         //keyboard
         {
             cursors = this.input.keyboard.createCursorKeys();
-            keyboard = this.input.keyboard.addKeys("enter");
             keyboard = this.input.keyboard.addKeys("space");
+            keyboard = this.input.keyboard.addKeys("enter");
         }
 
         //timer for boss spawning + boss spawning stuff - testing the boss timer
