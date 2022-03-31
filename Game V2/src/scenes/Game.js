@@ -2824,6 +2824,7 @@ var Game = new Phaser.Class({
                         lifeText.setText("Hearts: " + life);
                         if (life <= 0) {
                             this.scene.start("Death");
+			    this.gameSound.stop();
                             localStorage.setItem("Health", 3);
                         }
                         this.time.addEvent({
