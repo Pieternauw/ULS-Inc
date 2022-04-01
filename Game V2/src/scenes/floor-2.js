@@ -71,7 +71,7 @@ var iceGame = new Phaser.Class({
             platforms.create(75, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(150, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(225, 650, "ground2").setScale(0.4).refreshBody();
-            platforms.create(300, 650, "ground2").setScale(0.4).refreshBody();  
+            platforms.create(300, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(475, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(525, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(600, 650, "ground2").setScale(0.4).refreshBody();
@@ -119,7 +119,7 @@ var iceGame = new Phaser.Class({
             platforms.create(1025, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(1100, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(1175, 650, "ground2").setScale(0.4).refreshBody();
-            platforms.create(1200, 650, "ground2").setScale(0.4).refreshBody();  
+            platforms.create(1200, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(1275, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(1325, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(1400, 650, "ground2").setScale(0.4).refreshBody();
@@ -154,8 +154,8 @@ var iceGame = new Phaser.Class({
             platforms.create(1750, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(1825, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(1900, 650, "ground2").setScale(0.4).refreshBody();
-            platforms.create(1975, 650, "ground2").setScale(0.4).refreshBody(); 
-            platforms.create(2000, 650, "ground2").setScale(0.4).refreshBody(); 
+            platforms.create(1975, 650, "ground2").setScale(0.4).refreshBody();
+            platforms.create(2000, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(2075, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(2125, 650, "ground2").setScale(0.4).refreshBody();
             platforms.create(2200, 650, "ground2").setScale(0.4).refreshBody();
@@ -299,7 +299,7 @@ var iceGame = new Phaser.Class({
             platforms.create(75, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(150, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(225, 1950, "ground2").setScale(0.4).refreshBody();
-            platforms.create(300, 1950, "ground2").setScale(0.4).refreshBody();  
+            platforms.create(300, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(475, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(525, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(600, 1950, "ground2").setScale(0.4).refreshBody();
@@ -335,7 +335,7 @@ var iceGame = new Phaser.Class({
             platforms.create(225, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(300, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(375, 2600, "ground2").setScale(0.4).refreshBody();
-            platforms.create(400, 2600, "ground2").setScale(0.4).refreshBody(); 
+            platforms.create(400, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(475, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(525, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(600, 2600, "ground2").setScale(0.4).refreshBody();
@@ -373,7 +373,7 @@ var iceGame = new Phaser.Class({
             platforms.create(225, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(300, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(375, 3250, "ground2").setScale(0.4).refreshBody();
-            platforms.create(400, 3250, "ground2").setScale(0.4).refreshBody();   
+            platforms.create(400, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(475, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(525, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(600, 3250, "ground2").setScale(0.4).refreshBody();
@@ -408,8 +408,8 @@ var iceGame = new Phaser.Class({
             platforms.create(950, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(1025, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(1100, 3250, "ground2").setScale(0.4).refreshBody();
-            platforms.create(1175, 3250, "ground2").setScale(0.4).refreshBody(); 
-            platforms.create(1200, 3250, "ground2").setScale(0.4).refreshBody(); 
+            platforms.create(1175, 3250, "ground2").setScale(0.4).refreshBody();
+            platforms.create(1200, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(1275, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(1325, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(1400, 3250, "ground2").setScale(0.4).refreshBody();
@@ -460,8 +460,8 @@ var iceGame = new Phaser.Class({
             platforms.create(2550, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(2625, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(2700, 3250, "ground2").setScale(0.4).refreshBody();
-            platforms.create(2775, 3250, "ground2").setScale(0.4).refreshBody(); 
-            platforms.create(2800, 3250, "ground2").setScale(0.4).refreshBody(); 
+            platforms.create(2775, 3250, "ground2").setScale(0.4).refreshBody();
+            platforms.create(2800, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(2875, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(2925, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(3000, 3250, "ground2").setScale(0.4).refreshBody();
@@ -487,7 +487,7 @@ var iceGame = new Phaser.Class({
             platforms.create(3425, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(3500, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(3575, 3250, "ground2").setScale(0.4).refreshBody();
-            platforms.create(3600, 3250, "ground2").setScale(0.4).refreshBody();  
+            platforms.create(3600, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(3675, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(3725, 3250, "ground2").setScale(0.4).refreshBody();
             platforms.create(3800, 3250, "ground2").setScale(0.4).refreshBody();
@@ -584,7 +584,7 @@ var iceGame = new Phaser.Class({
             platforms.create(2475, 1300, "ground2").setScale(0.4).refreshBody();
             platforms.create(2550, 1300, "ground2").setScale(0.4).refreshBody();
             platforms.create(2625, 1300, "ground2").setScale(0.4).refreshBody();
-            platforms.create(2700, 1300, "ground2").setScale(0.4).refreshBody(); 
+            platforms.create(2700, 1300, "ground2").setScale(0.4).refreshBody();
             platforms.create(2875, 1300, "ground2").setScale(0.4).refreshBody();
             platforms.create(2925, 1300, "ground2").setScale(0.4).refreshBody();
             platforms.create(3000, 1300, "ground2").setScale(0.4).refreshBody();
@@ -608,7 +608,7 @@ var iceGame = new Phaser.Class({
             platforms.create(2475, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(2550, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(2625, 1950, "ground2").setScale(0.4).refreshBody();
-            platforms.create(2700, 1950, "ground2").setScale(0.4).refreshBody();  
+            platforms.create(2700, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(2875, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(2925, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(3000, 1950, "ground2").setScale(0.4).refreshBody();
@@ -676,7 +676,7 @@ var iceGame = new Phaser.Class({
             platforms.create(1675, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(1750, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(1825, 1950, "ground2").setScale(0.4).refreshBody();
-            platforms.create(1900, 1950, "ground2").setScale(0.4).refreshBody(); 
+            platforms.create(1900, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(1975, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(2025, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(2075, 1950, "ground2").setScale(0.4).refreshBody();
@@ -702,7 +702,7 @@ var iceGame = new Phaser.Class({
             platforms.create(1675, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(1750, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(1825, 2600, "ground2").setScale(0.4).refreshBody();
-            platforms.create(1900, 2600, "ground2").setScale(0.4).refreshBody(); 
+            platforms.create(1900, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(2075, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(2125, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(2200, 2600, "ground2").setScale(0.4).refreshBody();
@@ -748,7 +748,7 @@ var iceGame = new Phaser.Class({
             platforms.create(875, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(950, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(1025, 1950, "ground2").setScale(0.4).refreshBody();
-            platforms.create(1100, 1950, "ground2").setScale(0.4).refreshBody(); 
+            platforms.create(1100, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(1275, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(1325, 1950, "ground2").setScale(0.4).refreshBody();
             platforms.create(1400, 1950, "ground2").setScale(0.4).refreshBody();
@@ -772,7 +772,7 @@ var iceGame = new Phaser.Class({
             platforms.create(875, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(950, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(1025, 2600, "ground2").setScale(0.4).refreshBody();
-            platforms.create(1100, 2600, "ground2").setScale(0.4).refreshBody(); 
+            platforms.create(1100, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(1275, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(1325, 2600, "ground2").setScale(0.4).refreshBody();
             platforms.create(1400, 2600, "ground2").setScale(0.4).refreshBody();
@@ -821,7 +821,8 @@ var iceGame = new Phaser.Class({
         //allows cursors for inputs
         {
             cursors = this.input.keyboard.createCursorKeys();
-            keyboard = this.input.keyboard.addKeys("enter");
+            keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+            keyE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
         }
         //creates stars for room
         {
@@ -2777,13 +2778,6 @@ var iceGame = new Phaser.Class({
             scoreText.scrollFactorX = 0;
             scoreText.scrollFactorY = 0;
         }
-        //add Space key
-        {
-            keyboard = this.input.keyboard.addKeys("space");
-            if (keyboard.space.isDown) {
-                sword = this.add.image(x, y, "sword-down");
-            }
-        }
         //enemies (muk) - change count back when done
         {
             muks2 = this.physics.add.group();
@@ -3005,8 +2999,8 @@ var iceGame = new Phaser.Class({
         }
         //collision of attacks and muks
         {
-           this.physics.add.collider(muks2, attack, attackMuks2, null, this);
-           attack1.body.enable = false;
+            this.physics.add.collider(muks2, attack, attackMuks2, null, this);
+            attack1.body.enable = false;
 
             function attackMuks2(muks2, attack) {
                 muks2.setTint(0xff0000);
@@ -3027,7 +3021,7 @@ var iceGame = new Phaser.Class({
                 }
             }
         }
-      //special attack (for boss scene this is just test)
+        //special attack (for boss scene this is just test)
         {
             //special attack is a bigger attack requiring coins
             attack2 = attack.create(x + 20, y + 10, "bomb").setScale(5);
@@ -3059,12 +3053,12 @@ var iceGame = new Phaser.Class({
         y = player.body.position.y;
         //attack layer hiding
         {
-            if (keyboard.space.isDown) {
+            if (Phaser.Input.Keyboard.JustDown(keyS)) {
                 attack1.body.enable = true;
                 attack1.setPosition(x + 20, y + 20);
                 attack1.visible = true;
                 this.time.addEvent({
-                    delay: 500,
+                    delay: 20,
                     loop: false,
                     callback: () => {
                         attack1.visible = false;
@@ -3099,7 +3093,7 @@ var iceGame = new Phaser.Class({
         {
             if (score >= 10) {
                 if (Phaser.Input.Keyboard.JustDown(keyE)) {
-					          attack2.setPosition(x + 20, y + 20);
+                    attack2.setPosition(x + 20, y + 20);
                     attack2.body.enable = true;
                     attack2.visible = true;
                     score = score - 10;
@@ -3110,8 +3104,6 @@ var iceGame = new Phaser.Class({
                         callback: () => {
                             attack2.body.enable = false;
                             attack2.visible = false;
-                            scoreText.setText("Score: " + score);
-
                         }
                     });
                 }
