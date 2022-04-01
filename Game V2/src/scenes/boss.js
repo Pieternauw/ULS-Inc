@@ -163,7 +163,8 @@ var Boss = new Phaser.Class({
         //keyboard
         {
             cursors = this.input.keyboard.createCursorKeys();
-            keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE)
+            keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+            keyE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
         }
 
         //timer for boss spawning + boss spawning stuff - testing the boss timer
@@ -239,6 +240,17 @@ var Boss = new Phaser.Class({
         //random placement of boss
         randomrenoBx = Phaser.Math.Between(0, 1200)
         randomrenoBy = Phaser.Math.Between(0, 1000)
+
+        //special attack (for boss scene this is just test)
+        {
+            //special attack is a bigger attack requiring coins
+            attack2 = attack.create(x + 20, y + 10, "bomb").setScale(5);
+            attack2.visible = false;
+            attack2.body.enable = false;
+            attack2.scrollFactorX = 0;
+            attack2.scrollFactorY = 0;
+            score = localStorage.getItem("Score");
+        }
     },
     update: function() {
         //movement
@@ -305,6 +317,27 @@ var Boss = new Phaser.Class({
                     }
                 })
             } while (bossLife > 0); */
+        }
+        //special attack 
+        {
+            if (score >= 10) {
+                if (Phaser.Input.Keyboard.JustDown(keyE)) {
+                    attack2.body.enable = true;
+                    attack2.visible = true;
+                    score = score - 10;
+                    scoreCounter = scoreCounter - 10;
+                    this.time.addEvent({
+                        delay: 500,
+                        loop: false,
+                        callback: () => {
+                            attack2.body.enable = false;
+                            attack2.visible = false;
+                            scoreText.setText("Score: " + score);
+
+                        }
+                    });
+                }
+            }
         }
     }
 });

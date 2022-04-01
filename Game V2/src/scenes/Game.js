@@ -848,9 +848,8 @@ var Game = new Phaser.Class({
         //allows cursors for inputs
         {
             cursors = this.input.keyboard.createCursorKeys();
-            keyboard = this.input.keyboard.addKeys("enter");
-            keyboard = this.input.keyboard.addKeys("space");
-
+            keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+            keyE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
         }
         //creates stars for room
         {
@@ -2824,7 +2823,7 @@ var Game = new Phaser.Class({
                         lifeText.setText("Hearts: " + life);
                         if (life <= 0) {
                             this.scene.start("Death");
-			    this.gameSound.stop();
+                            this.gameSound.stop();
                             localStorage.setItem("Health", 3);
                         }
                         this.time.addEvent({
@@ -3048,22 +3047,23 @@ var Game = new Phaser.Class({
             //special attack is a bigger attack requiring coins
             attack2 = attack.create(x + 20, y + 10, "bomb").setScale(5);
             attack2.visible = false;
-
             attack2.body.enable = false;
+            attack2.scrollFactorX = 0;
+            attack2.scrollFactorY = 0;
         }
         //Game Audio
-		{
-			this.gameSound = this.sound.add('game');
-        	this.gameSound.play({
-           		mute: false,
-            	volume: 1,
-            	rate: 1,
-            	detune: 0,
-            	seek: 0,
-            	loop: true,
-            	delay: 0
-        	});
-		}
+        {
+            this.gameSound = this.sound.add('game');
+            this.gameSound.play({
+                mute: false,
+                volume: 1,
+                rate: 1,
+                detune: 0,
+                seek: 0,
+                loop: true,
+                delay: 0
+            });
+        }
     },
     update: function(game) {
         //movement code
@@ -3089,7 +3089,7 @@ var Game = new Phaser.Class({
         y = player.body.position.y;
         //attack layer hiding
         {
-            if (keyboard.space.isDown) {
+            if (Phaser.Input.Keyboard.JustDown(keyS)) {
                 attack1.body.enable = true;
                 attack1.setPosition(x + 20, y + 20);
                 attack1.visible = true;
@@ -3125,7 +3125,7 @@ var Game = new Phaser.Class({
         //special attack 
         {
             if (score >= 10) {
-                this.input.keyboard.on('keydown-' + 'ENTER', function(event) {
+                if (Phaser.Input.Keyboard.JustDown(keyE)) {
                     attack2.body.enable = true;
                     attack2.visible = true;
                     score = score - 10;
@@ -3136,10 +3136,11 @@ var Game = new Phaser.Class({
                         callback: () => {
                             attack2.body.enable = false;
                             attack2.visible = false;
+                            scoreText.setText("Score: " + score);
+
                         }
                     });
-
-                })
+                }
             }
         }
     }
