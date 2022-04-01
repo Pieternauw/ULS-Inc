@@ -247,9 +247,19 @@ var Boss = new Phaser.Class({
             attack2 = attack.create(x + 20, y + 10, "bomb").setScale(5);
             attack2.visible = false;
             attack2.body.enable = false;
-            attack2.scrollFactorX = 0;
-            attack2.scrollFactorY = 0;
             score = localStorage.getItem("Score");
+        }
+        //score
+        {
+            scoreText = ' ';
+            scoreText = this.add.text(0, 25, "score: 0", {
+                fontSize: "32px",
+                fill: "#000"
+            });
+            //color for scoreText
+            scoreText.setColor("white");
+            scoreText.scrollFactorX = 0;
+            scoreText.scrollFactorY = 0;
         }
     },
     update: function() {
@@ -322,6 +332,7 @@ var Boss = new Phaser.Class({
         {
             if (score >= 10) {
                 if (Phaser.Input.Keyboard.JustDown(keyE)) {
+                    attack2.setPosition(x + 20, y + 20);
                     attack2.body.enable = true;
                     attack2.visible = true;
                     score = score - 10;
@@ -332,8 +343,6 @@ var Boss = new Phaser.Class({
                         callback: () => {
                             attack2.body.enable = false;
                             attack2.visible = false;
-                            scoreText.setText("Score: " + score);
-
                         }
                     });
                 }
