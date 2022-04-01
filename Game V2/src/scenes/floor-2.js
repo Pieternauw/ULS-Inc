@@ -2755,7 +2755,7 @@ var iceGame = new Phaser.Class({
         //creates Life & Score counter
         {
             score = 0;
-            var scoreText;
+            scoreText = ' ';
             scoreText = this.add.text(0, 25, "score: 0", {
                 fontSize: "32px",
                 fill: "#000"
@@ -3005,10 +3005,8 @@ var iceGame = new Phaser.Class({
         }
         //collision of attacks and muks
         {
-            //look back at bomb creating functions for how this was done idk why it isn't creating a collider
-            //bomb function doesn't help this is exactly the same
-            this.physics.add.collider(muks2, attack, attackMuks2, null, this);
-            attack1.body.enable = false;
+           this.physics.add.collider(muks2, attack, attackMuks2, null, this);
+           attack1.body.enable = false;
 
             function attackMuks2(muks2, attack) {
                 muks2.setTint(0xff0000);
@@ -3025,9 +3023,16 @@ var iceGame = new Phaser.Class({
                 //muk count = 0 -> scene transition
 
                 if (muk2Count == 0) {
-                    this.scene.start("Boss");
+                    this.scene.start("iceBoss");
                 }
             }
+        }
+      //special attack (for boss scene this is just test)
+        {
+            //special attack is a bigger attack requiring coins
+            attack2 = attack.create(x + 20, y + 10, "bomb").setScale(5);
+            attack2.visible = false;
+            attack2.body.enable = false;
         }
     },
     update: function(game) {
@@ -3079,6 +3084,37 @@ var iceGame = new Phaser.Class({
                 scoreCounter = 0;
                 lifeText.setText("Health: " + life);
                 localStorage.setItem("Health", life);
+            }
+        }
+        //scene transition
+        {
+            if (muks2.countActive() == 0) {
+                localStorage.setItem("Health", life);
+                localStorage.setItem("Score", score)
+                this.scene.start("iceBoss");
+                this.gameSound.stop();
+            }
+        }
+        //special attack 
+        {
+            if (score >= 10) {
+                if (Phaser.Input.Keyboard.JustDown(keyE)) {
+					          attack2.setPosition(x + 20, y + 20);
+                    attack2.body.enable = true;
+                    attack2.visible = true;
+                    score = score - 10;
+                    scoreCounter = scoreCounter - 10;
+                    this.time.addEvent({
+                        delay: 500,
+                        loop: false,
+                        callback: () => {
+                            attack2.body.enable = false;
+                            attack2.visible = false;
+                            scoreText.setText("Score: " + score);
+
+                        }
+                    });
+                }
             }
         }
     }
