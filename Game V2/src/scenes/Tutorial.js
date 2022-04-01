@@ -14,7 +14,7 @@ var Tutorial = new Phaser.Class({
         moveText.setColor("white");
 
         var attackText = ' ';
-        attackText = this.add.text(200, 300, "Attack with space", {
+        attackText = this.add.text(210, 300, "Attack with space", {
             fontSize: "32px",
             fill: "#000"
         });
@@ -29,8 +29,15 @@ var Tutorial = new Phaser.Class({
             }
         });
 
+        specialText = ' ';
+        specialText = this.add.text(250, 400, "Use Enter for a special \nattack using 10 coins", {
+            fontsize: "32px",
+            fill: "#000"
+        });
+        specialText.setColor("white");
+
         var enterText = ' ';
-        enterText = this.add.text(200, 500, "Press Enter to continue", {
+        enterText = this.add.text(250, 600, "Press Enter to continue", {
             fontsize: "32px",
             fill: "#000"
         });
