@@ -3058,7 +3058,7 @@ var iceGame = new Phaser.Class({
                 attack1.setPosition(x + 20, y + 20);
                 attack1.visible = true;
                 this.time.addEvent({
-                    delay: 20,
+                    delay: 1000,
                     loop: false,
                     callback: () => {
                         attack1.visible = false;
