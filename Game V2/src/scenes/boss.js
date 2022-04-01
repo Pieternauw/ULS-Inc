@@ -318,7 +318,7 @@ var Boss = new Phaser.Class({
             /*
             do {
                 this.time.addEvent({
-                    delay: 500,
+                    delay: 5000,
                     loop: false,
                     callback: () => {
                         //setting position
