@@ -330,13 +330,13 @@ var Boss = new Phaser.Class({
         }
         //special attack 
         {
-            if (score >= 10) {
+            if (score >= 30) {
                 if (Phaser.Input.Keyboard.JustDown(keyE)) {
                     attack2.setPosition(x + 20, y + 20);
                     attack2.body.enable = true;
                     attack2.visible = true;
-                    score = score - 10;
-                    scoreCounter = scoreCounter - 10;
+                    score = score - 30;
+                    scoreText.setText("Score: " + score);
                     this.time.addEvent({
                         delay: 500,
                         loop: false,

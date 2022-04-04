@@ -3104,7 +3104,7 @@ var Game = new Phaser.Class({
         }
         //returning health 
         {
-            if (scoreCounter == 30) {
+            if (scoreCounter == 20) {
                 life++;
                 scoreCounter = 0;
                 lifeText.setText("Health: " + life);
@@ -3127,15 +3127,15 @@ var Game = new Phaser.Class({
                     attack2.setPosition(x + 20, y + 20);
                     attack2.body.enable = true;
                     attack2.visible = true;
-                    score = score - 10;
-                    scoreCounter = scoreCounter - 10;
+                    score = score - 30;
+                    scoreText.setText("Score: " + score);
+                    scoreCounter = scoreCounter - 30;
                     this.time.addEvent({
                         delay: 500,
                         loop: false,
                         callback: () => {
                             attack2.body.enable = false;
                             attack2.visible = false;
-                            scoreText.setText("Score: " + score);
 
                         }
                     });
