@@ -3122,7 +3122,7 @@ var Game = new Phaser.Class({
         }
         //special attack 
         {
-            if (score >= 10) {
+            if (score >= 30) {
                 if (Phaser.Input.Keyboard.JustDown(keyE)) {
                     attack2.setPosition(x + 20, y + 20);
                     attack2.body.enable = true;
