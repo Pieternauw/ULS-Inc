@@ -3096,6 +3096,12 @@ var Game = new Phaser.Class({
                     loop: false,
                     callback: () => {
                         attack1.body.enable = false;
+                    }
+                });
+                this.time.addEvent({
+                    delay: 500,
+                    loop: false,
+                    callback: () => {
                         attack1.visible = false;
                     }
                 });
@@ -3135,8 +3141,13 @@ var Game = new Phaser.Class({
                         loop: false,
                         callback: () => {
                             attack2.body.enable = false;
+                        }
+                    });
+                    this.time.addEvent({
+                        delay: 500,
+                        loop: false,
+                        callback: () => {
                             attack2.visible = false;
-
                         }
                     });
                 }

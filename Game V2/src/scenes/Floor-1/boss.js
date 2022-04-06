@@ -8,7 +8,7 @@ var Boss = new Phaser.Class({
         this.load.image("floor", "https://images.creativemarket.com/0.1.0/ps/120087/910/607/m1/fpnw/wm0/stonefloor001_large-.jpg?1401477523&s=aeb8c8fbad2e06ac22344908c9ad2c9e");
         this.load.image("ground", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/dungeon-wall.png");
         this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
-        this.load.image("enemy", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/skeletonminion.png");
+        this.load.image("enemy", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/boss.jpeg");
         this.load.spritesheet("dude", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/Dude.png", {
             frameWidth: 32,
             frameHeight: 48
@@ -106,7 +106,7 @@ var Boss = new Phaser.Class({
         }
 
         //player code
-        player = this.physics.add.sprite(400, 400, "dude").setScale(1.25);
+        player = this.physics.add.sprite(500, 500, "dude").setScale(1.25);
         this.cameras.main.startFollow(player);
 
         //animations
@@ -171,7 +171,7 @@ var Boss = new Phaser.Class({
         {
             //boss movement and other code
             renoB = this.physics.add.group();
-            renoBgiB = renoB.create(400, 100, "enemy").setScale(1.5);
+            renoBgiB = renoB.create(500, 250, "enemy").setScale(1.5);
         }
         //boss hitting player
         {
@@ -296,8 +296,14 @@ var Boss = new Phaser.Class({
                     delay: 20,
                     loop: false,
                     callback: () => {
-                        attack1.visible = false;
                         attack1.body.enable = false;
+                    }
+                });
+                this.time.addEvent({
+                    delay: 500,
+                    loop: false,
+                    callback: () => {
+                        attack1.visible = false;
                     }
                 });
                 console.log("space");
@@ -338,10 +344,16 @@ var Boss = new Phaser.Class({
                     score = score - 30;
                     scoreText.setText("Score: " + score);
                     this.time.addEvent({
-                        delay: 500,
+                        delay: 20,
                         loop: false,
                         callback: () => {
                             attack2.body.enable = false;
+                        }
+                    });
+                    this.time.addEvent({
+                        delay: 500,
+                        loop: false,
+                        callback: () => {
                             attack2.visible = false;
                         }
                     });
