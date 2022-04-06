@@ -8,7 +8,7 @@ var Boss = new Phaser.Class({
         this.load.image("floor", "https://images.creativemarket.com/0.1.0/ps/120087/910/607/m1/fpnw/wm0/stonefloor001_large-.jpg?1401477523&s=aeb8c8fbad2e06ac22344908c9ad2c9e");
         this.load.image("ground", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/dungeon-wall.png");
         this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
-        this.load.image("enemy", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/boss.jpeg");
+        this.load.image("enemy", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/renoB.png");
         this.load.spritesheet("dude", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/Dude.png", {
             frameWidth: 32,
             frameHeight: 48
@@ -171,7 +171,8 @@ var Boss = new Phaser.Class({
         {
             //boss movement and other code
             renoB = this.physics.add.group();
-            renoBgiB = renoB.create(500, 250, "enemy").setScale(1.5);
+            renoBgiB = renoB.create(500, 250, "enemy");
+            renoBgiB.setBounce(0.5);
         }
         //boss hitting player
         {
@@ -181,6 +182,7 @@ var Boss = new Phaser.Class({
             function hitMuk(player, muk) {
                 player.setTint(0xff0000);
                 player.anims.play("turn");
+                renoBgiB.setPosition(Phaser.Math.Between(100, 1100), Phaser.Math.Between(100, 900));
                 this.time.addEvent({
                     delay: 500,
                     loop: false,
@@ -209,7 +211,7 @@ var Boss = new Phaser.Class({
 
             attack = this.physics.add.group();
 
-            attack1 = attack.create(x + 20, y + 10, "bomb").setScale(2.5);
+            attack1 = attack.create(x + 20, y + 10, "bomb").setScale(3);
             attack1.visible = false;
         }
         //collision of attacks and boss
