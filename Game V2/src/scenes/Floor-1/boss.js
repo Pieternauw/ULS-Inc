@@ -266,7 +266,7 @@ var Boss = new Phaser.Class({
         //score
         {
             scoreText = ' ';
-            scoreText = this.add.text(0, 25, "score: 0", {
+            scoreText = this.add.text(0, 25, "score: " + score, {
                 fontSize: "32px",
                 fill: "#000"
             });
