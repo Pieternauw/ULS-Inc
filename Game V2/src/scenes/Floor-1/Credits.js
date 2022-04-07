@@ -4,12 +4,15 @@ var Credits = new Phaser.Class({
         Phaser.Scene.call(this, { "key": "Credits" });
     },
     init: function() {},
-    preload: function() {},
+    preload: function() {
+        this.load.audio("credits", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/Credit_Jazz_Music.mp3");
+    },
     create: function() {
-
+    {
         cursors = this.input.keyboard.createCursorKeys();
         keyboard = this.input.keyboard.addKeys("enter");
-
+    } //Keys
+    {
         var credit1Text = '';
         var credit2Text = '';
         var credit3Text = '';
@@ -73,12 +76,24 @@ var Credits = new Phaser.Class({
             fill: "#000"
         })
         credit9Text.setColor("White");
-        
+} //Text
+    {
+        this.creditsSound = this.sound.add('credits');
+        this.creditsSound.play({
+             mute: false,
+             volume: 1,
+             rate: 1,
+             detune: 0,
+             seek: 0,
+             loop: true,
+             delay: 0
+          });
+        }    
     },
     update: function() {
         if (keyboard.enter.isDown) {
             this.scene.start("Title");
-            //this.themeSound.stop();
+            this.creditsSound.stop();
         }
     }
 });
