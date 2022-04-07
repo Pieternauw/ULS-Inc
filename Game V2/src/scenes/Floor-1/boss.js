@@ -133,9 +133,9 @@ var Boss = new Phaser.Class({
 
         //boss health
         {
-            bossLife = 10;
+            bossLife = 20;
             bossText = " ";
-            bossText = this.add.text(150, 700, "renoB giB: 10", {
+            bossText = this.add.text(150, 700, "renoB giB: 20", {
                 fontSize: "64px",
                 fill: "#000"
             });
@@ -240,8 +240,18 @@ var Boss = new Phaser.Class({
             }
         }
         //random placement of boss
-        randomrenoBx = Phaser.Math.Between(0, 1200)
-        randomrenoBy = Phaser.Math.Between(0, 1000)
+        {
+            bossMove = this.time.addEvent({
+                delay: 5000,
+                loop: true,
+                callback: () => {
+                    renoBgiB.setPosition(Phaser.Math.Between(100, 1100), Phaser.Math.Between(100, 900));
+                }
+            });
+            if (bossLife == 0) {
+                bossMove.remove();
+            }
+        }
 
         //special attack (for boss scene this is just test)
         {
