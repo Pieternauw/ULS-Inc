@@ -183,6 +183,7 @@ var Boss = new Phaser.Class({
                 player.setTint(0xff0000);
                 player.anims.play("turn");
                 renoBgiB.setPosition(Phaser.Math.Between(100, 1100), Phaser.Math.Between(100, 900));
+                renoBgiB.setVelocity(0, 0);
                 this.time.addEvent({
                     delay: 500,
                     loop: false,
@@ -242,10 +243,11 @@ var Boss = new Phaser.Class({
         //random placement of boss
         {
             bossMove = this.time.addEvent({
-                delay: 5000,
+                delay: 2500,
                 loop: true,
                 callback: () => {
                     renoBgiB.setPosition(Phaser.Math.Between(100, 1100), Phaser.Math.Between(100, 900));
+                    //renoBgiB.setVelocity(Phaser.Math.Between(-100, 100), Phaser.Math.Between(-100, 100));
                 }
             });
             if (bossLife == 0) {
