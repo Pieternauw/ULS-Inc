@@ -8,14 +8,16 @@ var Boss = new Phaser.Class({
         this.load.image("floor", "https://images.creativemarket.com/0.1.0/ps/120087/910/607/m1/fpnw/wm0/stonefloor001_large-.jpg?1401477523&s=aeb8c8fbad2e06ac22344908c9ad2c9e");
         this.load.image("ground", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/dungeon-wall.png");
         this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
-        this.load.image("enemy", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/skeletonminion.png");
+        this.load.image("enemy", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/renoB.png");
         this.load.spritesheet("dude", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/Dude.png", {
             frameWidth: 32,
             frameHeight: 48
         });
+        this.load.audio("boss1", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/QUIETBoss.mp3");
+        this.load.audio("boss2", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/MEDIUM_Boss.mp3");
+        this.load.audio("boss3", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/INTENSEBoss.mp3");
     },
     create: function() {
-
         //floor, add more if a bigger room required
         {
             this.add.image(0, 0, "floor").setScale(1.5);
@@ -23,7 +25,6 @@ var Boss = new Phaser.Class({
             this.add.image(700, 0, "floor").setScale(1.5);
             this.add.image(700, 910, "floor").setScale(1.5);
         }
-
         //boss room walls
         {
             platforms = this.physics.add.staticGroup();
@@ -104,11 +105,9 @@ var Boss = new Phaser.Class({
             platforms.create(1200, 0, "ground").setScale(0.25).refreshBody();
             platforms.create(1275, 0, "ground").setScale(0.25).refreshBody();
         }
-
         //player code
-        player = this.physics.add.sprite(400, 400, "dude").setScale(1.25);
+        player = this.physics.add.sprite(500, 500, "dude").setScale(1.25);
         this.cameras.main.startFollow(player);
-
         //animations
         {
             this.anims.create({
@@ -130,12 +129,11 @@ var Boss = new Phaser.Class({
             });
         }
         this.physics.add.collider(player, platforms);
-
         //boss health
         {
-            bossLife = 10;
+            bossLife = 20;
             bossText = " ";
-            bossText = this.add.text(150, 700, "renoB giB: 10", {
+            bossText = this.add.text(150, 700, "renoB giB: 20", {
                 fontSize: "64px",
                 fill: "#000"
             });
@@ -163,14 +161,46 @@ var Boss = new Phaser.Class({
         //keyboard
         {
             cursors = this.input.keyboard.createCursorKeys();
-            keyboard = this.input.keyboard.addKeys("enter");
-            keyboard = this.input.keyboard.addKeys("space");
+            keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+            keyE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
         }
-
-        //boss movement and other code
+        //timer for boss spawning + boss spawning stuff - testing the boss timer
         {
+            //boss movement and other code
             renoB = this.physics.add.group();
-            renoBgiB = renoB.create(0, 0, "enemy").setScale(1.5);
+            renoBgiB = renoB.create(500, 250, "enemy");
+            renoBgiB.setBounce(0.5);
+        }
+        //boss hitting player
+        {
+            this.physics.add.collider(renoB, platforms);
+            this.physics.add.collider(player, renoB, hitMuk, null, this);
+
+            function hitMuk(player, muk) {
+                player.setTint(0xff0000);
+                player.anims.play("turn");
+                renoBgiB.setPosition(Phaser.Math.Between(100, 1100), Phaser.Math.Between(100, 900));
+                renoBgiB.setVelocity(0, 0);
+                this.time.addEvent({
+                    delay: 500,
+                    loop: false,
+                    callback: () => {
+                        life--;
+                        lifeText.setText("Hearts: " + life);
+                        if (life <= 0) {
+                            this.scene.start("Death");
+                            localStorage.setItem("Health", 3);
+                        }
+                        this.time.addEvent({
+                            delay: 500,
+                            loop: false,
+                            callback: () => {
+                                player.clearTint();
+                            }
+                        });
+                    }
+                })
+            }
         }
         //attack
         {
@@ -179,7 +209,7 @@ var Boss = new Phaser.Class({
 
             attack = this.physics.add.group();
 
-            attack1 = attack.create(x + 20, y + 20, "bomb").setScale(3);
+            attack1 = attack.create(x + 20, y + 10, "bomb").setScale(3);
             attack1.visible = false;
         }
         //collision of attacks and boss
@@ -200,18 +230,83 @@ var Boss = new Phaser.Class({
                         renoB.clearTint();
                     }
                 });
-                this.time.addEvent({
-                    delay: 500,
-                    callback: () => {
-                        bossLife--;
-                        bossText.setText("renoB giB: " + bossLife);
-                        if (bossLife == 0) {
-                            this.scene.start("Win");
-                        }
-                    }
-                });
+                bossLife--;
+                bossText.setText("renoB giB: " + bossLife);
+                if (bossLife <= 0) {
+                    this.scene.start("Win");
+                }
             }
         }
+        //random placement of boss
+        {
+            bossMove = this.time.addEvent({
+                delay: 2500,
+                loop: true,
+                callback: () => {
+                    renoBgiB.setPosition(Phaser.Math.Between(100, 1100), Phaser.Math.Between(100, 900));
+                    //renoBgiB.setVelocity(Phaser.Math.Between(-100, 100), Phaser.Math.Between(-100, 100));
+                }
+            });
+            if (bossLife == 0) {
+                bossMove.remove();
+            }
+        }
+        //special attack (for boss scene this is just test)
+        {
+            //special attack is a bigger attack requiring coins
+            attack2 = attack.create(x + 20, y + 10, "bomb").setScale(5);
+            attack2.visible = false;
+            attack2.body.enable = false;
+            score = localStorage.getItem("Score");
+        }
+        //score
+        {
+            scoreText = ' ';
+            scoreText = this.add.text(0, 25, "score: " + score, {
+                fontSize: "32px",
+                fill: "#000"
+            });
+            //color for scoreText
+            scoreText.setColor("white");
+            scoreText.scrollFactorX = 0;
+            scoreText.scrollFactorY = 0;
+        }
+        {
+        this.boss1Sound = this.sound.add('boss1');
+        this.boss1Sound.play({
+             mute: false,
+             volume: 1,
+             rate: 1,
+             detune: 0,
+             seek: 0,
+             loop: true,
+             delay: 0
+          });
+        } //Audio 1
+        {
+        this.boss2Sound = this.sound.add('boss2');
+        this.boss2Sound.play({
+             mute: false,
+             volume: 1,
+             rate: 1,
+             detune: 0,
+             seek: 0,
+             loop: true,
+             delay: 0
+          });
+        } //Audio 2
+        {
+        this.boss3Sound = this.sound.add('boss3');
+        this.boss3Sound.play({
+             mute: false,
+             volume: 1,
+             rate: 1,
+             detune: 0,
+             seek: 0,
+             loop: true,
+             delay: 0
+          });
+        } //Audio 3
     },
     update: function() {
         //movement
@@ -233,13 +328,11 @@ var Boss = new Phaser.Class({
                 player.anims.play("turn");
             }
         }
-
         x = player.body.position.x;
         y = player.body.position.y;
-
         //attack layer hiding
         {
-            if (keyboard.space.isDown) {
+            if (Phaser.Input.Keyboard.JustDown(keyS)) {
                 attack1.body.enable = true;
                 attack1.setPosition(x + 20, y + 20);
                 attack1.visible = true;
@@ -247,14 +340,83 @@ var Boss = new Phaser.Class({
                     delay: 20,
                     loop: false,
                     callback: () => {
-                        attack1.visible = false;
                         attack1.body.enable = false;
+                    }
+                });
+                this.time.addEvent({
+                    delay: 500,
+                    loop: false,
+                    callback: () => {
+                        attack1.visible = false;
                     }
                 });
                 console.log("space");
                 this.time.addEvent({
                     delay: 500,
                 })
+            }
+        }
+        //boss movement/velocity
+        {
+            rx = renoBgiB.body.position.x;
+            ry = renoBgiB.body.position.y;
+
+            console.log(rx + " + " + ry);
+
+            //random placement of boss (teleportation mechanic)
+            //ask ben about the move to function for placement
+            /*
+            do {
+                this.time.addEvent({
+                    delay: 5000,
+                    loop: false,
+                    callback: () => {
+                        //setting position
+                        console.log(rx + " + " + ry)
+                    }
+                })
+            } while (bossLife > 0); */
+        }
+        //special attack 
+        {
+            if (score >= 30) {
+                if (Phaser.Input.Keyboard.JustDown(keyE)) {
+                    attack2.setPosition(x + 20, y + 20);
+                    attack2.body.enable = true;
+                    attack2.visible = true;
+                    score = score - 30;
+                    scoreText.setText("Score: " + score);
+                    this.time.addEvent({
+                        delay: 20,
+                        loop: false,
+                        callback: () => {
+                            attack2.body.enable = false;
+                        }
+                    });
+                    this.time.addEvent({
+                        delay: 500,
+                        loop: false,
+                        callback: () => {
+                            attack2.visible = false;
+                        }
+                    });
+                }
+            }
+        }
+        //Audio Switches
+        {
+            if(bossLife >= 15){
+                this.boss3Sound.stop();
+                this.boss2Sound.stop();
+                this.bossSound.start();
+            } else if(bossLife < 15 && bossLife >= 7){
+                this.boss3Sound.stop();
+                this.boss2Sound.start();
+                this.bossSound.stop();
+            } else if (bossLife < 7){
+                this.boss3Sound.start();
+                this.boss2Sound.stop();
+                this.bossSound.stop();
             }
         }
     }
