@@ -270,42 +270,41 @@ var Boss = new Phaser.Class({
             scoreText.setColor("white");
             scoreText.scrollFactorX = 0;
             scoreText.scrollFactorY = 0;
-        }
-        {
-        this.boss1Sound = this.sound.add('boss1');
-        this.boss1Sound.play({
-             mute: false,
-             volume: 1,
-             rate: 1,
-             detune: 0,
-             seek: 0,
-             loop: true,
-             delay: 0
-          });
+        } {
+            this.boss1Sound = this.sound.add('boss1');
+            this.boss1Sound.play({
+                mute: false,
+                volume: 1,
+                rate: 1,
+                detune: 0,
+                seek: 0,
+                loop: true,
+                delay: 0
+            });
         } //Audio 1
         {
-        this.boss2Sound = this.sound.add('boss2');
-        this.boss2Sound.play({
-             mute: false,
-             volume: 1,
-             rate: 1,
-             detune: 0,
-             seek: 0,
-             loop: true,
-             delay: 0
-          });
+            this.boss2Sound = this.sound.add('boss2');
+            this.boss2Sound.play({
+                mute: false,
+                volume: 1,
+                rate: 1,
+                detune: 0,
+                seek: 0,
+                loop: true,
+                delay: 0
+            });
         } //Audio 2
         {
-        this.boss3Sound = this.sound.add('boss3');
-        this.boss3Sound.play({
-             mute: false,
-             volume: 1,
-             rate: 1,
-             detune: 0,
-             seek: 0,
-             loop: true,
-             delay: 0
-          });
+            this.boss3Sound = this.sound.add('boss3');
+            this.boss3Sound.play({
+                mute: false,
+                volume: 1,
+                rate: 1,
+                detune: 0,
+                seek: 0,
+                loop: true,
+                delay: 0
+            });
         } //Audio 3
     },
     update: function() {
@@ -405,18 +404,18 @@ var Boss = new Phaser.Class({
         }
         //Audio Switches
         {
-            if(bossLife >= 15){
+            if (bossLife >= 15) {
                 this.boss3Sound.stop();
                 this.boss2Sound.stop();
-                this.bossSound.start();
-            } else if(bossLife < 15 && bossLife >= 7){
+                this.boss1Sound.play();
+            } else if (bossLife < 15 && bossLife >= 7) {
                 this.boss3Sound.stop();
-                this.boss2Sound.start();
-                this.bossSound.stop();
-            } else if (bossLife < 7){
-                this.boss3Sound.start();
+                this.boss2Sound.play();
+                this.boss1Sound.stop();
+            } else if (bossLife < 7) {
+                this.boss3Sound.play();
                 this.boss2Sound.stop();
-                this.bossSound.stop();
+                this.boss1Sound.stop();
             }
         }
     }
