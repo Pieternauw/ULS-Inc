@@ -189,6 +189,9 @@ var Boss = new Phaser.Class({
                         lifeText.setText("Hearts: " + life);
                         if (life <= 0) {
                             this.scene.start("Death");
+                            this.boss1Sound.stop();
+                            this.boss2Sound.stop();
+                            this.boss3Sound.stop();
                             localStorage.setItem("Health", 3);
                         }
                         this.time.addEvent({
@@ -234,6 +237,9 @@ var Boss = new Phaser.Class({
                 bossText.setText("renoB giB: " + bossLife);
                 if (bossLife <= 0) {
                     this.scene.start("Win");
+                    this.boss1Sound.stop();
+                    this.boss2Sound.stop();
+                    this.boss3Sound.stop();
                 }
             }
         }
@@ -270,7 +276,9 @@ var Boss = new Phaser.Class({
             scoreText.setColor("white");
             scoreText.scrollFactorX = 0;
             scoreText.scrollFactorY = 0;
-        } {
+        }
+        //audio
+        {
             this.boss1Sound = this.sound.add('boss1');
             this.boss1Sound.play({
                 mute: false,
@@ -306,6 +314,9 @@ var Boss = new Phaser.Class({
                 delay: 0
             });
         } //Audio 3
+        bossStage = 1;
+        this.boss2Sound.stop();
+        this.boss3Sound.stop();
     },
     update: function() {
         //movement
@@ -404,18 +415,14 @@ var Boss = new Phaser.Class({
         }
         //Audio Switches
         {
-            if (bossLife >= 15) {
-                this.boss3Sound.stop();
-                this.boss2Sound.stop();
-                this.boss1Sound.play();
-            } else if (bossLife < 15 && bossLife >= 7) {
-                this.boss3Sound.stop();
+            if (bossLife < 15 && bossStage == 1) {
                 this.boss2Sound.play();
                 this.boss1Sound.stop();
-            } else if (bossLife < 7) {
+                bossStage = 2;
+            } else if (bossLife < 7 && bossStage == 2) {
                 this.boss3Sound.play();
                 this.boss2Sound.stop();
-                this.boss1Sound.stop();
+                bossStage = 3;
             }
         }
     }
