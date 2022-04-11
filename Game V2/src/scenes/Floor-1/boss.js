@@ -13,9 +13,11 @@ var Boss = new Phaser.Class({
             frameWidth: 32,
             frameHeight: 48
         });
+        this.load.audio("boss1", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/QUIETBoss.mp3");
+        this.load.audio("boss2", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/MEDIUM_Boss.mp3");
+        this.load.audio("boss3", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/INTENSEBoss.mp3");
     },
     create: function() {
-
         //floor, add more if a bigger room required
         {
             this.add.image(0, 0, "floor").setScale(1.5);
@@ -23,7 +25,6 @@ var Boss = new Phaser.Class({
             this.add.image(700, 0, "floor").setScale(1.5);
             this.add.image(700, 910, "floor").setScale(1.5);
         }
-
         //boss room walls
         {
             platforms = this.physics.add.staticGroup();
@@ -104,11 +105,9 @@ var Boss = new Phaser.Class({
             platforms.create(1200, 0, "ground").setScale(0.25).refreshBody();
             platforms.create(1275, 0, "ground").setScale(0.25).refreshBody();
         }
-
         //player code
         player = this.physics.add.sprite(500, 500, "dude").setScale(1.25);
         this.cameras.main.startFollow(player);
-
         //animations
         {
             this.anims.create({
@@ -130,7 +129,6 @@ var Boss = new Phaser.Class({
             });
         }
         this.physics.add.collider(player, platforms);
-
         //boss health
         {
             bossLife = 20;
@@ -166,7 +164,6 @@ var Boss = new Phaser.Class({
             keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
             keyE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
         }
-
         //timer for boss spawning + boss spawning stuff - testing the boss timer
         {
             //boss movement and other code
@@ -192,6 +189,9 @@ var Boss = new Phaser.Class({
                         lifeText.setText("Hearts: " + life);
                         if (life <= 0) {
                             this.scene.start("Death");
+                            this.boss1Sound.stop();
+                            this.boss2Sound.stop();
+                            this.boss3Sound.stop();
                             localStorage.setItem("Health", 3);
                         }
                         this.time.addEvent({
@@ -237,6 +237,9 @@ var Boss = new Phaser.Class({
                 bossText.setText("renoB giB: " + bossLife);
                 if (bossLife <= 0) {
                     this.scene.start("Win");
+                    this.boss1Sound.stop();
+                    this.boss2Sound.stop();
+                    this.boss3Sound.stop();
                 }
             }
         }
@@ -254,7 +257,6 @@ var Boss = new Phaser.Class({
                 bossMove.remove();
             }
         }
-
         //special attack (for boss scene this is just test)
         {
             //special attack is a bigger attack requiring coins
@@ -275,6 +277,46 @@ var Boss = new Phaser.Class({
             scoreText.scrollFactorX = 0;
             scoreText.scrollFactorY = 0;
         }
+        //audio
+        {
+            this.boss1Sound = this.sound.add('boss1');
+            this.boss1Sound.play({
+                mute: false,
+                volume: 1,
+                rate: 1,
+                detune: 0,
+                seek: 0,
+                loop: true,
+                delay: 0
+            });
+        } //Audio 1
+        {
+            this.boss2Sound = this.sound.add('boss2');
+            this.boss2Sound.play({
+                mute: false,
+                volume: 1,
+                rate: 1,
+                detune: 0,
+                seek: 0,
+                loop: true,
+                delay: 0
+            });
+        } //Audio 2
+        {
+            this.boss3Sound = this.sound.add('boss3');
+            this.boss3Sound.play({
+                mute: false,
+                volume: 1,
+                rate: 1,
+                detune: 0,
+                seek: 0,
+                loop: true,
+                delay: 0
+            });
+        } //Audio 3
+        bossStage = 1;
+        this.boss2Sound.stop();
+        this.boss3Sound.stop();
     },
     update: function() {
         //movement
@@ -296,10 +338,8 @@ var Boss = new Phaser.Class({
                 player.anims.play("turn");
             }
         }
-
         x = player.body.position.x;
         y = player.body.position.y;
-
         //attack layer hiding
         {
             if (Phaser.Input.Keyboard.JustDown(keyS)) {
@@ -342,7 +382,6 @@ var Boss = new Phaser.Class({
                     loop: false,
                     callback: () => {
                         //setting position
-
                         console.log(rx + " + " + ry)
                     }
                 })
@@ -372,6 +411,18 @@ var Boss = new Phaser.Class({
                         }
                     });
                 }
+            }
+        }
+        //Audio Switches
+        {
+            if (bossLife < 15 && bossStage == 1) {
+                this.boss2Sound.play();
+                this.boss1Sound.stop();
+                bossStage = 2;
+            } else if (bossLife < 7 && bossStage == 2) {
+                this.boss3Sound.play();
+                this.boss2Sound.stop();
+                bossStage = 3;
             }
         }
     }
