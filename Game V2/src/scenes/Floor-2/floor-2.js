@@ -11,6 +11,7 @@ var iceGame = new Phaser.Class({
         this.load.image("star", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/coin/coin_gold.png");
         this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
         this.load.image("muk2", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/Snow%20Sprites/evil_snowman.png")
+        this.load.audio("ice", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/InGame2Track.mp3")
         this.load.spritesheet("dude", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/Dude.png", {
             frameWidth: 32,
             frameHeight: 48
@@ -2798,6 +2799,7 @@ var iceGame = new Phaser.Class({
                         lifeText.setText("Hearts: " + life);
                         if (life <= 0) {
                             this.scene.start("Death");
+                            this.iceSound.stop();
                             localStorage.setItem("Health", 3);
                         }
                         this.time.addEvent({
@@ -3028,6 +3030,19 @@ var iceGame = new Phaser.Class({
             attack2.visible = false;
             attack2.body.enable = false;
         }
+        //Game Audio
+        {
+        this.iceSound = this.sound.add('ice');
+        this.iceSound.play({
+          mute: false,
+          volume: 1,
+          rate: 1,
+          detune: 0,
+          seek: 0,
+          loop: true,
+          delay: 0
+        })
+      }
     },
     update: function(game) {
         //movement code
@@ -3058,7 +3073,7 @@ var iceGame = new Phaser.Class({
                 attack1.setPosition(x + 20, y + 20);
                 attack1.visible = true;
                 this.time.addEvent({
-                    delay: 1000,
+                    delay: 500,
                     loop: false,
                     callback: () => {
                         attack1.visible = false;
@@ -3073,7 +3088,7 @@ var iceGame = new Phaser.Class({
         }
         //returning health 
         {
-            if (scoreCounter == 30) {
+            if (scoreCounter == 20) {
                 life++;
                 scoreCounter = 0;
                 lifeText.setText("Health: " + life);
@@ -3085,8 +3100,8 @@ var iceGame = new Phaser.Class({
             if (muks2.countActive() == 0) {
                 localStorage.setItem("Health", life);
                 localStorage.setItem("Score", score)
-                this.scene.start("iceBoss");
-                this.gameSound.stop();
+                this.scene.start("Boss2");
+                this.iceSound.stop();
             }
         }
         //special attack 
@@ -3096,8 +3111,9 @@ var iceGame = new Phaser.Class({
                     attack2.setPosition(x + 20, y + 20);
                     attack2.body.enable = true;
                     attack2.visible = true;
-                    score = score - 10;
-                    scoreCounter = scoreCounter - 10;
+                    score = score - 30;
+                    scoreText.setText("Score: " + score);
+                    scoreCounter = scoreCounter - 30;
                     this.time.addEvent({
                         delay: 500,
                         loop: false,
