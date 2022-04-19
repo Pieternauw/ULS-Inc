@@ -203,7 +203,7 @@ var Boss = new Phaser.Class({
                     }
                 });
                 this.time.addEvent({
-                    delay: 100,
+                    delay: 200,
                     loop: false,
                     callback: () => {
                         renoBgiB.setPosition(Phaser.Math.Between(100, 1100), Phaser.Math.Between(100, 900));
