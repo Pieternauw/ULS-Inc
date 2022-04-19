@@ -179,8 +179,7 @@ var Boss = new Phaser.Class({
             function hitMuk(player, muk) {
                 player.setTint(0xff0000);
                 player.anims.play("turn");
-                renoBgiB.setPosition(Phaser.Math.Between(100, 1100), Phaser.Math.Between(100, 900));
-                renoBgiB.setVelocity(0, 0);
+                player.body.enable = false;
                 this.time.addEvent({
                     delay: 500,
                     loop: false,
@@ -201,6 +200,15 @@ var Boss = new Phaser.Class({
                                 player.clearTint();
                             }
                         });
+                    }
+                });
+                this.time.addEvent({
+                    delay: 200,
+                    loop: false,
+                    callback: () => {
+                        renoBgiB.setPosition(Phaser.Math.Between(100, 1100), Phaser.Math.Between(100, 900));
+                        renoBgiB.setVelocity(0, 0);
+                        player.body.enable = true;
                     }
                 })
             }
@@ -365,27 +373,6 @@ var Boss = new Phaser.Class({
                     delay: 500,
                 })
             }
-        }
-        //boss movement/velocity
-        {
-            rx = renoBgiB.body.position.x;
-            ry = renoBgiB.body.position.y;
-
-            console.log(rx + " + " + ry);
-
-            //random placement of boss (teleportation mechanic)
-            //ask ben about the move to function for placement
-            /*
-            do {
-                this.time.addEvent({
-                    delay: 5000,
-                    loop: false,
-                    callback: () => {
-                        //setting position
-                        console.log(rx + " + " + ry)
-                    }
-                })
-            } while (bossLife > 0); */
         }
         //special attack 
         {
