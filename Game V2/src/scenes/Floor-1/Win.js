@@ -6,6 +6,7 @@ var Win = new Phaser.Class({
     init: function() {},
     preload: function() {
         this.load.image("chest", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/OpenChest.png");
+      this.load.audio('winner', 'https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/Win_1.mp3');
     },
     create: function() {
 
@@ -35,11 +36,22 @@ var Win = new Phaser.Class({
             fill: "#000"
         })
         continueText.setColor("White");
+      {
+      this.winnerSound = this.sound.add('winner');
+      this.winnerSound.play({
+          mute: false,
+          volume: 1,
+          rate: 1,
+          detune: 0,
+          seek: 0,
+          loop: true,
+          delay: 0.25});
+      } //Audio
     },
     update: function() {
         if (keyboard.enter.isDown) {
             this.scene.start("iceGame");
-            //this.themeSound.stop();
+            this.winnerSound.stop();
         }
     }
 });
