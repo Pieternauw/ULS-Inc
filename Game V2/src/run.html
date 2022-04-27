@@ -7,10 +7,11 @@
     <script src="scenes/Floor-1/Death Screen.js"></script>
     <script src="scenes/Floor-1/Game.js"></script>
     <script src="scenes/Floor-1/Title.js"></script>
-    <script src="scenes/Floow-1/Win.js"></script>
+    <script src="scenes/Floor-1/Win.js"></script>
     <script src="scenes/Floor-1/Tutorial.js"></script>
     <script src="scenes/Floor-1/Goals.js"></script>
     <script src="scenes/Floor-2/floor-2.js"></script>
+    <script src="scenes/Floor-1/difficulty.js"></script>
 </head>
 
 <body>
@@ -19,8 +20,8 @@
             type: Phaser.AUTO,
             width: 800,
             height: 800,
-            scene: [Title, Tutorial, Goals, Game, iceGame, Boss, Death, Win],
-            //scene: [Boss],
+            scene: [Title, Tutorial, Goals, Mode, Game, Boss, Death, iceGame, Win],
+            //scene: [Boss, Win],
             physics: {
                 default: "arcade",
                 arcade: {

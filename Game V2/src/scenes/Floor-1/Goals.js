@@ -45,7 +45,7 @@ var Goals = new Phaser.Class({
         }
 
         if (keyboard.enter.isDown) {
-            this.scene.start("Game");
+            this.scene.start("Mode");
         }
     }
 })
