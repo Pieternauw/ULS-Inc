@@ -28,7 +28,7 @@ var Mode = new Phaser.Class({
         });
         mode2.setColor("white");
         var mode3 = ' ';
-        mode3 = this.add.text(75, 400, "Level 1", {
+        mode3 = this.add.text(75, 400, "Level 3", {
             fontSize: "32px",
             fill: "#000"
         });
@@ -46,10 +46,10 @@ var Mode = new Phaser.Class({
     update: function() {
         if (Phaser.Input.Keyboard.JustDown(key1)) {
             localStorage.setItem("Mode", 1);
-            selection.setPosition(0, 215);
+            selection.setPosition(50, 215);
             selection.visible = true;
             this.time.addEvent({
-                delay: 2000,
+                delay: 4000,
                 callback: () => {
                     this.scene.start("Game");
                 }
@@ -57,8 +57,9 @@ var Mode = new Phaser.Class({
         } else if (Phaser.Input.Keyboard.JustDown(key2)) {
             localStorage.setItem("Mode", 2);
             selection.setPosition(50, 315);
+            selection.visible = true;
             this.time.addEvent({
-                delay: 2000,
+                delay: 4000,
                 callback: () => {
                     this.scene.start("Game");
                 }
@@ -66,9 +67,9 @@ var Mode = new Phaser.Class({
         } else if (Phaser.Input.Keyboard.JustDown(key3)) {
             localStorage.setItem("Mode", 3);
             selection.setPosition(50, 415);
-            seleciton.visible = true;
+            selection.visible = true;
             this.time.addEvent({
-                delay: 2000,
+                delay: 4000,
                 callback: () => {
                     this.scene.start("Game");
                 }

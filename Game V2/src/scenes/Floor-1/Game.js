@@ -36,6 +36,7 @@ var Game = new Phaser.Class({
                 eVel = 250;
                 break;
         }
+        console.log(mode);
 
         //adds image for background
         {
