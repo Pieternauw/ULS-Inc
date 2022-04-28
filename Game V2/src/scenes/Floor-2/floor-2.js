@@ -20,26 +20,22 @@ var iceGame = new Phaser.Class({
     create: function() {
         mode = localStorage.getItem("Mode");
         life = localStorage.getItem("Health");
-        eVel = 200;
 
-        switch (mode) {
-            case 1:
-                if (life < 5) {
-                    life = 5
-                }
-                eVel = 150;
-                break;
-            case 2:
-                if (life < 3) {
-                    life = 3
-                }
-                break;
-            case 3:
-                if (life > 3) {
-                    life = 3;
-                }
-                eVel = 250;
-                break;
+        if (mode == 1) {
+            if (life < 5) {
+                life = 5
+            }
+            eVel = 150;
+        } else if (mode == 2) {
+            if (life < 3) {
+                life = 3
+            }
+        } else if (mode == 3) {
+            if (life < 3) {
+                life = 3
+            }
+        } else {
+            eVel = 200;
         }
         console.log(mode);
         //adds image for background

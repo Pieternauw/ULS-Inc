@@ -22,19 +22,18 @@ var Game = new Phaser.Class({
         life = 0;
         eVel = 0;
 
-        switch (mode) {
-            case 1:
-                life = 5;
-                eVel = 150;
-                break;
-            case 2:
-                life = 3;
-                eVel = 200;
-                break;
-            case 3:
-                life = 3;
-                eVel = 250;
-                break;
+        if (mode == 1) {
+            life = 5;
+            eVel = 150;
+        } else if (mode == 2) {
+            life = 3;
+            eVel = 200;
+        } else if (mode == 3) {
+            life = 3;
+            eVel = 250;
+        } else {
+            life = 3;
+            eVel = 200
         }
         console.log(mode);
 
