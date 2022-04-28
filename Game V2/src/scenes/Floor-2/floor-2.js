@@ -716,7 +716,7 @@ var iceGame = new Phaser.Class({
             platforms.create(2400, 1575, "ground2").setScale(0.4).refreshBody();
             platforms.create(2400, 1650, "ground2").setScale(0.4).refreshBody();
             platforms.create(2400, 1700, "ground2").setScale(0.4).refreshBody();
-            platforms.create(2400, 1750, "ground").setScale(0.4).refreshBody();
+            platforms.create(2400, 1750, "ground2").setScale(0.4).refreshBody();
             platforms.create(2400, 1825, "ground2").setScale(0.4).refreshBody();
             platforms.create(2400, 1900, "ground2").setScale(0.4).refreshBody();
             platforms.create(2400, 1975, "ground2").setScale(0.4).refreshBody();
@@ -3100,7 +3100,8 @@ var iceGame = new Phaser.Class({
                 console.log("space");
                 this.time.addEvent({
                     delay: 500,
-                })
+                });
+                console.log(muks2.countActive());
             }
         }
         //returning health 
