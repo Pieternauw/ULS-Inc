@@ -16,6 +16,7 @@ var Title = new Phaser.Class({
         var title;
         var title2;
         var Start;
+        var pp;
 
         title = this.add.text(215, 125, "Dungeon", {
             fontSize: "100px",
@@ -34,6 +35,12 @@ var Title = new Phaser.Class({
             fill: "#000"
         })
         Start.setColor("White");
+        
+        pp = this.add.text(340, 550, "©ULS Inc", {
+            fontSize: "32px",
+            fill: "#000"
+        })
+        pp.setColor("White");
 
         cursors = this.input.keyboard.createCursorKeys();
         keyboard = this.input.keyboard.addKeys("enter");
