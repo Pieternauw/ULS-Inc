@@ -145,7 +145,7 @@ var Boss = new Phaser.Class({
         }
         //player health
         {
-            life = localStorage.getItem("Health")
+            life = localStorage.getItem("Health");
 
             lifeText = " ";
             lifeText = this.add.text(0, 0, "Hearts: " + life, {
@@ -412,6 +412,7 @@ var Boss = new Phaser.Class({
                 bossStage = 3;
             }
         }
+        localStorage.setItem("Health", life);
     }
 });
 
