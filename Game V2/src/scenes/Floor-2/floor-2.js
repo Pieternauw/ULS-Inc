@@ -20,23 +20,24 @@ var iceGame = new Phaser.Class({
     create: function() {
         mode = localStorage.getItem("Mode");
         life = localStorage.getItem("Health");
-        eVel = 0;
+        eVel = 200;
 
         switch (mode) {
             case 1:
-                if (life <= 5) {
+                if (life < 5) {
                     life = 5
                 }
                 eVel = 150;
                 break;
             case 2:
-                eVel = 200;
-                if (life <= 3) {
+                if (life < 3) {
                     life = 3
                 }
                 break;
             case 3:
-                life = 3;
+                if (life > 3) {
+                    life = 3;
+                }
                 eVel = 250;
                 break;
         }
