@@ -18,6 +18,25 @@ var Game = new Phaser.Class({
         });
     },
     create: function() {
+        mode = localStorage.getItem("Mode");
+        life = 0;
+        eVel = 0;
+
+        switch (mode) {
+            case 1:
+                life = 5;
+                eVel = 150;
+                break;
+            case 2:
+                life = 3;
+                eVel = 200;
+                break;
+            case 3:
+                life = 3;
+                eVel = 250;
+                break;
+        }
+
         //adds image for background
         {
             this.add.image(0, 0, "floor").setScale(1.5);
@@ -2790,8 +2809,7 @@ var Game = new Phaser.Class({
             });
             //color for scoreText
             scoreText.setColor("white");
-            //creates score counter
-            life = 3;
+            //creates score counters
             lifeText = " ";
             lifeText = this.add.text(0, 0, "Hearts: " + life, {
                 fontSize: "32px",
@@ -2848,168 +2866,168 @@ var Game = new Phaser.Class({
                 var muk2 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(700, 1250), 'muk');
                 muk2.setBounce(1);
                 muk2.setCollideWorldBounds(false);
-                muk2.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk2.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk3
             {
                 var muk3 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(1400, 1950), 'muk');
                 muk3.setBounce(1);
                 muk3.setCollideWorldBounds(false);
-                muk3.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk3.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk4
             {
                 var muk4 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(2100, 2650), 'muk');
                 muk4.setBounce(1);
                 muk4.setCollideWorldBounds(false);
-                muk4.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk4.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk5
             {
                 var muk5 = muks.create(Phaser.Math.Between(100, 700), Phaser.Math.Between(2800, 3350), 'muk');
                 muk5.setBounce(1);
                 muk5.setCollideWorldBounds(false);
-                muk5.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk5.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk6 - middle 1
             {
                 var muk6 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(100, 550), 'muk');
                 muk6.setBounce(1);
                 muk6.setCollideWorldBounds(false);
-                muk6.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk6.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk7
             {
                 var muk7 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(700, 1250), 'muk');
                 muk7.setBounce(1);
                 muk7.setCollideWorldBounds(false);
-                muk7.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk7.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk8
             {
                 var muk8 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(1400, 1950), 'muk');
                 muk8.setBounce(1);
                 muk8.setCollideWorldBounds(false);
-                muk8.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk8.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk9
             {
                 var muk9 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(2100, 2650), 'muk');
                 muk9.setBounce(1);
                 muk9.setCollideWorldBounds(false);
-                muk9.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk9.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk10
             {
                 var muk10 = muks.create(Phaser.Math.Between(800, 1500), Phaser.Math.Between(2100, 2650), 'muk');
                 muk10.setBounce(1);
                 muk10.setCollideWorldBounds(false);
-                muk10.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk10.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk11 - middle 2
             {
                 var muk11 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(100, 550), 'muk');
                 muk11.setBounce(1);
                 muk11.setCollideWorldBounds(false);
-                muk11.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk11.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk12
             {
                 var muk12 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(700, 1250), 'muk');
                 muk12.setBounce(1);
                 muk12.setCollideWorldBounds(false);
-                muk12.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk12.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk13
             {
                 var muk13 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(1400, 1950), 'muk');
                 muk13.setBounce(1);
                 muk13.setCollideWorldBounds(false);
-                muk13.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk13.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk14
             {
                 var muk14 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
                 muk14.setBounce(1);
                 muk14.setCollideWorldBounds(false);
-                muk14.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk14.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk15
             {
                 var muk15 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
                 muk15.setBounce(1);
                 muk15.setCollideWorldBounds(false);
-                muk15.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk15.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk16 - middle 3
             {
                 var muk16 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(100, 550), 'muk');
                 muk16.setBounce(1);
                 muk16.setCollideWorldBounds(false);
-                muk16.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk16.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk17
             {
                 var muk17 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(700, 1250), 'muk');
                 muk17.setBounce(1);
                 muk17.setCollideWorldBounds(false);
-                muk17.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk17.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk18
             {
                 var muk18 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(1400, 1950), 'muk');
                 muk18.setBounce(1);
                 muk18.setCollideWorldBounds(false);
-                muk18.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk18.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk19
             {
                 var muk19 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
                 muk19.setBounce(1);
                 muk19.setCollideWorldBounds(false);
-                muk19.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk19.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk20
             {
                 var muk20 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
                 muk20.setBounce(1);
                 muk20.setCollideWorldBounds(false);
-                muk20.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk20.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk21 - left
             {
                 var muk21 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(100, 550), 'muk');
                 muk21.setBounce(1);
                 muk21.setCollideWorldBounds(false);
-                muk21.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk21.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk22
             {
                 var muk22 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(700, 1250), 'muk');
                 muk22.setBounce(1);
                 muk22.setCollideWorldBounds(false);
-                muk22.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk22.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk23
             {
                 var muk23 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(1400, 1950), 'muk');
                 muk23.setBounce(1);
                 muk23.setCollideWorldBounds(false);
-                muk23.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk23.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk24
             {
                 var muk24 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
                 muk24.setBounce(1);
                 muk24.setCollideWorldBounds(false);
-                muk24.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk24.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
             //muk25
             {
                 var muk25 = muks.create(Phaser.Math.Between(1600, 2300), Phaser.Math.Between(2100, 2650), 'muk');
                 muk25.setBounce(1);
                 muk25.setCollideWorldBounds(false);
-                muk25.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(-200, 200));
+                muk25.setVelocity(Phaser.Math.Between(-eVel, eVel), Phaser.Math.Between(-eVel, eVel));
             }
 
         }
