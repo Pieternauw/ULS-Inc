@@ -3,9 +3,6 @@ var Mode = new Phaser.Class({
     initialize: function() {
         Phaser.Scene.call(this, { "key": "Mode" });
     },
-    preload: function() {
-        this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
-    },
     create: function() {
         var diffictuly = ' ';
         diffictuly = this.add.text(75, 100, "Select your difficulty setting", {

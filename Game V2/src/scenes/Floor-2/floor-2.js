@@ -4,19 +4,6 @@ var iceGame = new Phaser.Class({
         Phaser.Scene.call(this, { "key": "iceGame" });
     },
     init: function() {},
-    preload: function() {
-        //this.load.setBaseURL("https://labs.phaser.io/assets");
-        this.load.image("floor2", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/MC_IceBackground.jpeg");
-        this.load.image("wall", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/508c262fcaf54d4bfd4fdb4b6adfbd7296ac3649/Game%20V2/src/resources/dungeon/ice_brick.png");
-        this.load.image("star", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/coin/coin_gold.png");
-        this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
-        this.load.image("muk2", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/Snow%20Sprites/evil_snowman.png")
-        this.load.audio("ice", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/InGame2Track.mp3")
-        this.load.spritesheet("dude", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/Dude.png", {
-            frameWidth: 32,
-            frameHeight: 48
-        });
-    },
     create: function() {
         mode = localStorage.getItem("Mode");
         life = localStorage.getItem("Health");

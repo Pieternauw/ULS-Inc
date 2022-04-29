@@ -4,9 +4,6 @@ var Credits = new Phaser.Class({
         Phaser.Scene.call(this, { "key": "Credits" });
     },
     init: function() {},
-    preload: function() {
-        this.load.audio("credits", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/Credit_Jazz_Music.mp3");
-    },
     create: function() {
     {
         cursors = this.input.keyboard.createCursorKeys();

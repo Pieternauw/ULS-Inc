@@ -4,7 +4,6 @@ var Tutorial = new Phaser.Class({
         Phaser.Scene.call(this, { "key": "Tutorial" });
     },
     init: function() {},
-    preload: function() {},
     create: function() {
         var moveText = ' ';
         moveText = this.add.text(200, 100, "Move with arrow keys", {
