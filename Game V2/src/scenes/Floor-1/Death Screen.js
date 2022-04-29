@@ -3,9 +3,6 @@ var Death = new Phaser.Class({
     initialize: function() {
         Phaser.Scene.call(this, { "key": "Death" });
     },
-    preload: function() {
-        this.load.audio('death', 'https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/Death-Screen-Music.mp3');
-    },
     create: function() {
 
         cursors = this.input.keyboard.createCursorKeys();

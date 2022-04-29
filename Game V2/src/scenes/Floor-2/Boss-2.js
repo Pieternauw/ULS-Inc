@@ -4,19 +4,6 @@ var Boss2 = new Phaser.Class({
         Phaser.Scene.call(this, { "key": "Boss2" });
     },
     init: function() {},
-    preload: function() {
-        this.load.image("floor2", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/MC_IceBackground.jpeg");
-        this.load.image("wall", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/ice_brick.png");
-        this.load.image("bomb", "https://labs.phaser.io/assets/demoscene/blue_ball.png");
-        this.load.image("enemy2", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/Snow%20Sprites/Boss.png");
-        this.load.spritesheet("dude", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/Dude.png", {
-            frameWidth: 32,
-            frameHeight: 48
-        });
-        this.load.audio("iceBoss1", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/QUIETBoss.mp3");
-        this.load.audio("iceBoss2", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/MEDIUM_Boss.mp3");
-        this.load.audio("iceBoss3", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/INTENSEBoss.mp3");
-    },
     create: function() {
         //floor, add more if a bigger room required
         {

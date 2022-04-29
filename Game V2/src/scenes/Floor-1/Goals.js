@@ -4,7 +4,6 @@ var Goals = new Phaser.Class({
         Phaser.Scene.call(this, { "key": "Goals" });
     },
     init: function() {},
-    preload: function() {},
     create: function() {
         var moveText = ' ';
         moveText = this.add.text(75, 100, "Kill all of the enemies to move on", {

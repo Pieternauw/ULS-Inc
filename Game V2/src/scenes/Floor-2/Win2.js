@@ -4,10 +4,6 @@ var Win2 = new Phaser.Class({
         Phaser.Scene.call(this, { "key": "Win2" });
     },
     init: function() {},
-    preload: function() {
-        this.load.image("floor", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/images.jpg");
-        this.load.audio('finalwin','https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/FINALWIN.mp3');
-    },
     create: function() {
       
         this.add.image(390, 300, "floor").setScale(4.7);

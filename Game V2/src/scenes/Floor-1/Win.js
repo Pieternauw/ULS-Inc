@@ -4,10 +4,6 @@ var Win = new Phaser.Class({
         Phaser.Scene.call(this, { "key": "Win" });
     },
     init: function() {},
-    preload: function() {
-        this.load.image("chest", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/OpenChest.png");
-      this.load.audio('winner', 'https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/Win_1.mp3');
-    },
     create: function() {
 
         this.add.image(350, 300, "chest").setScale(2.25);
