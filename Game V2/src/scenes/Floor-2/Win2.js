@@ -6,7 +6,7 @@ var Win2 = new Phaser.Class({
     init: function() {},
     create: function() {
       
-        this.add.image(390, 300, "floor").setScale(4.7);
+        this.add.image(390, 300, "winFloor").setScale(4.7);
       
         cursors = this.input.keyboard.createCursorKeys();
         keyboard = this.input.keyboard.addKeys("enter");
