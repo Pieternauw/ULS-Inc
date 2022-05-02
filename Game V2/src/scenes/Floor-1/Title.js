@@ -28,9 +28,9 @@ var Title = new Phaser.Class({
             this.load.image("enemy2", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/Snow%20Sprites/Boss.png");
             
             this.load.audio("ice", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/InGame2Track.mp3");
-            this.load.audio("iceBoss1", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/QUIETBoss.mp3");
-            this.load.audio("iceBoss2", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/MEDIUM_Boss.mp3");
-            this.load.audio("iceBoss3", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/INTENSEBoss.mp3");
+            this.load.audio("iceBoss1", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/QuietIceBoss.mp3");
+            this.load.audio("iceBoss2", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/MediumIceBoss.mp3");
+            this.load.audio("iceBoss3", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/Intense_IceBoss.mp3");
         }
         //all file loads
         {
