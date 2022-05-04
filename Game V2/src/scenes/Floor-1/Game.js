@@ -5,24 +5,27 @@ var Game = new Phaser.Class({
     },
     init: function() {},
     create: function() {
-        mode = localStorage.getItem("Mode");
-        life = 0;
-        eVel = 0;
+        //game mode 
+        {
+            mode = localStorage.getItem("Mode");
+            life = 0;
+            eVel = 0;
 
-        if (mode == 1) {
-            life = 5;
-            eVel = 150;
-        } else if (mode == 2) {
-            life = 3;
-            eVel = 200;
-        } else if (mode == 3) {
-            life = 3;
-            eVel = 250;
-        } else {
-            life = 3;
-            eVel = 200
+            if (mode == 1) {
+                life = 5;
+                eVel = 150;
+            } else if (mode == 2) {
+                life = 3;
+                eVel = 200;
+            } else if (mode == 3) {
+                life = 3;
+                eVel = 250;
+            } else {
+                life = 3;
+                eVel = 200
+            }
+            console.log(mode);
         }
-        console.log(mode);
 
         //adds image for background
         {
