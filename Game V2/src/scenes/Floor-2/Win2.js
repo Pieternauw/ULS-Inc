@@ -3,7 +3,10 @@ var Win2 = new Phaser.Class({
     initialize: function() {
         Phaser.Scene.call(this, { "key": "Win2" });
     },
-    init: function() {},
+    preload: function() {
+        this.load.image("winFloor", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/images.jpg");
+        this.load.audio("finalWin", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/FINALWIN.mp3");
+    },
     create: function() {
       
         this.add.image(390, 300, "winFloor").setScale(4.7);
@@ -34,8 +37,8 @@ var Win2 = new Phaser.Class({
         continueText.setColor("White");
         //Audio
         {
-          this.finalwinSound = this.sound.add('finalwin');
-          this.finalwinSound.play({
+          finalwinSound = this.sound.add("finalWin");
+          finalwinSound.play({
             mute: false,
             volume: 1,
             rate: 1,
@@ -48,7 +51,7 @@ var Win2 = new Phaser.Class({
     update: function() {
         if (keyboard.enter.isDown) {
             this.scene.start("Credits");
-            this.finalwinSound.stop();
+            finalwinSound.stop();
         }
     }
 });

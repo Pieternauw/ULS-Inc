@@ -51,10 +51,10 @@ var Title = new Phaser.Class({
         //win 
         {
             this.load.image("chest", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/OpenChest.png");
-            this.load.audio('winner', 'https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/Win_1.mp3');
+            this.load.audio("winner", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/Win_1.mp3");
 
             this.load.image("winFloor", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/images.jpg");
-            this.load.audio('finalwin','https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/FINALWIN.mp3');
+            this.load.audio("finalWin","https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/FINALWIN.mp3");
         }
     },
     create: function() {
