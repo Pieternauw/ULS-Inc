@@ -18,7 +18,7 @@ var iceGame = new Phaser.Class({
                 life = 3
             }
         } else if (mode == 3) {
-            if (life < 3) {
+            if (life > 3) {
                 life = 3
             }
         } else {
@@ -3033,17 +3033,17 @@ var iceGame = new Phaser.Class({
         }
         //Game Audio
         {
-        this.iceSound = this.sound.add('ice');
-        this.iceSound.play({
-          mute: false,
-          volume: 1,
-          rate: 1,
-          detune: 0,
-          seek: 0,
-          loop: true,
-          delay: 0
-        })
-      }
+            this.iceSound = this.sound.add('ice');
+            this.iceSound.play({
+                mute: false,
+                volume: 1,
+                rate: 1,
+                detune: 0,
+                seek: 0,
+                loop: true,
+                delay: 0
+            })
+        }
     },
     update: function(game) {
         //movement code
