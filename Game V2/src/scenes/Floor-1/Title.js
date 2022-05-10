@@ -12,8 +12,8 @@ var Title = new Phaser.Class({
             this.load.image("ground", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/dungeon-wall.png");
             this.load.image("enemy", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/renoB.png");
             this.load.image("muk", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/sprite/skeletonminion.png")
-        
-            
+
+
             //music
             this.load.audio("boss1", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/QUIETBoss.mp3");
             this.load.audio("boss2", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/MEDIUM_Boss.mp3");
@@ -26,7 +26,7 @@ var Title = new Phaser.Class({
             this.load.image("wall", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/508c262fcaf54d4bfd4fdb4b6adfbd7296ac3649/Game%20V2/src/resources/dungeon/ice_brick.png");
             this.load.image("muk2", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/Snow%20Sprites/evil_snowman.png")
             this.load.image("enemy2", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/Snow%20Sprites/Boss.png");
-            
+
             this.load.audio("ice", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/InGame2Track.mp3");
             this.load.audio("iceBoss1", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/QuietIceBoss.mp3");
             this.load.audio("iceBoss2", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/MediumIceBoss.mp3");
@@ -54,7 +54,7 @@ var Title = new Phaser.Class({
             this.load.audio("winner", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/Win_1.mp3");
 
             this.load.image("winFloor", "https://raw.githubusercontent.com/Pieternauw/ULS-Inc/main/Game%20V2/src/resources/dungeon/images.jpg");
-            this.load.audio("finalWin","https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/FINALWIN.mp3");
+            this.load.audio("finalWin", "https://raw.githubusercontent.com/nlaranio/CSResources/main/Jumper/assets/sfx/FINALWIN.mp3");
         }
     },
     create: function() {
@@ -82,7 +82,7 @@ var Title = new Phaser.Class({
             fill: "#000"
         })
         Start.setColor("White");
-        
+
         pp = this.add.text(340, 550, "©ULS Inc", {
             fontSize: "32px",
             fill: "#000"
