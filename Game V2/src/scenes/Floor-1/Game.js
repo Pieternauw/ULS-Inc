@@ -3129,7 +3129,7 @@ var Game = new Phaser.Class({
         {
             if (muks.countActive() == 0) {
                 localStorage.setItem("Health", life);
-                localStorage.setItem("Score", score)
+                localStorage.setItem("Score", score);
                 this.scene.start("Boss");
                 this.gameSound.stop();
             }
